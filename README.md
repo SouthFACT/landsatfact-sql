@@ -1,7 +1,6 @@
 # landsatfact-sql
 ## SQL views and SQL functions used by landsatfact
 
----
 ### Views
 ---
 Collection of views used to create landsatfact.  
@@ -18,6 +17,7 @@ Collection of views used to create landsatfact.
 * [vw_initial_mosaic_ndmi.sql](views/vw_initial_mosaic_ndmi.sql)
 > Brief description
 * [vw_initial_mosaic_ndvi.sql](views/vw_initial_mosaic_ndvi.sql)
+
 > Brief description
 * [vw_initial_mosaic_swir.sql](views/vw_initial_mosaic_swir.sql)
 > Brief description
@@ -60,6 +60,5 @@ Collection of views used to create landsatfact.
 * [vw_viewer_quads.sql](views/vw_viewer_quads.sql)
 > Brief description
 
----
 ### Functions
 ---
