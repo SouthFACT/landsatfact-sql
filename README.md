@@ -15,14 +15,9 @@ ___
   ```
   View, commit, and/or provide suggestions on GitHub @ [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
   <br><br>
-*vw_download_scenes* view is available at [vw_download_scenes.sql](views/vw_download_scenes.sql) and is used for..
-  <br><br>
-##### vw_initial_mosaic_cloud
-  ```
-  This view provides ...
-  ```
-  View, commit, and/or provide suggestions on GitHub @ [vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql)
-  <br><br>
+**vw_download_scenes** view is available at [vw_download_scenes.sql](views/vw_download_scenes.sql) and is used for..
+
+**vw_initial_mosaic_cloud** view is available at [vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql) and is used for..
 
 ##### [vw_initial_mosaic_gap.sql](views/vw_initial_mosaic_gap.sql)
 ```
