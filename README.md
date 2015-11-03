@@ -4,7 +4,7 @@
 ### Views
 ---
 Collection of views used to create landsatfact.
-**test_vw_user_notification.sql**
+#### test_vw_user_notification.sql
   View: [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
   > Brief description
 
