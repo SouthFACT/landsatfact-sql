@@ -6,7 +6,7 @@
 ---
 Collection of views used to create landsatfact.  
 * [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
-> Brief description
+>Brief description
 * [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
 > Brief description
 * [vw_download_scenes.sql](views/vw_download_scenes.sql)
