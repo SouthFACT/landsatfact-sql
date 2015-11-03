@@ -1,12 +1,13 @@
 # landsatfact-sql
-## SQL views and SQL functions used by landsatfact
+A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Views
----
-Collection of views used to create landsatfact.
-#### test_vw_user_notification.sql
-  View: [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
-  > Brief description
+___
+  ##### test_vw_user_notification.sql
+  The Provides ...
+
+  [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
+
 
 * [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
   > Brief description
