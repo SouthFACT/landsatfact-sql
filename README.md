@@ -3,13 +3,13 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Views
 ___
-**test_vw_user_notification** [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
+**test_vw_user_notification:** the SQL is available at [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
 
-**vw_archive_product_dates. the view** [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
+**vw_archive_product_dates:** the SQL is available at [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
 
 **vw_download_scenes** the SQL is available at [views/vw_download_scenes.sql](views/vw_download_scenes.sql) and is used for..in the landsat fact project.  
 
-**vw_initial_mosaic_cloud** view is available at [ßviews/vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql) and is used for..
+**vw_initial_mosaic_cloud** the SQL is available at [views/vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql) and is used for..
 
 ##### [vw_initial_mosaic_gap.sql](views/vw_initial_mosaic_gap.sql)
 ```
