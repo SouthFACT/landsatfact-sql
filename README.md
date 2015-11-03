@@ -4,9 +4,9 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 ### Views
 ___
 ##### test_vw_user_notification.sql
-  The Provides ...
+  This view Provides ...
 
-  [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
+  View, commit, and/or provide suggestions on GitHub @ [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
 
 
 * [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
