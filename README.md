@@ -9,9 +9,7 @@ ___
   This view provides ...
   ```
   View, commit, and/or provide suggestions on GitHub @ [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
-
-
-
+<br><br>
 ##### vw_archive_product_dates
   ```
   This view provides ...
