@@ -4,7 +4,7 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 ### Views
 ___
 
-####  test_vw_user_notification
+##### test_vw_user_notification
   ```
   This view provides ...
   ```
@@ -15,21 +15,19 @@ ___
   This view provides ...
   ```
   View, commit, and/or provide suggestions on GitHub @ [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
-
-
-
-#####  vw_download_scenes
+  <br><br>
+##### vw_download_scenes
   ```
   This view provides ...
   ```
   View, commit, and/or provide suggestions on GitHub @ [vw_download_scenes.sql](views/vw_download_scenes.sql)
+  <br><br>
+##### vw_initial_mosaic_cloud
+  ```
+  This view provides ...
+  ```
+  View, commit, and/or provide suggestions on GitHub @ [vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql)
 
-
-##### [vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql)
-```
-This view provides ...
-```
-View, commit, and/or provide suggestions on GitHub @
 
 ##### [vw_initial_mosaic_gap.sql](views/vw_initial_mosaic_gap.sql)
 ```
