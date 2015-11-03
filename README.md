@@ -3,7 +3,7 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Views
 ___
-  ##### test_vw_user_notification.sql
+##### test_vw_user_notification.sql
   The Provides ...
 
   [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
