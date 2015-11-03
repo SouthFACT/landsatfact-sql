@@ -6,14 +6,14 @@
 Collection of views used to create landsatfact.  
 * [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
   > Brief description
-
 * [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
   > Brief description
 
 * [vw_download_scenes.sql](views/vw_download_scenes.sql)
-> Brief description
+  > Brief description
 * [vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql)
-> Brief description
+  > Brief description
+
 * [vw_initial_mosaic_gap.sql](views/vw_initial_mosaic_gap.sql)
 > Brief description
 * [vw_initial_mosaic_ndmi.sql](views/vw_initial_mosaic_ndmi.sql)
