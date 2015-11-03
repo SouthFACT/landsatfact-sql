@@ -3,8 +3,10 @@
 
 ### Views
 ---
-Collection of views used to create landsatfact.  
-* [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
+Collection of views used to create landsatfact.
+* **test_vw_user_notification.sql**
+
+  View: [test_vw_user_notification.sql](views/test_vw_user_notification.sql)
   > Brief description
 
 * [vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
