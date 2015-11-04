@@ -202,11 +202,8 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    product_id character varying (100)
+    geom geometry
 ```
 <br><br>
 ### view [vw_tile_index_cloud](views/vw_tile_index_cloud.sql)
@@ -214,11 +211,11 @@ Columns
 Used for... in function?
 ```sql
 Columns
+    location text
+    "oid" character varying (8)
+    geom geometry
     product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    srs character varying (600)
 ```
 <br><br>
 ### view [vw_tile_index_gap](views/vw_tile_index_gap.sql)
@@ -226,11 +223,11 @@ Columns
 Used for... in function?
 ```sql
 Columns
+    location text
+    "oid" character varying (8)
+    geom geometry
     product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    srs character varying (600)
 ```
 <br><br>
 ### view [vw_tile_index_ndmi](views/vw_tile_index_ndmi.sql)
@@ -238,11 +235,11 @@ Columns
 Used for... in function?
 ```sql
 Columns
+    location text
+    "oid" character varying (8)
+    geom geometry
     product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    srs character varying (600)
 ```
 <br><br>
 ### view [vw_tile_index_ndvi](views/vw_tile_index_ndvi.sql)
@@ -250,11 +247,12 @@ Columns
 Used for... in function?
 ```sql
 Columns
+    location text
+    "oid" character varying (8)
+    geom geometry
     product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    srs character varying (600)
+    quad_id character varying (8)
 ```
 <br><br>
 ### view [vw_tile_index_swir](views/vw_tile_index_swir.sql)
@@ -262,11 +260,11 @@ Columns
 Used for... in function?
 ```sql
 Columns
+    location text
+    "oid" character varying (8)
+    geom geometry
     product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    srs character varying (600)
 ```
 <br><br>
 ### view [vw_viewer_quads](views/vw_viewer_quads.sql)
@@ -274,11 +272,13 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
+    "oid" character varying (8)
+    geom geometry
+    last_update date
+    srs character varying (600)
     lsf_url text
+    input1 character varying (40)
+    input2 character varying (40)
 ```
 <br><br>
 ### Functions
