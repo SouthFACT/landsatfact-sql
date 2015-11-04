@@ -27,7 +27,7 @@ Used for...
 ```
 <br><br>
 ### function [is_validsceneinersects](functions/is_validsceneinersects       s.sql)
-function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of of scenes the custom request geometery is allowed to intersect.
+function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of scenes the custom request geometery is allowed to intersect.
 
 **requires**
 * CustomRequest_GeoJSON text containing Custom Request GeoJSON
