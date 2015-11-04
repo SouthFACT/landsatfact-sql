@@ -8,6 +8,7 @@ CREATE OR REPLACE FUNCTION public.is_validsceneintersects(
   RETURNS boolean AS
 $BODY$
 
+
   --function to ensure data passed only intersects less <= 4 wrs2_codes
 
   --requires two arguments
