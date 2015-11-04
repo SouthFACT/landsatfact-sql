@@ -11,7 +11,7 @@ Used for...
           aoi_name text,
           aoi_type text,
           county_geoid integer)
-      RETURNS void AS
+      RETURNS void
 ```
 <br><br>
 ### function [insert_user_aoi_by_geojson](functions/insert_user_aoi_by_geojson.sql)
@@ -23,7 +23,7 @@ Used for...
           aoi_name text,
           aoi_type text,
           geojson text)
-      RETURNS void AS
+      RETURNS void
 ```
 <br><br>
 ### function [is_validsceneinersects](functions/is_validsceneinersects       s.sql)
@@ -41,7 +41,20 @@ function to ensure custom request geometry intersects <= n (number) of scenes.  
     is_validsceneinersects(
           customrequest_geojson text,
           allowed_intersections integer)
-      RETURNS boolean AS
+      RETURNS boolean
+```
+
+**Run Example:**
+*replace* some geojson with [sample GeoJSON](https://raw.githubusercontent.com/nemac/landsatfact-sql/master/sampledata/buncombecounty.geojson)
+```sql
+SELECT * FROM is_validSceneInersects('some geojson',4);
+```
+**Returns:**
+```sql
+is_validsceneinersects
+------------------------
+t
+(1 row)
 ```
 <br><br>
 ## Views
