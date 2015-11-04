@@ -3,7 +3,7 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Functions
 ### function [get_countyByGeoid](functions/get_countybygeoid.sql)
-Function to get GeoJSON for a county by the count geoid.
+Function to get GeoJSON for a county by the counties geoid.
 ```sql
 get_countybygeoid(countygeoid integer)
   RETURNS text
