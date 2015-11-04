@@ -499,6 +499,18 @@ Columns
 
 ### Data Types
 ### Type [scene_url](datatypes/scene_url.sql)
+
+```sql
+CREATE TYPE scene_url as (
+  daysfrom integer,
+  cc_full real,
+  scene_id character varying(35),
+  wrs2_code character varying(6),
+  acquistion_date date,
+  browse_url character varying(100)
+);
+```
+
 Data type used to return a table of data from the functions:
 * [get_scenesMostRecent](README.md#function-get_scenesmostrecent)
 * [get_scenesAlternate](README.md#function-get_scenesalternate)
