@@ -2,30 +2,6 @@
 A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Functions
-### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
-Used for...
-```sql
-    insert_user_aoi_by_county(
-          node_id text,
-          user_id text,
-          aoi_name text,
-          aoi_type text,
-          county_geoid integer)
-      RETURNS void
-```
-<br><br>
-### function [insert_user_aoi_by_geojson](functions/insert_user_aoi_by_geojson.sql)
-Used for...
-```sql
-    insert_user_aoi_by_geojson(
-          node_id text,
-          user_id text,
-          aoi_name text,
-          aoi_type text,
-          geojson text)
-      RETURNS void
-```
-<br><br>
 ### function [is_validsceneinersects](functions/is_validsceneinersects       s.sql)
 function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of scenes the custom request geometery is allowed to intersect.
 
@@ -56,6 +32,30 @@ is_validsceneinersects
 ------------------------
 t
 (1 row)
+```
+<br><br>
+### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
+Used for...
+```sql
+    insert_user_aoi_by_county(
+          node_id text,
+          user_id text,
+          aoi_name text,
+          aoi_type text,
+          county_geoid integer)
+      RETURNS void
+```
+<br><br>
+### function [insert_user_aoi_by_geojson](functions/insert_user_aoi_by_geojson.sql)
+Used for...
+```sql
+    insert_user_aoi_by_geojson(
+          node_id text,
+          user_id text,
+          aoi_name text,
+          aoi_type text,
+          geojson text)
+      RETURNS void
 ```
 <br><br>
 ## Views
