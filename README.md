@@ -20,7 +20,7 @@ function to ensure custom request geometry intersects <= n (number) of scenes.  
       RETURNS boolean
 ```
 
-**Run Example:**
+**Example:**
 
 **Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
 ```sql
