@@ -166,46 +166,31 @@ Used for...
           county_geoid integer)
       RETURNS void
 ```
-<br><br>
-### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
-Used for...
+**requires**
+* node_id text
+* user_id text
+* aoi_name text
+* aoi_type text
+* county_geoid integer
+
+**returns**
+
+Not Available for insert function
+
+**Example**
+
 ```sql
-    insert_user_aoi_by_county(
-          node_id text,
-          user_id text,
-          aoi_name text,
-          aoi_type text,
-          county_geoid integer)
-      RETURNS void
-```
-<br><br>
-**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
-```sql
-SELECT * FROM is_validSceneInersects('some geojson',4);
+SELECT * FROM insert_user_aoi_by_county('552','16','Buncombe County','subscription',37021);
 ```
 **Returns:**
 ```sql
-is_validsceneinersects
-------------------------
-t
+insert_custom_request_scenes
+------------------------------
+
 (1 row)
 ```
+
 <br><br>
-### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
-Used for...
-```sql
-    insert_user_aoi_by_county(
-          node_id text,
-          user_id text,
-          aoi_name text,
-          aoi_type text,
-          county_geoid integer)
-      RETURNS void
-```
-<br><br>
-
-
-
 ### function [insert_user_aoi_by_geojson](functions/insert_user_aoi_by_geojson.sql)
 Used for...
 ```sql
