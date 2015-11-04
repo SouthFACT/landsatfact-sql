@@ -1,8 +1,8 @@
--- Function: public.is_validsceneinersects(text, integer)
+-- Function: public.is_validsceneintersects(text, integer)
 
--- DROP FUNCTION public.is_validsceneinersects(text, integer);
+-- DROP FUNCTION public.is_validsceneintersects(text, integer);
 
-CREATE OR REPLACE FUNCTION public.is_validsceneinersects(
+CREATE OR REPLACE FUNCTION public.is_validsceneintersects(
     customrequest_geojson text,
     allowed_intersections integer)
   RETURNS boolean AS
@@ -35,9 +35,9 @@ $BODY$
 $BODY$
   LANGUAGE plpgsql IMMUTABLE
   COST 100;
-ALTER FUNCTION public.is_validsceneinersects(text, integer)
+ALTER FUNCTION public.is_validsceneintersects(text, integer)
   OWNER TO root;
-GRANT EXECUTE ON FUNCTION public.is_validsceneinersects(text, integer) TO public;
-GRANT EXECUTE ON FUNCTION public.is_validsceneinersects(text, integer) TO root;
-GRANT EXECUTE ON FUNCTION public.is_validsceneinersects(text, integer) TO dataonly;
-GRANT EXECUTE ON FUNCTION public.is_validsceneinersects(text, integer) TO readonly;
+GRANT EXECUTE ON FUNCTION public.is_validsceneintersects(text, integer) TO public;
+GRANT EXECUTE ON FUNCTION public.is_validsceneintersects(text, integer) TO root;
+GRANT EXECUTE ON FUNCTION public.is_validsceneintersects(text, integer) TO dataonly;
+GRANT EXECUTE ON FUNCTION public.is_validsceneintersects(text, integer) TO readonly;
