@@ -17,12 +17,11 @@ get_countybygeoid(countygeoid integer)
 
 **Example:**
 
-**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
 ```sql
 SELECT * FROM get_countyByGeoid(37021);
 ```
 **Returns:**
-[sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
+* [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
 
 <br><br>
 ### function [get_scenesMostRecent](functions/get_scenesmostrecent.sql)
