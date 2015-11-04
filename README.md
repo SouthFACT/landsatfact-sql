@@ -86,6 +86,22 @@ function inserts record into insert_custom_request_scenes to record each scene u
 * aoi_id integer the aoi_id of the custom request.
 * scene_id character varying (35) the Landsat scene id.
 
+**returns**
+Not Available for insert function
+
+**Example**
+
+```sql
+SELECT * FROM insert_custom_request_scenes(144,'LE70180352015274EDC00');
+```
+**Returns:**
+```sql
+insert_custom_request_scenes
+------------------------------
+
+(1 row)
+```
+
 <br><br>
 ### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
 Used for...
