@@ -87,6 +87,7 @@ function inserts record into insert_custom_request_scenes to record each scene u
 * scene_id character varying (35) the Landsat scene id.
 
 **returns**
+
 Not Available for insert function
 
 **Example**
