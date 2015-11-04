@@ -2,7 +2,7 @@
 A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Functions
-### function [get_scenesmostrecent](functions/get_scenesmostrecent.sql)
+### function [get_scenesmostrecent](functions/get_scenesmostrecent.sql) 
 Function to get url's of the images of the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date there should be a most recent url for each scene that the CustomRequest_GeoJson intersects.
 ```sql
     is_validsceneinersects(
