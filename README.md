@@ -7,15 +7,22 @@ ___
 
 Used for... in function?
 ```sql
-columns
+Columns
     aoi_id integer
+    product_type character varying (6)
+```
+
+### view [vw_archive_product_dates](views/vw_archive_product_dates.sql)
+
+Used for... in function?
+```sql
+Columns
+    product_date date
     user_id character varying (30)
     node_id character varying (30)
     extent text
     lsf_url text
 ```
-
-**vw_archive_product_dates:** the SQL is available at [views/vw_archive_product_dates.sql](views/vw_archive_product_dates.sql)
 
 **vw_download_scenes** the SQL is available at [views/vw_download_scenes.sql](views/vw_download_scenes.sql) and is used for..in the landsat fact project.  
 
