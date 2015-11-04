@@ -31,11 +31,19 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+  wrs2 text
+  satellite text
+  scene_id character varying (35)
+  sensor character varying (25)
+  acquisition_date date
+  browse_url character varying (100)
+  "path" integer
+  row integer
+  cc_full real
+  cc_quad_ul real
+  cc_quad_ur real
+  cc_quad_ll real
+  cc_quad_lr real
 ```
 <br><br>
 
@@ -122,11 +130,14 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    wrs2 text
+    satellite text
+    scene_id character varying (35)
+    sensor character varying (25)
+    acquisition_date date
+    browse_url character varying (100)
+    path integer
+
 ```
 <br><br>
 ### view [vw_latest_quads_cloud.sql](views/vw_latest_quads_cloud.sql)
