@@ -3,7 +3,7 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Functions
 ### function [get_countyByGeoid](functions/get_countybygeoid.sql)
-Function to get scene image url's for the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date.  There should be a image and url for each scene that the CustomRequest_GeoJson intersects.
+Function to get GeoJSON for a county by the count geoid.
 ```sql
 get_countybygeoid(countygeoid integer)
   RETURNS text
@@ -25,7 +25,7 @@ SELECT * FROM get_countyByGeoid(37021);
 
 <br><br>
 ### function [get_scenesMostRecent](functions/get_scenesmostrecent.sql)
-Function to get url's of Landsat scene images which are the closest date to the requested date. The intention is to call this twice once for the start date then again for the end date there should be a most recent url for each scene that the CustomRequest_GeoJson intersects.
+Function to get scene image url's for the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date.  There should be a image and url for each scene that the CustomRequest_GeoJson intersects.
 ```sql
 get_scenesMostRecent(
     customrequest_geojson text,
