@@ -42,10 +42,10 @@ daysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |      
 ```
 <br><br>
 
-## function [is_validSceneInersects](functions/is_validsceneinersects       s.sql)
+## function [is_validSceneIntersects](functions/is_validsceneintersects       s.sql)
 function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of scenes the custom request geometery is allowed to intersect.
 ```sql
-is_validSceneInersects(
+is_validSceneIntersects(
       customrequest_geojson text,
       allowed_intersections integer)
   RETURNS boolean
@@ -64,7 +64,7 @@ is_validSceneInersects(
 
 **Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
 ```sql
-SELECT * FROM is_validSceneInersects('some geojson',4);
+SELECT * FROM is_validSceneIntersects('some geojson',4);
 ```
 **Returns:**
 ```sql
