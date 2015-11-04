@@ -24,18 +24,78 @@ Columns
     lsf_url text
 ```
 <br><br>
-**vw_download_scenes** the SQL is available at [views/vw_download_scenes.sql](views/vw_download_scenes.sql) and is used for..in the landsat fact project.  
+### view [views/vw_download_scenes.sql](views/vw_download_scenes.sql)
 
-**vw_initial_mosaic_cloud** the SQL is available at [views/vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql) and is used for..in the landsat fact project.and is used for..
+Used for... in function?
+```sql
+Columns
+    product_date date
+    user_id character varying (30)
+    node_id character varying (30)
+    extent text
+    lsf_url text
+```
+<br><br>
+### view [views/vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql)
 
-**vw_initial_mosaic_gap** the SQL statement is available at [vw_initial_mosaic_gap.sql](views/vw_initial_mosaic_gap.sql) and is used for..in the landsat fact project.
+Used for... in function?
+```sql
+Columns
+    product_date date
+    user_id character varying (30)
+    node_id character varying (30)
+    extent text
+    lsf_url text
+```
+<br><br>
+### view [vw_initial_mosaic_gap.sql](views/vw_initial_mosaic_gap.sql)
 
-**vw_initial_mosaic_ndmi**  the SQL statement is available at [vw_initial_mosaic_ndmi.sql](views/vw_initial_mosaic_ndmi.sql) and is used for..in the landsat fact project.
+Used for... in function?
+```sql
+Columns
+    product_date date
+    user_id character varying (30)
+    node_id character varying (30)
+    extent text
+    lsf_url text
+```
+<br><br>
+### view [w_initial_mosaic_ndmi.sql](views/vw_initial_mosaic_ndmi.sql)
 
-**vw_initial_mosaic_ndvi** the SQL statement is available at [vw_initial_mosaic_ndvi.sql](views/vw_initial_mosaic_ndvi.sql) and is used for..in the landsat fact project.
+Used for... in function?
+```sql
+Columns
+    product_date date
+    user_id character varying (30)
+    node_id character varying (30)
+    extent text
+    lsf_url text
+```
+<br><br>
+### view [vw_initial_mosaic_ndvi.sql](views/vw_initial_mosaic_ndvi.sql)
 
-**vw_initial_mosaic_swir** the SQL statement is available at [vw_initial_mosaic_swir.sql](views/vw_initial_mosaic_swir.sql) and is used for..in the landsat fact project.
+Used for... in function?
+```sql
+Columns
+    product_date date
+    user_id character varying (30)
+    node_id character varying (30)
+    extent text
+    lsf_url text
+```
+<br><br>
+### view [vw_initial_mosaic_swir.sql](views/vw_initial_mosaic_swir.sql)
 
+Used for... in function?
+```sql
+Columns
+    product_date date
+    user_id character varying (30)
+    node_id character varying (30)
+    extent text
+    lsf_url text
+```
+<br><br>
 **vw_last_days_products**  the SQL statement is available at [vw_last_days_products.sql](viewws/vw_last_days_products.sql) and is used for..in the landsat fact project.
 
 ** [vw_last_days_scenes.sql](views/vw_last_days_scenes.sql)
