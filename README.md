@@ -25,7 +25,7 @@ SELECT * FROM get_countyByGeoid(37021);
 
 <br><br>
 ### function [get_scenesMostRecent](functions/get_scenesmostrecent.sql)
-Function to get scene image url's for the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date.  There should be a image and url for each scene that the CustomRequest_GeoJson intersects.
+Function to get images for a scene that was taken closest to the users requested date. The intention is to call this twice once for the start date then again for the end date.  There should be a image and url for each scene that the CustomRequest_GeoJson intersects.
 ```sql
 get_scenesMostRecent(
     customrequest_geojson text,
@@ -54,7 +54,7 @@ daysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |      
 ```
 <br><br>
 ### function [get_scenesAlternate](functions/get_scenesalternate.sql)
-function to get alternate urls for images of the most recent scene to the users requested date in a custom request.  This is only used when the user is not satisfied with scene image.
+function to get alternate images for a custom request.  This is only used when the user is not satisfied with scene image.
 ```sql
 get_scenesAlternate(
   customrequest_geojson text,
