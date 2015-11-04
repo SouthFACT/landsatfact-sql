@@ -30,13 +30,13 @@ Used for...
 function to ensure data passed only intersects less <= n number of scenes.  Where n is allowed_intersections.
 
 **requires**
-* CustomRequest_GeoJSON::text the Custom Requtests GeoJSON
-* allowed_Intersections::integer the maximum number of intersections allowed
+* CustomRequest_GeoJSON text containing Custom Request GeoJSON
+* allowed_Intersections integer that represents the maximum number of intersections allowed.
 
 **returns**
 * boolean
   * True if the number of scenes less than or equal to the allowed intersections
-  * False f the number of scenes is greater the allowed intersections
+  * False if the number of scenes is greater the allowed intersections
 ```sql
     is_validsceneinersects(
           customrequest_geojson text,
