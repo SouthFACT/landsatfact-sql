@@ -3,48 +3,48 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Functions
 ### function [is_validsceneinersects](functions/is_validsceneinersects       s.sql)
-function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of scenes the custom request geometery is allowed to intersect.
+  function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of scenes the custom request geometery is allowed to intersect.
 
-**requires**
-* CustomRequest_GeoJSON text containing Custom Request GeoJSON
-* allowed_Intersections integer that represents the maximum number of intersections allowed.
+  **requires**
+  * CustomRequest_GeoJSON text containing Custom Request GeoJSON
+  * allowed_Intersections integer that represents the maximum number of intersections allowed.
 
-**returns**
-* boolean
-  * True if the number of scenes less than or equal to the allowed intersections
-  * False if the number of scenes is greater the allowed intersections
-```sql
-    is_validsceneinersects(
-          customrequest_geojson text,
-          allowed_intersections integer)
-      RETURNS boolean
-```
+  **returns**
+  * boolean
+    * True if the number of scenes less than or equal to the allowed intersections
+    * False if the number of scenes is greater the allowed intersections
+  ```sql
+      is_validsceneinersects(
+            customrequest_geojson text,
+            allowed_intersections integer)
+        RETURNS boolean
+  ```
 
 **Example:**
 
-**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
-```sql
-SELECT * FROM is_validSceneInersects('some geojson',4);
-```
-**Returns:**
-```sql
-is_validsceneinersects
-------------------------
-t
-(1 row)
-```
-<br><br>
-### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
-Used for...
-```sql
-    insert_user_aoi_by_county(
-          node_id text,
-          user_id text,
-          aoi_name text,
-          aoi_type text,
-          county_geoid integer)
-      RETURNS void
-```
+  **Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
+  ```sql
+  SELECT * FROM is_validSceneInersects('some geojson',4);
+  ```
+  **Returns:**
+  ```sql
+  is_validsceneinersects
+  ------------------------
+  t
+  (1 row)
+  ```
+  <br><br>
+  ### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
+  Used for...
+  ```sql
+      insert_user_aoi_by_county(
+            node_id text,
+            user_id text,
+            aoi_name text,
+            aoi_type text,
+            county_geoid integer)
+        RETURNS void
+  ```
 <br><br>
 ### function [insert_user_aoi_by_geojson](functions/insert_user_aoi_by_geojson.sql)
 Used for...
