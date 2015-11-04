@@ -25,7 +25,7 @@ SELECT * FROM get_countyByGeoid(37021);
 
 <br><br>
 ### function [get_scenesMostRecent](functions/get_scenesmostrecent.sql)
-Function to get url's of the images of the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date there should be a most recent url for each scene that the CustomRequest_GeoJson intersects.
+Function to get url's of Landsat scene images which are the closest date to the requested date. The intention is to call this twice once for the start date then again for the end date there should be a most recent url for each scene that the CustomRequest_GeoJson intersects.
 ```sql
 get_scenesMostRecent(
     customrequest_geojson text,
