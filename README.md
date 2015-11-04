@@ -42,7 +42,7 @@ daysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |      
 ```
 <br><br>
 
-## function [is_validSceneIntersects](functions/is_validsceneintersects       s.sql)
+## function [is_validSceneIntersects](functions/is_validsceneintersects.sql)
 function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of scenes the custom request geometery is allowed to intersect.
 ```sql
 is_validSceneIntersects(
