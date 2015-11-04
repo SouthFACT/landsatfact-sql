@@ -11,15 +11,16 @@ Function to get url's of the images of the most recent scene to the users reques
 
 **returns**
 * table of data type scene_url:
-    ```sql
-    CREATE TYPE scene_url as (
-      daysfrom integer,
-      cc_full real,
-      scene_id character varying(35),
-      wrs2_code character varying(6),
-      acquistion_date date,
-      browse_url character varying(100)  );
-    ```
+```sql
+CREATE TYPE scene_url as (
+  daysfrom integer,
+  cc_full real,
+  scene_id character varying(35),
+  wrs2_code character varying(6),
+  acquistion_date date,
+  browse_url character varying(100)  
+);
+```
 
 ```sql
     is_validsceneinersects(
