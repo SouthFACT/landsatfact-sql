@@ -4,13 +4,18 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 ### Functions
 ### function [get_scenesmostrecent](functions/get_scenesmostrecent.sql)
 Function to get url's of the images of the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date there should be a most recent url for each scene that the CustomRequest_GeoJson intersects.
-
+```sql
+    is_validsceneinersects(
+          customrequest_geojson text,
+          allowed_intersections integer)
+      RETURNS boolean
+```
 **requires**
 * CustomRequest_GeoJSON text containing Custom Request GeoJSON
 * customrequest_date date the date passed by the user for the custom request.  agnostic to start or end date date format is yyyy-mm-dd or mm-dd-yyyy or yyyy/mm/dd or mm/dd/yyyy.
 
 **returns**
-* table of data type scene_url:
+* table of data type scene_url
 ```sql
 CREATE TYPE scene_url as (
   daysfrom integer,
@@ -18,16 +23,10 @@ CREATE TYPE scene_url as (
   scene_id character varying(35),
   wrs2_code character varying(6),
   acquistion_date date,
-  browse_url character varying(100)  
-);
+  browse_url character varying(100)  );
 ```
 
-```sql
-    is_validsceneinersects(
-          customrequest_geojson text,
-          allowed_intersections integer)
-      RETURNS boolean
-```
+
 **Example:**
 
 **Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
@@ -40,6 +39,51 @@ is_validsceneinersects
 ------------------------
 t
 (1 row)
+```
+<br><br>
+
+## function [is_validsceneinersects](functions/is_validsceneinersects       s.sql)
+function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of scenes the custom request geometery is allowed to intersect.
+```sql
+    is_validsceneinersects(
+          customrequest_geojson text,
+          allowed_intersections integer)
+      RETURNS boolean
+```
+**requires**
+* CustomRequest_GeoJSON text containing Custom Request GeoJSON
+* allowed_Intersections integer that represents the maximum number of intersections allowed.
+
+**returns**
+* boolean
+  * True if the number of scenes less than or equal to the allowed intersections
+  * False if the number of scenes is greater the allowed intersections
+
+
+**Run Example:**
+
+**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
+```sql
+SELECT * FROM is_validSceneInersects('some geojson',4);
+```
+**Returns:**
+```sql
+is_validsceneinersects
+------------------------
+t
+(1 row)
+```
+<br><br>
+### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
+Used for...
+```sql
+    insert_user_aoi_by_county(
+          node_id text,
+          user_id text,
+          aoi_name text,
+          aoi_type text,
+          county_geoid integer)
+      RETURNS void
 ```
 <br><br>
 ### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
