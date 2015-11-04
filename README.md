@@ -2,10 +2,10 @@
 A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Functions
-### function [get_scenesmostrecent](functions/get_scenesmostrecent.sql)
+### function [get_scenesMostRecent](functions/get_scenesmostrecent.sql)
 Function to get url's of the images of the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date there should be a most recent url for each scene that the CustomRequest_GeoJson intersects.
 ```sql
-get_scenesmostrecent(
+get_scenesMostRecent(
     customrequest_geojson text,
     customrequest_date date)
 RETURNS SETOF scene_url
@@ -42,10 +42,10 @@ daysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |      
 ```
 <br><br>
 
-## function [is_validsceneinersects](functions/is_validsceneinersects       s.sql)
+## function [is_validSceneInersects](functions/is_validsceneinersects       s.sql)
 function to ensure custom request geometry intersects <= n (number) of scenes.  Where n is the number of scenes the custom request geometery is allowed to intersect.
 ```sql
-is_validsceneinersects(
+is_validSceneInersects(
       customrequest_geojson text,
       allowed_intersections integer)
   RETURNS boolean
