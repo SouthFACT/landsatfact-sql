@@ -119,7 +119,7 @@ SELECT * FROM is_validSceneIntersects('some geojson',4);
 ```
 **Returns:**
 ```sql
-is_validsceneinersects
+is_validSceneIntersects
 ------------------------
 t
 (1 row)
