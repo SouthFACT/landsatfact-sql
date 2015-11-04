@@ -74,6 +74,19 @@ t
 (1 row)
 ```
 <br><br>
+### function [insert_custom_request_scenes](functions/insert_custom_request_scenes.sql)
+function inserts record into insert_custom_request_scenes to record each scene used by a custom request.
+```sql
+  insert_custom_request_scenes(
+    aoi_id integer,
+    scene_id character varying (35))
+  RETURNS void
+```
+**requires**
+* aoi_id integer the aoi_id of the custom request.
+* scene_id character varying (35) the Landsat scene id.
+
+<br><br>
 ### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
 Used for...
 ```sql
