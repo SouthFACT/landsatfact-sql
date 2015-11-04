@@ -17,13 +17,31 @@ Used for...
 ### function [insert_user_aoi_by_geojson](functions/insert_user_aoi_by_geojson.sql)
 Used for...
 ```sql
-    insert_user_aoi_by_county(
+    insert_user_aoi_by_geojson(
           node_id text,
           user_id text,
           aoi_name text,
           aoi_type text,
           geojson text)
       RETURNS void AS
+```
+<br><br>
+### function [is_validsceneinersects](functions/is_validsceneinersects       s.sql)
+function to ensure data passed only intersects less <= n number of scenes.  Where n is allowed_intersections.
+
+**requires**
+* CustomRequest_GeoJSON::text the Custom Requtests GeoJSON
+* allowed_Intersections::integer the maximum number of intersections allowed
+
+**returns**
+* boolean
+  * True if the number of scenes less than or equal to the allowed intersections
+  * False f the number of scenes is greater the allowed intersections
+```sql
+    is_validsceneinersects(
+          customrequest_geojson text,
+          allowed_intersections integer)
+      RETURNS boolean AS
 ```
 <br><br>
 ## Views
