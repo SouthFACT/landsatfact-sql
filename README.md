@@ -45,7 +45,7 @@ function to ensure custom request geometry intersects <= n (number) of scenes.  
 ```
 
 **Run Example:**
-*replace* some geojson with [sample GeoJSON](https://raw.githubusercontent.com/nemac/landsatfact-sql/master/sampledata/buncombecounty.geojson)
+*replace* some geojson with [sample GeoJSON](blob/master/sampledata/buncombecounty.geojson?short_path=f249f19)
 ```sql
 SELECT * FROM is_validSceneInersects('some geojson',4);
 ```
