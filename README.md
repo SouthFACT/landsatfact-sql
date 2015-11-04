@@ -11,7 +11,7 @@ Columns
     aoi_id integer
     product_type character varying (6)
 ```
-
+<br><br>
 ### view [vw_archive_product_dates](views/vw_archive_product_dates.sql)
 
 Used for... in function?
@@ -23,7 +23,7 @@ Columns
     extent text
     lsf_url text
 ```
-
+<br><br>
 **vw_download_scenes** the SQL is available at [views/vw_download_scenes.sql](views/vw_download_scenes.sql) and is used for..in the landsat fact project.  
 
 **vw_initial_mosaic_cloud** the SQL is available at [views/vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql) and is used for..in the landsat fact project.and is used for..
