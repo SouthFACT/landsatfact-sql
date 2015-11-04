@@ -1,6 +1,21 @@
 # landsatfact-sql
 A collection of all the SQL views and SQL functions used by landsatfact.
 
+### Functions
+___
+
+### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
+Used for...
+```sql
+    insert_user_aoi_by_county(
+          node_id text,
+          user_id text,
+          aoi_name text,
+          aoi_type text,
+          county_geoid integer)
+      RETURNS void AS
+```
+<br><br>
 ## Views
 ___
 ### view [test_vw_user_notification](views/test_vw_user_notification.sql)
@@ -12,7 +27,6 @@ Columns
     product_type character varying (6)
 ```
 <br><br>
-
 ### view [vw_archive_product_dates](views/vw_archive_product_dates.sql)
 
 Used for... in function?
@@ -281,5 +295,3 @@ Columns
     input2 character varying (40)
 ```
 <br><br>
-### Functions
----
