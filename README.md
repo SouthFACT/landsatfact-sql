@@ -2,8 +2,6 @@
 A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Functions
-___
-
 ### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
 Used for...
 ```sql
@@ -17,7 +15,6 @@ Used for...
 ```
 <br><br>
 ## Views
-___
 ### view [test_vw_user_notification](views/test_vw_user_notification.sql)
 
 Used for... in function?
