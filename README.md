@@ -60,7 +60,7 @@ is_validsceneinersects(
   * False if the number of scenes is greater the allowed intersections
 
 
-**Run Example:**
+**Example:**
 
 **Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
 ```sql
