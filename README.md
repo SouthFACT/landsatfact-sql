@@ -3,7 +3,7 @@ A collection of all the SQL views and SQL functions used by landsatfact.
 
 ### Functions
 ### function [get_countyByGeoid](functions/get_countybygeoid.sql)
-Function to get scene image url's for the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date there should be a most recent url for each scene that the CustomRequest_GeoJson intersects.
+Function to get scene image url's for the most recent scene to the users requested date. The intention is to call this twice once for the start date then again for the end date.  There should be a most recent url for each scene that the CustomRequest_GeoJson intersects.
 ```sql
 get_countybygeoid(countygeoid integer)
   RETURNS text
