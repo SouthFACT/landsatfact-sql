@@ -37,7 +37,7 @@ Columns
   sensor character varying (25)
   acquisition_date date
   browse_url character varying (100)
-  "path" integer
+  path integer
   row integer
   cc_full real
   cc_quad_ul real
