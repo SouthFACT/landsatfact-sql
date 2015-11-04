@@ -438,4 +438,4 @@ Columns
 
 ### Data Types
 ### Type [scene_url](datatypes/scene_url.sql)
-Used to return a table of data from the functions [get_scenesMostRecent](README.md#function-get_scenesmosteecent)
+Used to return a table of data from the functions [get_scenesMostRecent](README.md#function-get_scenesmostrecent)
