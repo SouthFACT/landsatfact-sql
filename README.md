@@ -25,7 +25,6 @@ Columns
     lsf_url text
 ```
 <br><br>
-
 ### view [vw_download_scenes.sql](views/vw_download_scenes.sql)
 
 Used for... in function?
@@ -46,98 +45,76 @@ Columns
   cc_quad_lr real
 ```
 <br><br>
-
 ### view [vw_initial_mosaic_cloud.sql](views/vw_initial_mosaic_cloud.sql)
 
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location  text
 ```
 <br><br>
-
 ### view [vw_initial_mosaic_gap.sql](views/vw_initial_mosaic_gap.sql)
 
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
-
 ### view [w_initial_mosaic_ndmi.sql](views/vw_initial_mosaic_ndmi.sql)
 
 Used for... in function
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
-
 ### view [vw_initial_mosaic_ndvi.sql](views/vw_initial_mosaic_ndvi.sql)
 
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
-
 ### view [vw_initial_mosaic_swir.sql](views/vw_initial_mosaic_swir.sql)
 
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
-
 ### view [vw_last_days_products.sql](viewws/vw_last_days_products.sql)
 
 Used for... in function?
 ```sql
 Columns
+    product_id character varying (100)
+    input1 character varying (40)
+    input2 character varying (40)
+    product_type character varying (6)
     product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    quad_id input2 character varying (8)
 ```
 <br><br>
-
 ### view [vw_last_days_scenes.sql](views/vw_last_days_scenes.sql)
 
 Used for... in function?
 ```sql
 Columns
-    wrs2 text
-    satellite text
     scene_id character varying (35)
     sensor character varying (25)
     acquisition_date date
     browse_url character varying (100)
-    path integer
-
+    "path" integer
+    row integer
+    cc_full real
+    cc_quad_ul real
+    cc_quad_ur real
+    cc_quad_ll real
+    cc_quad_lr real
+    data_type_l1 character varying (5)
 ```
 <br><br>
 ### view [vw_latest_quads_cloud.sql](views/vw_latest_quads_cloud.sql)
@@ -145,11 +122,7 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_latest_quads_cloud_new.sql](views/vw_latest_quads_cloud_new.sql)
@@ -157,11 +130,7 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_latest_quads_gap.sql](views/vw_latest_quads_gap.sql)
@@ -169,11 +138,7 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_latest_quads_gap_new.sql](views/vw_latest_quads_gap_new.sql)
@@ -181,11 +146,7 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_latest_quads_ndmi.sql](views/vw_latest_quads_ndmi.sql)
@@ -193,11 +154,7 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_latest_quads_ndmi_new.sql](views/vw_latest_quads_ndmi_new.sql)
@@ -205,11 +162,7 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_latest_quads_ndvi.sql](views/vw_latest_quads_ndvi.sql)
@@ -217,11 +170,7 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_latest_quads_ndvi_new.sql](views/vw_latest_quads_ndvi_new.sql)
@@ -229,24 +178,15 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
-
 ### view [vw_latest_quads_swir.sql](views/vw_latest_quads_swir.sql)
 
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_latest_quads_swir_new.sql](views/vw_latest_quads_swir_new.sql)
@@ -254,11 +194,7 @@ Columns
 Used for... in function?
 ```sql
 Columns
-    product_date date
-    user_id character varying (30)
-    node_id character varying (30)
-    extent text
-    lsf_url text
+    location text
 ```
 <br><br>
 ### view [vw_reclass_products.sql](views/vw_reclass_products.sql)
