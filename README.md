@@ -15,7 +15,7 @@ RETURNS SETOF scene_url
 * customrequest_date date the date passed by the user for the custom request.  agnostic to start or end date date format is yyyy-mm-dd or mm-dd-yyyy or yyyy/mm/dd or mm/dd/yyyy.
 
 **returns**
-* table of data type [scene_url](#Type-scene_url)
+* table of data type [scene_url](.#type-scene_url)
 
 **Example:**
 
@@ -438,4 +438,4 @@ Columns
 
 ### Data Types
 ### Type [scene_url](datatypes/scene_url.sql)
-Used to return a table of data from the functions [get_scenesMostRecent](#Functions-get_scenesMostRecent)
+Used to return a table of data from the functions [get_scenesMostRecent](.#function-get_scenesmosteecent)
