@@ -14,6 +14,18 @@ Used for...
       RETURNS void AS
 ```
 <br><br>
+### function [insert_user_aoi_by_geojson](functions/insert_user_aoi_by_geojson.sql)
+Used for...
+```sql
+    insert_user_aoi_by_county(
+          node_id text,
+          user_id text,
+          aoi_name text,
+          aoi_type text,
+          geojson text)
+      RETURNS void AS
+```
+<br><br>
 ## Views
 ### view [test_vw_user_notification](views/test_vw_user_notification.sql)
 
