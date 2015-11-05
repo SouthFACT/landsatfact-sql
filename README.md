@@ -1,7 +1,6 @@
 # landsatfact-sql
 A collection of all the SQL views, functions, and data types used by Landsat FACT.
 
-## What's on here
 ### Landsat FACT SQL Functions
 * [delete_user_aoi_by_nid](functions.md#function-delete_user_aoi_by_nid)
 * [get_countyByGeoid](functions.md#function-get_countybygeoid)
