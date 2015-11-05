@@ -2,6 +2,7 @@
 A collection of all the SQL views, functions, and data types used by Landsat FACT.
 
 ### Landsat FACT SQL Functions
+* [All functions](functions.md)
 * [delete_user_aoi_by_nid](functions.md#function-delete_user_aoi_by_nid)
 * [get_countyByGeoid](functions.md#function-get_countybygeoid)
 * [get_scenesAlternate](functions.md#function-get_scenesalternate)
@@ -14,6 +15,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [update_user_aoi_by_geojson](functions.md#function-update_user_aoi_by_geojson)
 
 ### Landsat FACT SQL Views
+* [All views](views.md)
 * [test_vw_user_notification](views.md#view-test_vw_user_notification)
 * [vw_archive_product_dates](views.md#view-vw_archive_product_dates)
 * [vw_download_scenes](views.md#view-vw_download_scenes)
@@ -43,4 +45,5 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [vw_viewer_quads](views.md#view-vw_viewer_quads)
 
 ### Landsat FACT SQL Data Types
+* [All Types](datatypes.md)
 * [scene_url](datatypes.md#type-scene_url)
