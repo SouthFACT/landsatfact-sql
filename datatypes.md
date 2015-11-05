@@ -17,5 +17,5 @@ Data type used to return a table of data from the functions:
 * [get_scenesMostRecent](functions.md#function-get_scenesmostrecent)
 * [get_scenesAlternate](functions.md#function-get_scenesalternate)
 
-[Table of contents](README.md)
+Back to [Table of contents](README.md)
 <br><br>
