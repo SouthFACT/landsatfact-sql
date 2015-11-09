@@ -158,6 +158,13 @@ Back to [Table of contents](README.md)
 <br><br>
 ### function [initiate_custom_request](functions/initiate_custom_request.sql)
 initiates the custom request process in the database. writes data to the PostGreSQL database for the Custom request python scripts to begin processing
+* updates the table custom_requests with a new custom request
+* updates the table custom_request_scenes with all scenes used by the custom request
+* updates the table custom_request_dates marks status as pending with the current date
+
+**NOTES**  
+assumes that functions [insert_user_aoi_by_county](functions.md#function-insert_user_aoi_by_county) or  [insert_user_aoi_by_geojson](functions.md#function-insert_user_aoi_by_geojson) must be called first.
+
 ```sql
   initiate_custom_request(
       aoi_id text,
