@@ -31,9 +31,8 @@ delete_user_aoi_by_nid
 Back to [Table of contents](README.md)
 <br><br>
 ### function [get_aoi_id_by_nodeid](functions/get_aoi_id_by_nodeid.sql)
-function gets the aoi_id of user area of interest (subscription or custom request) and returns it's aoi_id.
- needed for adding custom requests.  aoi_id is auto created and after insertion of new user_aoi (subscription or custom request)
- this functions provides a way to retrie the aoi_id based on node_id.
+function gets the aoi_id for the users area of interest (subscription or custom request). The aoi_id is auto created and after insertion of new user_aoi (subscription or custom request)
+ this functions provides a way to retrieve the aoi_id based on node_id.
 
 ```sql
 get_aoi_id_by_nodeid(
@@ -155,6 +154,40 @@ daysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |      
       -4 |   97.39 | LE70180352015274EDC00 | 018035    | 2015-10-01      | http://earthexplorer.usgs.gov/browse/etm/18/35/2015/LE70180352015274EDC00.jpg
 (1 row)
 ```
+Back to [Table of contents](README.md)
+<br><br>
+### function [initiate_custom_request](functions/initiate_custom_request.sql)
+initiates the custom request process in the database. writes data to the PostGreSQL database for the Custom request python scripts to begin processing
+```sql
+  initiate_custom_request(
+      aoi_id text,
+      user_id text,
+      scenes text
+      )
+    RETURNS void
+```
+**requires**
+* aoi_id text the node id of the custom request
+* user_id the user_id for the custom request
+* scenes as text comma delimited string of scene_ids from the landsat FACT ui
+
+**returns**
+
+Not Available for insert function
+
+**Example**
+
+```sql
+select * from initiate_custom_request('9999','99','LE70180352015274EDC00,LE70180352015274EDC00');
+```
+**Returns:**
+```sql
+initiate_custom_request
+------------------------------
+
+(1 row)
+```
+
 Back to [Table of contents](README.md)
 <br><br>
 ### function [insert_custom_request_scenes](functions/insert_custom_request_scenes.sql)
