@@ -312,7 +312,7 @@ t
 Back to [Table of contents](README.md)
 <br><br>
 ### function [update_custom_request_status](functions/update_custom_request_status.sql)
-function updates the custom_request_dates table with the users status.
+function updates the custom_request_dates table with the users status and the current date time.
 ```sql
   update_custom_request_status(
     aoi_id text,
