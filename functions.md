@@ -314,14 +314,14 @@ Back to [Table of contents](README.md)
 ### function [update_custom_request_status](functions/update_custom_request_status.sql)
 function updates the custom_request_dates table with the users status.
 ```sql
-update_user_aoi_by_county(
-    nid text,
-    county_geoid integer)
+  update_custom_request_status(
+    aoi_id text,
+    status integer)
   RETURNS void
 ```
 **requires**
-* 	aoi_id text the node id of the custom request
-	  status integer where:
+* aoi_id text the node id of the custom request
+* status integer where:
 		* 1  -"Pending"
 		* 2 - "Process Start"
 		* 3 - "Process Complete"
