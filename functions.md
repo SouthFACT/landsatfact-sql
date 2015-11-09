@@ -163,7 +163,7 @@ initiates the custom request process in the database. writes data to the PostGre
 * updates the table custom_request_dates marks status as pending with the current date
 
 **NOTES**  
-assumes that functions [insert_user_aoi_by_county](functions.md#function-insert_user_aoi_by_county) or  [insert_user_aoi_by_geojson](functions.md#function-insert_user_aoi_by_geojson) must be called first.
+assumes that functions [insert_user_aoi_by_county](functions.md#function-insert_user_aoi_by_county) or  [insert_user_aoi_by_geojson](functions.md#function-insert_user_aoi_by_geojson) were called previously.
 
 ```sql
   initiate_custom_request(
