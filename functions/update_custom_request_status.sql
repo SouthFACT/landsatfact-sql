@@ -10,9 +10,7 @@ CREATE OR REPLACE FUNCTION public.update_custom_request_status(
 $BODY$
 
 /**
-	--initiates the custom request process in the database.
-	writes data to the postgres database for the Custom request python scripts
-	to begin processing
+	--function updates the custom_request_dates table with the users status
 
 	--requires:
 	aoi_id text the node id of the custom request
@@ -21,13 +19,13 @@ $BODY$
 		2 - "Process Start"
 		3 - "Process Complete"
 		4 - "Completed"
-	
-	--returns 
+
+	--returns
 	 na
 **/
     BEGIN
- 
-	--update table custom_request_dates. 
+
+	--update table custom_request_dates.
 	-- sets date to now
 	-- sets stats id to status passed by ui
 	INSERT INTO custom_request_dates(aoi_id, custom_request_date, custom_request_status_id)
