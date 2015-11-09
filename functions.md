@@ -229,7 +229,8 @@ insert_custom_request_scenes
 Back to [Table of contents](README.md)
 <br><br>
 ### function [insert_user_aoi_by_county](functions/insert_user_aoi_by_county.sql)
-Used for...
+inserts a new subscription or custom request into the user_aoi table with a county.
+
 ```sql
     insert_user_aoi_by_county(
           node_id text,
@@ -240,11 +241,11 @@ Used for...
       RETURNS void
 ```
 **requires**
-* node_id text
-* user_id text
-* aoi_name text
-* aoi_type text
-* county_geoid integer
+* node_id text the node_id for the subscription or custom request (Drupal)
+* user_id text the user_id for the subscription or custom request (Drupal)
+* aoi_name text the subscription or custom request name
+* aoi_type text the subscription or custom request type (subscription or custom request)
+* county_geoid integer the county geoid
 
 **returns**
 
@@ -257,7 +258,7 @@ SELECT * FROM insert_user_aoi_by_county('552','16','Buncombe County','subscripti
 ```
 **Returns:**
 ```sql
-insert_custom_request_scenes
+insert_user_aoi_by_county
 ------------------------------
 
 (1 row)
@@ -266,7 +267,7 @@ insert_custom_request_scenes
 Back to [Table of contents](README.md)
 <br><br>
 ### function [insert_user_aoi_by_geojson](functions/insert_user_aoi_by_geojson.sql)
-Used for...
+inserts a new subscription or custom request into the user_aoi with GeoJSON
 ```sql
     insert_user_aoi_by_geojson(
           node_id text,
@@ -275,6 +276,30 @@ Used for...
           aoi_type text,
           geojson text)
       RETURNS void
+```
+**requires**
+* node_id text the node_id for the subscription or custom request (Drupal)
+* user_id text the user_id for the subscription or custom request (Drupal)
+* aoi_name text the subscription or custom request name
+* aoi_type text the subscription or custom request type (subscription or custom request)
+* geojson text the GeoJSON of a shape
+
+**returns**
+
+* Not Available for insert function
+
+**Example**
+
+**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
+```sql
+SELECT * FROM insert_user_aoi_by_geojson('552','16','Buncombe County','subscription','some geojson');
+```
+**Returns:**
+```sql
+insert_user_aoi_by_geojson
+------------------------------
+
+(1 row)
 ```
 Back to [Table of contents](README.md)
 <br><br>
