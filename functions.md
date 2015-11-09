@@ -343,6 +343,14 @@ update_custom_request_status
 t
 (1 row)
 ```
+and table looks like
+```sql
+aoi_id |    custom_request_date     | custom_request_status_id
+--------+----------------------------+--------------------------
+  9999 | 2015-11-09 18:03:01.759427 |                        1
+  9999 | 2015-11-09 18:24:11.219049 |                        2
+(2 rows)
+```
 Back to [Table of contents](README.md)
 <br><br>
 ### function [update_user_aoi_by_county](functions/update_user_aoi_by_county.sql)
