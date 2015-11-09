@@ -343,7 +343,7 @@ update_custom_request_status
 t
 (1 row)
 ```
-and table looks like
+update table:
 ```sql
 aoi_id |    custom_request_date     | custom_request_status_id
 --------+----------------------------+--------------------------
