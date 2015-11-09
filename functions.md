@@ -30,6 +30,39 @@ delete_user_aoi_by_nid
 ```
 Back to [Table of contents](README.md)
 <br><br>
+### function [get_aoi_id_by_nodeid](functions/get_aoi_id_by_nodeid.sql)
+function gets the aoi_id of user area of interest (subscription or custom request) and returns it's aoi_id.
+ needed for adding custom requests.  aoi_id is auto created and after insertion of new user_aoi (subscription or custom request)
+ this functions provides a way to retrie the aoi_id based on node_id.
+
+```sql
+get_aoi_id_by_nodeid(
+    pass_node_id text)
+  RETURNS integer
+```
+**requires**
+* node_id text for the custom request
+
+
+**returns**
+*  aoi_id the aoi_id for the node_id
+
+**Example:**
+
+```sql
+select * from get_aoi_id_by_nodeid('640');
+```
+**Returns:**
+```sql
+get_aoi_id_by_nodeid
+----------------------
+                 181
+(1 row)
+```
+
+Back to [Table of contents](README.md)
+<br><br>
+<br><br>
 ### function [get_countyByGeoid](functions/get_countybygeoid.sql)
 Function to get GeoJSON for a county by the counties geoid.
 ```sql
