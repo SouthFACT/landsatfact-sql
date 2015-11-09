@@ -29,7 +29,7 @@ $BODY$
         --update table custom_requests with new 
         --custom request
         INSERT INTO custom_requests(request_id, aoi_id)
-        VALUES (user_id || '.zip',aoi_id::integer);
+        VALUES (user_id || '_'  || aoi_id || '.zip',aoi_id::integer);
       
         --update table custom_request_scenes
         --loop scenes array
