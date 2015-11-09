@@ -322,10 +322,10 @@ function updates the custom_request_dates table with the users status.
 **requires**
 * aoi_id text the node id of the custom request
 * status integer where:
-		* 1  -"Pending"
-		* 2 - "Process Start"
-		* 3 - "Process Complete"
-		* 4 - "Completed".
+  * 1  -"Pending"
+  * 2 - "Process Start"
+  * 3 - "Process Complete"
+  * 4 - "Completed".
 
 **returns**
 
