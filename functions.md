@@ -156,6 +156,33 @@ daysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |      
 ```
 Back to [Table of contents](README.md)
 <br><br>
+### function [get_statusByAoiId](functions/get_statusbyaoiid.sql)
+Function to get images for a scene that was taken closest to the users requested date. The intention is to call this twice once for the start date then again for the end date.  There should be a image and url for each scene that the CustomRequest_GeoJson intersects.
+```sql
+get_statusByAoiId(ccr_aoi_id integer)
+      RETURNS text
+```
+**requires**
+* cr_aoi_id integer - aoi_id of a custom request.
+
+**returns**
+* cr_status varchar(150) the status of the custom request.
+
+**Example:**
+
+**Note:**
+```sql
+SELECT * FROM get_statusbyaoiid(198);
+```
+**Returns:**
+```sql
+get_statusbyaoiid 
+-------------------
+Pending
+(1 row)
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### function [initiate_custom_request](functions/initiate_custom_request.sql)
 initiates the custom request process in the database. writes data to the PostGreSQL database for the Custom request python scripts to begin processing
 * updates the table custom_requests with a new custom request
