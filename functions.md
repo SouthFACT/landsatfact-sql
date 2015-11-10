@@ -84,6 +84,59 @@ SELECT * FROM get_countyByGeoid(37021);
 
 Back to [Table of contents](README.md)
 <br><br>
+### function [get_customRequestsQuads](functions/get_customrequestsquads.sql)
+Function to a table or list of pending custom requests..
+```sql
+get_customRequestsQuads(cr_aoi_id integer)
+  RETURNS SETOF custom_request_quads
+```
+**requires**
+* cr_aoi_id::integer - aoi_id of a custom request
+
+
+**returns**
+* table of data type [custom_request_quads](datatypes.md#type-custom_request_quads)
+```
+  aoi_id integer aoi_id of custom request,
+  quad_id character varying(8) quad id of custom request,
+  scene_id character varying(25) scene id of the custom request,
+  quad_order bigint quad order use this to determine order of comparsion in change.  1 is first 2 is second,
+  wrs2_code character varying(6) wrs2 code of the custom request,
+  scene_date date date the scene was taken (derived from the scene id),
+  aoi_type character varying(30) the type of the aoi in this case its  "custom_request",
+  quad_location text quad location (LL lower left,  UL Upper Left, LR Lower Right, UR Upper Right),
+  request_id character varying(100) request id should be username_aoiid.zip,
+  current_status_id integer current status id,
+  current_status character varying(150) current status should be the highest status (determined by the status id)
+           1 "Pending"
+           2 "Process Start"
+           3 "Process Complete"
+           4 "Completed"
+```
+**Example:**
+
+```sql
+SELECT * FROM get_pendingcustomrequests();
+```
+
+**Returns:**
+```sql
+aoi_id | node_id | user_id |    aoi_name    |    aoi_type    | status_id | status  
+--------+---------+---------+----------------+----------------+-----------+---------
+   189 | 659     | 3       | Full Test      | custom_request |         1 | Pending
+   190 | 660     | 3       | Full Test 2    | custom_request |         1 | Pending
+   191 | 661     | 3       | Test With Name | custom_request |         1 | Pending
+   192 | 662     | 3       | Test 2         | custom_request |         1 | Pending
+   194 | 664     | 99      | test-goal      | custom_request |         1 | Pending
+   195 | 665     | 99      | test-ga-cr1    | custom_request |         1 | Pending
+   196 | 666     | 99      | test-ga-cr2    | custom_request |         1 | Pending
+   197 | 667     | 99      | test-ga-cr3    | custom_request |         1 | Pending
+   198 | 668     | 99      | test-ga-cr4    | custom_request |         1 | Pending
+(9 rows)
+```
+
+Back to [Table of contents](README.md)
+<br><br>
 ### function [get_pendingcustomrequests](functions/get_pendingcustomrequests.sql)
 Function to a table or list of pending custom requests..
 ```sql
@@ -96,6 +149,15 @@ get_pendingCustomRequests()
 
 **returns**
 * table of data type [custom_requests_pending](datatypes.md#type-custom_requests_pending)
+```
+  aoi_id integer aoi_id of custom request
+  node_id character varying(30) node_id of custom request
+  user_id character varying(30) user_id of custom request
+  aoi_name character varying(200) name of custom request
+  aoi_type character varying(30), aoi type of custom request in this case should always be "custom_request"
+  status_id integer the current status id which in this case should always be 1
+  status character varying(150), the current status which in this case should always be "Pending"
+```
 
 **Example:**
 
