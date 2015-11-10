@@ -21,3 +21,22 @@ Data type used to return a table of data from the functions:
 
 Back to [Table of contents](README.md)
 <br><br>
+### Type [custom_requests_pending](datatypes/custom_requests_pending.sql)
+
+```sql
+CREATE TYPE custom_requests_pending as (
+  aoi_id integer,
+  node_id character varying(30),
+  user_id character varying(30),
+  aoi_name character varying(200),
+  aoi_type character varying(30),
+  status_id integer,
+  status character varying(150),
+);
+
+```
+Data type used to return a table of pending custom requests from the functions:
+* [get_pendingCustomRequests](functions.md#function-get_pendingcustomrequests)
+
+Back to [Table of contents](README.md)
+<br><br>

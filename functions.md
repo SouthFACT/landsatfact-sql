@@ -61,7 +61,6 @@ get_aoi_id_by_nodeid
 
 Back to [Table of contents](README.md)
 <br><br>
-<br><br>
 ### function [get_countyByGeoid](functions/get_countybygeoid.sql)
 Function to get GeoJSON for a county by the counties geoid.
 ```sql
@@ -82,6 +81,43 @@ SELECT * FROM get_countyByGeoid(37021);
 ```
 **Returns:**
 * [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
+
+Back to [Table of contents](README.md)
+<br><br>
+### function [get_pendingcustomrequests](functions/get_pendingcustomrequests.sql)
+Function to a table or list of pending custom requests..
+```sql
+get_pendingCustomRequests()
+  RETURNS SETOF custom_requests_pending
+```
+**requires**
+* Nothing
+
+
+**returns**
+* table of data type [custom_requests_pending](datatypes.md#type-custom_requests_pending)
+
+**Example:**
+
+```sql
+SELECT * FROM get_pendingcustomrequests();
+```
+
+**Returns:**
+```sql
+aoi_id | node_id | user_id |    aoi_name    |    aoi_type    | status_id | status  
+--------+---------+---------+----------------+----------------+-----------+---------
+   189 | 659     | 3       | Full Test      | custom_request |         1 | Pending
+   190 | 660     | 3       | Full Test 2    | custom_request |         1 | Pending
+   191 | 661     | 3       | Test With Name | custom_request |         1 | Pending
+   192 | 662     | 3       | Test 2         | custom_request |         1 | Pending
+   194 | 664     | 99      | test-goal      | custom_request |         1 | Pending
+   195 | 665     | 99      | test-ga-cr1    | custom_request |         1 | Pending
+   196 | 666     | 99      | test-ga-cr2    | custom_request |         1 | Pending
+   197 | 667     | 99      | test-ga-cr3    | custom_request |         1 | Pending
+   198 | 668     | 99      | test-ga-cr4    | custom_request |         1 | Pending
+(9 rows)
+```
 
 Back to [Table of contents](README.md)
 <br><br>
@@ -176,7 +212,7 @@ SELECT * FROM get_statusbyaoiid(198);
 ```
 **Returns:**
 ```sql
-get_statusbyaoiid 
+get_statusbyaoiid
 -------------------
 Pending
 (1 row)
