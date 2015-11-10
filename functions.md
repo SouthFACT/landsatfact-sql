@@ -116,23 +116,19 @@ get_customRequestsQuads(cr_aoi_id integer)
 **Example:**
 
 ```sql
-SELECT * FROM get_pendingcustomrequests();
+SELECT * FROM get_customrequestsquads(194);
 ```
 
 **Returns:**
 ```sql
-aoi_id | node_id | user_id |    aoi_name    |    aoi_type    | status_id | status  
---------+---------+---------+----------------+----------------+-----------+---------
-   189 | 659     | 3       | Full Test      | custom_request |         1 | Pending
-   190 | 660     | 3       | Full Test 2    | custom_request |         1 | Pending
-   191 | 661     | 3       | Test With Name | custom_request |         1 | Pending
-   192 | 662     | 3       | Test 2         | custom_request |         1 | Pending
-   194 | 664     | 99      | test-goal      | custom_request |         1 | Pending
-   195 | 665     | 99      | test-ga-cr1    | custom_request |         1 | Pending
-   196 | 666     | 99      | test-ga-cr2    | custom_request |         1 | Pending
-   197 | 667     | 99      | test-ga-cr3    | custom_request |         1 | Pending
-   198 | 668     | 99      | test-ga-cr4    | custom_request |         1 | Pending
-(9 rows)
+aoi_id | quad_id  |       scene_id        | quad_order | wrs2_code | scene_date |    aoi_type    | quad_location |   request_id    | current_status_id | current_status
+--------+----------+-----------------------+------------+-----------+------------+----------------+---------------+-----------------+-------------------+----------------
+   194 | 017038LL | LE70170382012003EDC00 |          1 | 017038    | 2012-01-04 | custom_request | LL            | daveism_194.zip |                 1 | Pending
+   194 | 017038LL | LE70170382013005EDC00 |          2 | 017038    | 2013-01-06 | custom_request | LL            | daveism_194.zip |                 1 | Pending
+   194 | 018038LR | LE70180382011359EDC00 |          1 | 018038    | 2011-12-26 | custom_request | LR            | daveism_194.zip |                 1 | Pending
+   194 | 018038LR | LE70180382012362EDC00 |          2 | 018038    | 2012-12-28 | custom_request | LR            | daveism_194.zip |                 1 | Pending
+   194 | 018038UR | LE70180382011359EDC00 |          1 | 018038    | 2011-12-26 | custom_request | UR            | daveism_194.zip |                 1 | Pending
+   194 | 018038UR | LE70180382012362EDC00 |          2 | 018038    | 2012-12-28 | custom_request | UR            | daveism_194.zip |                 1 | Pending
 ```
 
 Back to [Table of contents](README.md)
