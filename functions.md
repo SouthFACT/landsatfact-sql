@@ -189,7 +189,6 @@ get_scenesAlternate(
 RETURNS SETOF scene_url
 ```
 **requires**
-* CustomRequest_GeoJSON text containing Custom Request GeoJSON
 * customrequest_date date the date passed by the user for the custom request.  agnostic to start or end date date format is yyyy-mm-dd or mm-dd-yyyy or yyyy/mm/dd or mm/dd/yyyy.
 * wrs2_code text the wrs2_code of the scene to find alternate images for.
 
@@ -199,9 +198,8 @@ RETURNS SETOF scene_url
 
 **Example:**
 
-**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
 ```sql
-SELECT * FROM get_scenesAlternate('some geojson','2015-10-05','018035');
+SELECT * FROM get_scenesAlternate('2015-10-05','018035');
 ```
 **Returns:**
 ```sql
