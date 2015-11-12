@@ -28,7 +28,8 @@ $BODY$
   BEGIN
 
 
-    	--return query that gets the a list of alternate images for ordered by dates closes to the custom request date
+    	--return query that gets the a list of alternate images for ordered by date
+      -- the days from defines the number of days beofre after the user defined date
 	--that intersect the input geometry for the current wrs2_code
 
 	--Note: for some reason postgresql requires casting of the requested date even though it was already casted.
@@ -44,7 +45,7 @@ $BODY$
              LEFT JOIN landsat_metadata as lm ON
                wrs2_code = substr(lm.scene_id,4,6)
           WHERE wrs2_code = $1
-          ORDER BY ABS((lm.acquisition_date -  $2)-0),cc_full' USING wrs2_code, CustomRequest_Date;
+          ORDER BY lm.acquisition_date' USING wrs2_code, CustomRequest_Date;
   RETURN;
   END
 $BODY$
