@@ -203,18 +203,26 @@ SELECT * FROM get_scenesAlternate('2015-10-05','018035');
 ```
 **Returns:**
 ```sql
-daysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |                                      browse_url                                       
+ddaysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |                                      browse_url                                       
 ----------+---------+-----------------------+-----------+-----------------+---------------------------------------------------------------------------------------
-       -4 |   97.39 | LE70180352015274EDC00 | 018035    | 2015-10-01      | http://earthexplorer.usgs.gov/browse/etm/18/35/2015/LE70180352015274EDC00.jpg
-       12 |    0.04 | LE70180352015290EDC00 | 018035    | 2015-10-17      | http://earthexplorer.usgs.gov/browse/etm/18/35/2015/LE70180352015290EDC00_REFL.jpg
-      -12 |   27.83 | LC80180352015266LGN00 | 018035    | 2015-09-23      | http://earthexplorer.usgs.gov/browse/landsat_8/2015/018/035/LC80180352015266LGN00.jpg
-      -20 |    0.04 | LE70180352015258EDC00 | 018035    | 2015-09-15      | http://earthexplorer.usgs.gov/browse/etm/18/35/2015/LE70180352015258EDC00_REFL.jpg
-      -28 |    38.7 | LC80180352015250LGN00 | 018035    | 2015-09-07      | http://earthexplorer.usgs.gov/browse/landsat_8/2015/018/035/LC80180352015250LGN00.jpg
-      -36 |   99.54 | LE70180352015242EDC00 | 018035    | 2015-08-30      | http://earthexplorer.usgs.gov/browse/etm/18/35/2015/LE70180352015242EDC00.jpg
-      -44 |    59.8 | LC80180352015234LGN00 | 018035    | 2015-08-22      | http://earthexplorer.usgs.gov/browse/landsat_8/2015/018/035/LC80180352015234LGN00.jpg
-      -52 |   24.05 | LE70180352015226EDC00 | 018035    | 2015-08-14      | http://earthexplorer.usgs.gov/browse/etm/18/35/2015/LE70180352015226EDC00.jpg
-      -60 |   80.65 | LC80180352015218LGN00 | 018035    | 2015-08-06      | http://earthexplorer.usgs.gov/browse/landsat_8/2015/018/035/LC80180352015218LGN00.jpg
-      -68 |   54.56 | LE70180352015210EDC00 | 018035    | 2015-07-29      | http://earthexplorer.usgs.gov/browse/etm/18/35/2015/LE70180352015210EDC00.jpg
+    -4452 |   40.87 | LE70180352003209EDC01 | 018035    | 2003-07-28      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000320951.jpg
+    -4436 |   90.83 | LE70180352003225EDC01 | 018035    | 2003-08-13      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000322551.jpg
+    -4420 |   40.33 | LE70180352003241EDC01 | 018035    | 2003-08-29      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000324151.jpg
+    -4388 |    6.04 | LE70180352003273EDC01 | 018035    | 2003-09-30      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000327351.jpg
+    -4372 |    0.01 | LE70180352003289EDC01 | 018035    | 2003-10-16      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000328951.jpg
+    -4356 |    0.02 | LE70180352003305EDC01 | 018035    | 2003-11-01      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000330551.jpg
+    -4340 |   42.83 | LE70180352003321EDC03 | 018035    | 2003-11-17      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000332153.jpg
+    -4324 |   99.94 | LE70180352003337EDC01 | 018035    | 2003-12-03      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000333751.jpg
+    -4308 |   89.66 | LE70180352003353EDC02 | 018035    | 2003-12-19      | http://earthexplorer.usgs.gov/browse/etm/18/35/2003/LE7018035000335352.jpg
+    -4292 |   79.19 | LE70180352004004GNC02 | 018035    | 2004-01-04      | http://earthexplorer.usgs.gov/browse/etm/18/35/2004/LE70180352004004GNC02.jpg
+    -4276 |   18.71 | LE70180352004020EDC03 | 018035    | 2004-01-20      | http://earthexplorer.usgs.gov/browse/etm/18/35/2004/LE7018035000402053.jpg
+    -4260 |   99.98 | LE70180352004036EDC01 | 018035    | 2004-02-05      | http://earthexplorer.usgs.gov/browse/etm/18/35/2004/LE7018035000403651.jpg
+    -4244 |   39.55 | LE70180352004052EDC02 | 018035    | 2004-02-21      | http://earthexplorer.usgs.gov/browse/etm/18/35/2004/LE7018035000405252.jpg
+    -4228 |   46.74 | LE70180352004068EDC01 | 018035    | 2004-03-08      | http://earthexplorer.usgs.gov/browse/etm/18/35/2004/LE7018035000406851.jpg
+    -4212 |   75.85 | LE70180352004084EDC02 | 018035    | 2004-03-24      | http://earthexplorer.usgs.gov/browse/etm/18/35/2004/LE7018035000408452.jpg
+    -4196 |    0.25 | LE70180352004100EDC02 | 018035    | 2004-04-09      | http://earthexplorer.usgs.gov/browse/etm/18/35/2004/LE7018035000410052.jpg
+    -4180 |   82.61 | LE70180352004116EDC01 | 018035    | 2004-04-25      | http://earthexplorer.usgs.gov/browse/etm/18/35/2004/LE7018035000411651.jpg
+...
 ```
 Back to [Table of contents](README.md)
 <br><br>
