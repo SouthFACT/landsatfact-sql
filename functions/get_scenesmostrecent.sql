@@ -53,18 +53,18 @@ $BODY$
 	--Note: for some reason postgresql requires casting of the requested date even though it was already casted.ß
 	RETURN QUERY EXECUTE
           'SELECT
-	          (lm.acquisition_date - $3::date )::integer as daysfrom,
+	          (lm.acquisition_date - $2::date )::integer as daysfrom,
 	          cc_full::real,
 	          lm.scene_id::character varying(35),
 	          wrs2_code::character varying(6),
 	          lm.acquisition_date::date,
-	          lm.browse_url::character varying(100)
+	          lm.browse_url::character varying(100),
+            st_asgeojson(geom) as geojson
            FROM wrs2_codes as wrs
              LEFT JOIN landsat_metadata as lm ON
                wrs2_code = substr(lm.scene_id,4,6)
-          WHERE st_intersects(wrs.geom,$1)
-            AND wrs2_code = $2
-          ORDER BY ABS((lm.acquisition_date -  $3)-0),cc_full LIMIT 1' USING CustomRequest_Geom, wrs2_code_row, CustomRequest_Date;
+          WHERE wrs2_code = $1
+          ORDER BY ABS((lm.acquisition_date -  $2::date)-0),cc_full LIMIT 1' USING wrs2_code_row, CustomRequest_Date;
 
     END LOOP;
   RETURN;

@@ -1,6 +1,6 @@
--- Function: public.get_scenesalternate(text, date, text)
+-- Function: public.get_scenesalternate(date, text)
 
--- DROP FUNCTION public.get_scenesalternate(text, date, text);
+-- DROP FUNCTION public.get_scenesalternate(date, text);
 
 CREATE OR REPLACE FUNCTION public.get_scenesalternate(
     customrequest_date date,
@@ -40,7 +40,8 @@ $BODY$
 	          lm.scene_id::character varying(35),
 	          wrs2_code::character varying(6),
 	          lm.acquisition_date::date,
-	          lm.browse_url::character varying(100)
+	          lm.browse_url::character varying(100),
+             st_asgeojson(geom) as geojson
            FROM wrs2_codes as wrs
              LEFT JOIN landsat_metadata as lm ON
                wrs2_code = substr(lm.scene_id,4,6)
