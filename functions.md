@@ -226,6 +226,34 @@ ddaysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |     
 ```
 Back to [Table of contents](README.md)
 <br><br>
+### function [get_scenesgeojson](functions/get_scenesgeojson.sql)
+function to get GeoJSON and wrs2 for a custom request.
+```sql
+get_scenesgeojson(
+  customrequest_geojson text)
+RETURNS SETOF scene_geojson
+```
+**requires**
+* CustomRequest_GeoJSON text containing Custom Request GeoJSON
+
+**returns**
+* table of data type [scene_geojson](datatypes.md#type-scene_geojson)
+
+**Example:**
+
+**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
+```sql
+SELECT * FROM get_scenesgeojson('some geojson');
+```
+**Returns:**
+```sql
+wrs2_code |                                                                                                                                                                                                                                                               geojson                                                                                                                                                                                                                                                                
+-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+018035    | {"type":"MultiPolygon","coordinates":[[[[-83.6066644360895,35.436244990029],[-83.606995929708,35.4362931795808],[-83.5933060200132,35.485687492988],[-83.5863269355887,35.5108686001641],[-83.2094804449266,36.8705615400183],[-83.2013282032923,36.899975493996],[-83.1887959596316,36.9451928531841],[-83.1884646566187,36.945144690244],[-81.1512965847653,36.6489928315925],[-81.1610615618593,36.6167467491402],[-81.5955104351528,35.18210188414],[-81.6065965355944,35.1454931641921],[-83.6066644360895,35.436244990029]]]]}
+(1 row)
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### function [get_scenesMostRecent](functions/get_scenesmostrecent.sql)
 Function to get images for a scene that was taken closest to the users requested date. The intention is to call this twice once for the start date then again for the end date.  There should be a image and url for each scene that the CustomRequest_GeoJson intersects.
 ```sql

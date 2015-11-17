@@ -54,6 +54,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 
 ### Landsat FACT SQL Data Types
 * [All Types](datatypes.md)
+* [scene_geojson](datatypes.md#type-scene_geojson)
 * [scene_url](datatypes.md#type-scene_url)
 * [custom_requests_pending](datatypes.md#type-custom_requests_pending)
 * [custom_request_quads](datatypes.md#type-custom_request_quads)
