@@ -46,7 +46,8 @@ $BODY$
      WHERE sub_crd.aoi_id = cr.aoi_id
      ORDER BY sub_crd.custom_request_status_id desc limit 1)
   FROM custom_request_dates as cr
-  WHERE  upper((select aoi_type FROM user_aoi where user_aoi.aoi_id = cr.aoi_id)) = upper($1)
+  WHERE  upper((select aoi_type FROM user_aoi where user_aoi.aoi_id = cr.aoi_id)) = upper($1) AND
+         (SELECT max(sub_crd.custom_request_status_id) FROM custom_request_dates sub_crd  WHERE sub_crd.aoi_id = cr.aoi_id) < 2
   GROUP BY cr.aoi_id
   ORDER BY cr.aoi_id,
     (SELECT status
