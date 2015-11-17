@@ -9,7 +9,7 @@ $BODY$
 /**
   function to get GeoJSON and wrs2_code for a custom request. that the CustomRequest_GeoJson intersects
 
-  requires two arguments
+  requires one arguments
      CustomRequest_GeoJson::text - the geojson for the users custom request
 
   returns a postgres table defined by the type scene_url
