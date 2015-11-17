@@ -7,9 +7,7 @@ CREATE OR REPLACE FUNCTION public.get_scenesgeojson(
   RETURNS SETOF scene_geojson AS
 $BODY$
 /**
-  function to get the url to the images of the most recent scene to the users requested date.
-  The intention is to call this twice once for the start date then again for the end date
-  there should be a most recent url for each wrs2_code that the CustomRequest_GeoJson intersects
+  function to get GeoJSON and wrs2_code for a custom request. that the CustomRequest_GeoJson intersects
 
   requires two arguments
      CustomRequest_GeoJson::text - the geojson for the users custom request

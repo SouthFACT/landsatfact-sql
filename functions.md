@@ -227,7 +227,7 @@ ddaysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |     
 Back to [Table of contents](README.md)
 <br><br>
 ### function [get_scenesgeojson](functions/get_scenesgeojson.sql)
-function to get GeoJSON and wrs2 for a custom request.
+function to get GeoJSON and wrs2_code for a custom request.
 ```sql
 get_scenesgeojson(
   customrequest_geojson text)
