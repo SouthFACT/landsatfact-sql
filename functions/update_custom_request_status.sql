@@ -21,7 +21,7 @@ $BODY$
 		4 - "Completed"
 
 	--returns
-	 true if succeds and false if fails
+	-- true if succeeds and false if fails
 **/
     BEGIN
 

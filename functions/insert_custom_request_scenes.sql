@@ -13,6 +13,8 @@ CREATE OR REPLACE FUNCTION public.insert_custom_request_scenes(
   --  aoi_id::integer the aoi_id of the cusom request
   --  scene_id::character varying (35) the landsat scene id
 
+  --returns
+	-- true if succeeds and false if fails
 
 $BODY$
 
