@@ -222,7 +222,7 @@ This view represents the first two scenes for the project area that are less tha
 
 **NOTES**
 * days_ago represents the how many days this scene was acquired
-* The Rank determines the order for the scene.
+* rank determines the order for the scene (from when it was acquired).
   * 1 is most recent scene.
   * 2 is 2nd most recent scene.
 
@@ -255,7 +255,7 @@ This view represents all scenes for the project area that are less than 5% cloud
 
 **NOTES**
 * days_ago represents the how many days this scene was acquired
-* The Rank determines the order for the scene.
+* rank determines the order for the scene (from when it was acquired).
   * 1 is most recent scene.
   * 2 is 2nd most recent scene.
   * and `N` is `N` most recent scene.
