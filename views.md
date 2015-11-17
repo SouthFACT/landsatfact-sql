@@ -219,7 +219,8 @@ Back to [Table of contents](README.md)
 views.md#view-
 ### view [vw_quilt](views/vw_quilt.sql)
 This view represents the first two scenes for the project area that are less than 5% cloud covered.
-**notes**
+
+**NOTES**
 * days_ago represents the how many days this scene was acquired
 * The Rank determines the order for the scene.
   * 1 is most recent scene.
@@ -251,7 +252,8 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_scenes_less_five](views/vw_scenes_less_five.sql)
 This view represents all scenes for the project area that are less than 5% cloud covered and where acquired after July 1, 2014.
-**notes**
+
+**NOTES**
 * days_ago represents the how many days this scene was acquired
 * The Rank determines the order for the scene.
   * 1 is most recent scene.
