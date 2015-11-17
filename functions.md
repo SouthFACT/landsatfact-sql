@@ -497,7 +497,7 @@ function updates the custom_request_dates table with the users status and the cu
   update_custom_request_status(
     aoi_id text,
     status integer)
-  RETURNS void
+  RETURNS boolean
 ```
 **requires**
 * aoi_id text the node id of the custom request
@@ -509,7 +509,7 @@ function updates the custom_request_dates table with the users status and the cu
 
 **returns**
 
-* Not Available for this type of function.
+* true if suceeds and false if fails
 
 **Example:**
 

@@ -6,7 +6,7 @@ CREATE OR REPLACE FUNCTION public.update_custom_request_status(
     aoi_id text,
     status integer
     )
-  RETURNS void AS
+  RETURNS BOOLEAN AS
 $BODY$
 
 /**
@@ -21,15 +21,25 @@ $BODY$
 		4 - "Completed"
 
 	--returns
-	 na
+	 true if succeds and false if fails
 **/
     BEGIN
 
-	--update table custom_request_dates.
-	-- sets date to now
-	-- sets stats id to status passed by ui
-	INSERT INTO custom_request_dates(aoi_id, custom_request_date, custom_request_status_id)
-	VALUES (aoi_id::integer,now()::timestamp without time zone,status);
+  	--update table custom_request_dates.
+  	-- sets date to now
+  	-- sets stats id to status passed by ui
+  	INSERT INTO custom_request_dates(aoi_id, custom_request_date, custom_request_status_id)
+  	VALUES (aoi_id::integer,now()::timestamp without time zone,status);
+
+    IF FOUND THEN
+       RETURN TRUE;
+    ELSE
+       RETURN FALSE;
+    END IF;
+     
+    --not unique return False
+    EXCEPTION WHEN unique_violation THEN
+      RETURN FALSE;
 
     END;
 $BODY$
