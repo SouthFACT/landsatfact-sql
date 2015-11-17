@@ -7,7 +7,7 @@ CREATE OR REPLACE FUNCTION public.initiate_custom_request(
     user_id text,
     scenes text
     )
-  RETURNS void AS
+  RETURNS boolean AS
 $BODY$
 
 /**
@@ -21,7 +21,7 @@ $BODY$
 	 scenes as text comma delimited string of scene_ids from the landsat fact ui
 
 	--returns
-	 na
+	 	-- true if succeeds and false if fails
 **/
     DECLARE scenes_array TEXT[];
     DECLARE scene TEXT;
@@ -47,6 +47,17 @@ $BODY$
 	--update table custom_request_dates.  this will mark the first one as pending
 	INSERT INTO custom_request_dates(aoi_id, custom_request_date, custom_request_status_id)
 	VALUES (aoi_id::integer,now()::timestamp without time zone,1);
+
+  --check if insert was success full
+  IF FOUND THEN
+     RETURN TRUE;
+  ELSE
+     RETURN FALSE;
+  END IF;
+
+  --not unique return False
+  EXCEPTION WHEN unique_violation THEN
+    RETURN FALSE;
 
     END;
 $BODY$

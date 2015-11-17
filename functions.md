@@ -326,7 +326,7 @@ assumes that functions [insert_user_aoi_by_county](functions.md#function-insert_
       user_id text,
       scenes text
       )
-    RETURNS void
+    RETURNS boolean
 ```
 **requires**
 * aoi_id text the node id of the custom request
@@ -334,8 +334,7 @@ assumes that functions [insert_user_aoi_by_county](functions.md#function-insert_
 * scenes as text comma delimited string of scene_ids from the landsat FACT ui
 
 **returns**
-
-Not Available for insert function
+* True if succeeds and false if fails
 
 **Example**
 
@@ -346,7 +345,7 @@ select * from initiate_custom_request('9999','99','LE70180352015274EDC00,LE70180
 ```sql
 initiate_custom_request
 ------------------------------
-
+t
 (1 row)
 ```
 
