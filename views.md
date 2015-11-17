@@ -216,6 +216,29 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
+views.md#view-
+### view [vw_quilt](views/vw_quilt.sql)
+This view represents the first two scenes for the project area that are less than 5% cloud covered.
+**notes**
+* days_ago represents the how many days this scene was acquired
+* The Rank determines the order for the scene.
+  * 1 is most recent scene.
+  * 2 is 2nd most recent scene.
+
+```sql
+Columns
+  geom geometry
+  wrs2_code character varying(6)
+  gid integer
+  cc_ull real
+  scene_id character varying(35)
+  acquisition_date date
+  days_ago integer
+  browse_url character varying(100)
+  rank bigint
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### view [vw_reclass_products](views/vw_reclass_products.sql)
 
 Used for... in function?
@@ -223,6 +246,29 @@ Used for... in function?
 Columns
     product_id character varying (100)
     geom geometry
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_scenes_less_five](views/vw_scenes_less_five.sql)
+This view represents all scenes for the project area that are less than 5% cloud covered and where acquired after July 1, 2014.
+**notes**
+* days_ago represents the how many days this scene was acquired
+* The Rank determines the order for the scene.
+  * 1 is most recent scene.
+  * 2 is 2nd most recent scene.
+  * and `N` is `N` most recent scene.
+
+```sql
+Columns
+  geom geometry
+  wrs2_code character varying(6)
+  gid integer
+  cc_ull real
+  scene_id character varying(35)
+  acquisition_date date
+  days_ago integer
+  browse_url character varying(100)
+  rank bigint
 ```
 Back to [Table of contents](README.md)
 <br><br>
