@@ -5,13 +5,21 @@
 CREATE OR REPLACE FUNCTION public.update_user_aoi_by_geojson(
     nid text,
     geojson text)
-  RETURNS void AS
+  RETURNS boolean  AS
 $BODY$
     DECLARE area_geojson geometry;
     BEGIN
          area_geojson = ST_Multi(ST_SetSRID(ST_GeomFromGeoJSON(geojson), 4326));
          UPDATE user_aoi SET geom = area_geojson
          WHERE node_id = nid;
+
+         --check if insert was success full
+         IF FOUND THEN
+            RETURN TRUE;
+         ELSE
+            RETURN FALSE;
+         END IF;
+
     END;
 $BODY$
   LANGUAGE plpgsql VOLATILE

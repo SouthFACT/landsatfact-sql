@@ -31,12 +31,13 @@ $BODY$
   	INSERT INTO custom_request_dates(aoi_id, custom_request_date, custom_request_status_id)
   	VALUES (aoi_id::integer,now()::timestamp without time zone,status);
 
+    --check if insert was success full
     IF FOUND THEN
        RETURN TRUE;
     ELSE
        RETURN FALSE;
     END IF;
-     
+
     --not unique return False
     EXCEPTION WHEN unique_violation THEN
       RETURN FALSE;

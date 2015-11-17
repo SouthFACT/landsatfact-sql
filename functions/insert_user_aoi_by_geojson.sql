@@ -8,13 +8,21 @@ CREATE OR REPLACE FUNCTION public.insert_user_aoi_by_geojson(
     aoi_name text,
     aoi_type text,
     geojson text)
-  RETURNS void AS
+  RETURNS boolean AS
 $BODY$
     DECLARE area_geojson geometry;
     BEGIN
         area_geojson = ST_Multi(ST_SetSRID(ST_GeomFromGeoJSON(geojson), 4326));
         INSERT INTO user_aoi(node_id, user_id, aoi_name, aoi_type, geom)
         VALUES (node_id, user_id, aoi_name, aoi_type, area_geojson);
+
+        --check if insert was success full
+        IF FOUND THEN
+           RETURN TRUE;
+        ELSE
+           RETURN FALSE;
+        END IF;
+
     END;
 $BODY$
   LANGUAGE plpgsql VOLATILE

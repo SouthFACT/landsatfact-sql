@@ -5,7 +5,7 @@
 CREATE OR REPLACE FUNCTION public.insert_custom_request_scenes(
     aoi_id integer,
     scene_id character varying (35))
-  RETURNS void AS
+  RETURNS boolean AS
 
   --inserts record into insert_custom_request_scenes to record each scene used by a custom request
 
@@ -20,6 +20,14 @@ $BODY$
         --insert record
         INSERT INTO custom_request_scenes(aoi_id, scene_id)
         VALUES (aoi_id, scene_id);
+
+        --check if insert was success full
+        IF FOUND THEN
+           RETURN TRUE;
+        ELSE
+           RETURN FALSE;
+        END IF;
+
     END;
 $BODY$
   LANGUAGE plpgsql VOLATILE

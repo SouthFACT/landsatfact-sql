@@ -8,13 +8,21 @@ CREATE OR REPLACE FUNCTION public.insert_user_aoi_by_county(
     aoi_name text,
     aoi_type text,
     county_geoid integer)
-  RETURNS void AS
+  RETURNS boolean AS
 $BODY$
     DECLARE county_geom geometry;
     BEGIN
       SELECT INTO county_geom geom FROM counties WHERE geoid = county_geoid;
       INSERT INTO user_aoi(node_id, user_id, aoi_name, aoi_type, geom)
       VALUES (node_id, user_id, aoi_name, aoi_type, county_geom);
+
+      --check if insert was success full
+      IF FOUND THEN
+         RETURN TRUE;
+      ELSE
+         RETURN FALSE;
+      END IF;
+
     END;
 $BODY$
   LANGUAGE plpgsql VOLATILE

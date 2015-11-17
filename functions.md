@@ -358,15 +358,14 @@ function inserts record into insert_custom_request_scenes to record each scene u
   insert_custom_request_scenes(
     aoi_id integer,
     scene_id character varying (35))
-  RETURNS void
+  RETURNS boolean
 ```
 **requires**
 * aoi_id integer the aoi_id of the custom request.
 * scene_id character varying (35) the Landsat scene id.
 
 **returns**
-
-Not Available for insert function
+* True if succeeds and false if fails
 
 **Example**
 
@@ -377,7 +376,7 @@ SELECT * FROM insert_custom_request_scenes(144,'LE70180352015274EDC00');
 ```sql
 insert_custom_request_scenes
 ------------------------------
-
+t
 (1 row)
 ```
 
@@ -393,7 +392,7 @@ inserts a new subscription or custom request into the user_aoi table with a coun
           aoi_name text,
           aoi_type text,
           county_geoid integer)
-      RETURNS void
+      RETURNS boolean
 ```
 **requires**
 * node_id text the node_id for the subscription or custom request (Drupal)
@@ -403,8 +402,7 @@ inserts a new subscription or custom request into the user_aoi table with a coun
 * county_geoid integer the county geoid
 
 **returns**
-
-* Not Available for insert function
+* True if succeeds and false if fails
 
 **Example**
 
@@ -415,7 +413,7 @@ SELECT * FROM insert_user_aoi_by_county('552','16','Buncombe County','subscripti
 ```sql
 insert_user_aoi_by_county
 ------------------------------
-
+t
 (1 row)
 ```
 
@@ -430,7 +428,7 @@ inserts a new subscription or custom request into the user_aoi with GeoJSON
           aoi_name text,
           aoi_type text,
           geojson text)
-      RETURNS void
+      RETURNS boolean
 ```
 **requires**
 * node_id text the node_id for the subscription or custom request (Drupal)
@@ -440,8 +438,7 @@ inserts a new subscription or custom request into the user_aoi with GeoJSON
 * geojson text the GeoJSON of a shape
 
 **returns**
-
-* Not Available for insert function
+* True if succeeds and false if fails
 
 **Example**
 
@@ -453,7 +450,7 @@ SELECT * FROM insert_user_aoi_by_geojson('552','16','Buncombe County','subscript
 ```sql
 insert_user_aoi_by_geojson
 ------------------------------
-
+t
 (1 row)
 ```
 Back to [Table of contents](README.md)
@@ -508,8 +505,7 @@ function updates the custom_request_dates table with the users status and the cu
   * 4 - "Completed".
 
 **returns**
-
-* true if suceeds and false if fails
+* true if succeeds and false if fails
 
 **Example:**
 
@@ -539,15 +535,14 @@ function to update a geometry in the subscription/custom request table.  Called 
 update_user_aoi_by_county(
     nid text,
     county_geoid integer)
-  RETURNS void
+  RETURNS boolean
 ```
 **requires**
 * nid text node_id for the custom request or subscription.
 * county_geoid integer County geoid for inserting geometry.
 
 **returns**
-
-* Not Available for this type of function.
+* True if succeeds and false if fails
 
 **Example:**
 
@@ -569,15 +564,14 @@ function to update a geometry in the subscription/custom request table.  Called 
 update_user_aoi_by_geojson(
     nid text,
     geojson text)
-  RETURNS void
+  RETURNS boolean
 ```
 **requires**
 * nid text node_id for the custom request or subscription.
 * geojson text GeoJSON text for geometry.
 
 **returns**
-
-* Not Available for this type of function.
+* True if succeeds and false if fails
 
 **Example:**
 
