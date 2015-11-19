@@ -11,12 +11,12 @@ SELECT
 	lm.acquisition_date::date,
 	abs(lm.acquisition_date - now()::date )::integer as days_ago,
 	lm.browse_url::character varying(100),
-	(ROW_NUMBER() OVER(PARTITION BY wrs.wrs2_code ORDER BY lm.acquisition_date::date DESC))::bigint AS rank
+	(ROW_NUMBER() OVER(PARTITION BY wrs.wrs2_code ORDER BY lm.acquisition_date::date))::bigint AS rank
 FROM wrs2_codes as wrs
   LEFT JOIN landsat_metadata as lm
     ON wrs2_code = substr(lm.scene_id,4,6)
-WHERE lm.cc_full < 5 and lm.acquisition_date > '2014-07-14'::date
-ORDER BY  wrs.gid,(ROW_NUMBER() OVER(PARTITION BY wrs.wrs2_code ORDER BY lm.acquisition_date::date DESC))::bigint ;
+WHERE lm.cc_full < 5 and lm.acquisition_date > '2014-07-01'::date
+ORDER BY  wrs.gid,(ROW_NUMBER() OVER(PARTITION BY wrs.wrs2_code ORDER BY lm.acquisition_date::date))::bigint ;
 
 ALTER TABLE public.vw_scenes_less_five OWNER TO root;
 GRANT ALL ON TABLE public.vw_scenes_less_five TO root;
