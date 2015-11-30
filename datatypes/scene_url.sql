@@ -4,6 +4,6 @@ CREATE TYPE scene_url as (
   scene_id character varying(35),
   wrs2_code character varying(6),
   acquistion_date date,
-  browse_url character varying(100),
+  browse_url character varying(150),
   geojson text
 );

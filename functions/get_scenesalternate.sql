@@ -25,8 +25,8 @@ $BODY$
   --  acquistion_date::date  the date the scene was acquired
   --  browse_url::character varying(100) the url to scene's image
 
-  BEGIN
 
+  BEGIN
 
     	--return query that gets the a list of alternate images for ordered by date
       -- the days from defines the number of days beofre after the user defined date
@@ -40,7 +40,11 @@ $BODY$
 	          lm.scene_id::character varying(35),
 	          wrs2_code::character varying(6),
 	          lm.acquisition_date::date,
-	          lm.browse_url::character varying(100),
+            (CASE WHEN acquisition_date >= ''2015-01-01''::date THEN
+          		(''http://landsat-pds.s3.amazonaws.com/L8/'' || CASE WHEN length(lm.path::text) < 3 THEN (''0'' || lm.path::text) ELSE lm.path::text END || ''/'' || CASE WHEN length(lm.row::text) < 3 THEN (''0''|| lm.row::text) ELSE lm.row::text END || ''/'' || lm.scene_id || ''/'' || lm.scene_id || ''_thumb_small.jpg'')::varchar(150)
+          	ELSE
+          	  (browse_url)::varchar(150)
+          	END)::varchar(150) as browse_url,
              st_asgeojson(geom) as geojson
            FROM wrs2_codes as wrs
              LEFT JOIN landsat_metadata as lm ON
