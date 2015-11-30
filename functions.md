@@ -179,6 +179,52 @@ aoi_id | node_id | user_id |    aoi_name    |    aoi_type    | status_id | statu
 
 Back to [Table of contents](README.md)
 <br><br>
+### function [get_processcompletecustomrequests](functions/get_processcompletecustomrequests.sql)
+Function to a table or list of processing complete custom requests.  these need emails sent.
+```sql
+get_processcompletecustomrequests()
+  RETURNS SETOF custom_requests_pending
+```
+**requires**
+* Nothing
+
+
+**returns**
+* table of data type [custom_requests_pending](datatypes.md#type-custom_requests_pending)
+```
+  aoi_id integer aoi_id of custom request
+  node_id character varying(30) node_id of custom request
+  user_id character varying(30) user_id of custom request
+  aoi_name character varying(200) name of custom request
+  aoi_type character varying(30), aoi type of custom request in this case should always be "custom_request"
+  status_id integer the current status id which in this case should always be 3
+  status character varying(150), the current status which in this case should always be "Process Complete"
+```
+
+**Example:**
+
+```sql
+SELECT * FROM get_processcompletecustomrequests();
+```
+
+**Returns:**
+```sql
+aoi_id | node_id | user_id |    aoi_name    |    aoi_type    | status_id | status  
+--------+---------+---------+----------------+----------------+-----------+---------
+   189 | 659     | 3       | Full Test      | custom_request |         3 | Process Complete
+   190 | 660     | 3       | Full Test 2    | custom_request |         3 | Process Complete
+   191 | 661     | 3       | Test With Name | custom_request |         3 | Process Complete
+   192 | 662     | 3       | Test 2         | custom_request |         3 | Process Complete
+   194 | 664     | 99      | test-goal      | custom_request |         3 | Process Complete
+   195 | 665     | 99      | test-ga-cr1    | custom_request |         3 | Process Complete
+   196 | 666     | 99      | test-ga-cr2    | custom_request |         3 | Process Complete
+   197 | 667     | 99      | test-ga-cr3    | custom_request |         3 | Process Complete
+   198 | 668     | 99      | test-ga-cr4    | custom_request |         3 | Process Complete
+(9 rows)
+```
+
+Back to [Table of contents](README.md)
+<br><br>
 ### function [get_scenesAlternate](functions/get_scenesalternate.sql)
 function to get alternate images for a custom request.  This is only used when the user is not satisfied with scene image.
 ```sql

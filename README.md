@@ -8,6 +8,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [get_countyByGeoid](functions.md#function-get_countybygeoid)
 * [get_customRequestsQuads](functions.md#function-get_customrequestsquads)
 * [get_pendingCustomRequests](functions.md#function-get_pendingcustomrequests)
+* [get_processCompleteCustomRequests](functions.md#function-get_processcompletecustomrequests)
 * [get_scenesAlternate](functions.md#function-get_scenesalternate)
 * [get_scenesMostRecent](functions.md#function-get_scenesmostrecent)
 * [get_statusByAoiId](functions.md#function-get_statusbyaoiid)
