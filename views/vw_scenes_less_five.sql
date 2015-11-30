@@ -22,3 +22,5 @@ ALTER TABLE public.vw_scenes_less_five OWNER TO root;
 GRANT ALL ON TABLE public.vw_scenes_less_five TO root;
 GRANT SELECT ON TABLE public.vw_scenes_less_five TO readonly;
 GRANT ALL ON TABLE public.vw_scenes_less_five TO dataonly;
+--AND
+--   (SELECT count(*) FROM vw_scenes_less_five sub where (ROW_NUMBER() OVER(PARTITION BY wrs.wrs2_code ORDER BY lm.acquisition_date::date))::bigint = sub.rank GROUP BY rank ) = (select count(*) FROM wrs2_codes)
