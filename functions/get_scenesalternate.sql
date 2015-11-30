@@ -40,7 +40,7 @@ $BODY$
 	          lm.scene_id::character varying(35),
 	          wrs2_code::character varying(6),
 	          lm.acquisition_date::date,
-            (CASE WHEN acquisition_date >= ''2015-01-01''::date THEN
+            (CASE WHEN acquisition_date >= ''2015-01-01''::date and substr(lm.scene_id,3,1) = ''8'' THEN
           		(''http://landsat-pds.s3.amazonaws.com/L8/'' || CASE WHEN length(lm.path::text) < 3 THEN (''0'' || lm.path::text) ELSE lm.path::text END || ''/'' || CASE WHEN length(lm.row::text) < 3 THEN (''0''|| lm.row::text) ELSE lm.row::text END || ''/'' || lm.scene_id || ''/'' || lm.scene_id || ''_thumb_small.jpg'')::varchar(150)
           	ELSE
           	  (browse_url)::varchar(150)
