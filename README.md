@@ -5,6 +5,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [All functions](functions.md)
 * [delete_user_aoi_by_nid](functions.md#function-delete_user_aoi_by_nid)
 * [get_aoi_id_by_nodeid](functions.md#function-get_aoi_id_by_nodeid)
+* [get_completedcustomrequests](functions.md#function-get_completedcustomrequests)
 * [get_countyByGeoid](functions.md#function-get_countybygeoid)
 * [get_customRequestsQuads](functions.md#function-get_customrequestsquads)
 * [get_pendingCustomRequests](functions.md#function-get_pendingcustomrequests)
