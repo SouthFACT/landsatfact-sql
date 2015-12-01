@@ -19,7 +19,8 @@ $BODY$
       --select the status for the matching aoid into the return varriable cr_status
       SELECT INTO cr_status (SELECT status FROM custom_request_status_types as type where type.custom_request_status_id  = cr_date.custom_request_status_id )::varchar(150)
       FROM custom_request_dates cr_date
-      WHERE aoi_id = cr_aoi_id;
+      WHERE aoi_id = cr_aoi_id
+      ORDER BY custom_request_status_id DESC limit 1;
       RETURN cr_status;
   END;
 $BODY$

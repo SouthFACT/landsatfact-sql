@@ -377,7 +377,7 @@ daysfrom | cc_full |       scene_id        | wrs2_code | acquistion_date |      
 Back to [Table of contents](README.md)
 <br><br>
 ### function [get_statusByAoiId](functions/get_statusbyaoiid.sql)
-Function to get images for a scene that was taken closest to the users requested date. The intention is to call this twice once for the start date then again for the end date.  There should be a image and url for each scene that the CustomRequest_GeoJson intersects.
+Function to get the current status by the aoid of a custom request
 ```sql
 get_statusByAoiId(ccr_aoi_id integer)
       RETURNS text
