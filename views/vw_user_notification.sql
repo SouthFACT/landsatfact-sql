@@ -9,11 +9,13 @@ CREATE OR REPLACE VIEW public.vw_user_notification AS
      user_aoi.aoi_name,
      vw_last_days_products.product_type,
      st_extent(st_transform(user_aoi.geom, 900913))::text AS extent,
-     ((((('http://landsatfact-map-dev.nemac.org/?theme=SE&layers='::text || vw_last_days_products.product_type::text) || date_part('year'::text, vw_last_days_products.product_date)) || date_part('month'::text, vw_last_days_products.product_date)) || (( SELECT
+     ((((('http://landsatfact-map-dev.nemac.org/?theme=SE&layers='::text ||
+        CASE WHEN vw_last_days_products.product_type = 'SWIR' THEN 'ALC' ELSE '' END || 
+        vw_last_days_products.product_type::text) || date_part('year'::text, vw_last_days_products.product_date)) || date_part('month'::text, vw_last_days_products.product_date)) || (( SELECT
                  CASE
                      WHEN length(date_part('day'::text, vw_last_days_products.product_date)::text) = 1 THEN '0'::text || date_part('day'::text, vw_last_days_products.product_date)::text
                      ELSE date_part('day'::text, vw_last_days_products.product_date)::text
-                 END AS date_part))) || ',AA&mask=&alphas=1,1&accgp=G02&basemap=Google%20Streets&extent='::text) || replace(replace(replace(st_extent(st_transform(user_aoi.geom, 900913))::text, 'BOX('::text, ''::text), ')'::text, ''::text), ' '::text, ','::text) AS lsf_url
+                 END AS date_part))) ||  ',AA&mask=&alphas=1,1&accgp=G02&basemap=Google%20Streets&extent='::text) || replace(replace(replace(st_extent(st_transform(user_aoi.geom, 900913))::text, 'BOX('::text, ''::text), ')'::text, ''::text), ' '::text, ','::text) AS lsf_url
     FROM landsat_quads,
      vw_last_days_products,
      user_aoi
