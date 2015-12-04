@@ -1,8 +1,8 @@
--- View: public.test_vw_user_notification
+-- View: public.vw_user_notification
 
--- DROP VIEW public.test_vw_user_notification;
+-- DROP VIEW public.vw_user_notification;
 
-CREATE OR REPLACE VIEW public.test_vw_user_notification AS
+CREATE OR REPLACE VIEW public.vw_user_notification AS
   SELECT DISTINCT user_aoi.aoi_id,
      user_aoi.user_id,
      user_aoi.node_id,
@@ -21,8 +21,8 @@ CREATE OR REPLACE VIEW public.test_vw_user_notification AS
    GROUP BY user_aoi.node_id, user_aoi.aoi_id, user_aoi.user_id, vw_last_days_products.product_type, vw_last_days_products.product_date
    ORDER BY user_aoi.user_id, user_aoi.node_id;
 
-ALTER TABLE public.test_vw_user_notification
+ALTER TABLE public.vw_user_notification
   OWNER TO root;
-GRANT ALL ON TABLE public.test_vw_user_notification TO root;
-GRANT SELECT ON TABLE public.test_vw_user_notification TO readonly;
-GRANT ALL ON TABLE public.test_vw_user_notification TO dataonly;
+GRANT ALL ON TABLE public.vw_user_notification TO root;
+GRANT SELECT ON TABLE public.vw_user_notification TO readonly;
+GRANT ALL ON TABLE public.vw_user_notification TO dataonly;
