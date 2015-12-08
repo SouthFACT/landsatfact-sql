@@ -48,6 +48,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [vw_reclass_products](views.md#view-vw_reclass_products)
 * [vw_scenes_less_five](views.md#view-vw_scenes_less_five)
 * [vw_tile_index_cloud](views.md#view-vw_tile_index_cloud)
+* [vw_tile_index_customrequest](views.md#view-vw_tile_index_customrequest)
 * [vw_tile_index_gap](views.md#view-vw_tile_index_gap)
 * [vw_tile_index_ndmi](views.md#view-vw_tile_index_ndmi)
 * [vw_tile_index_ndvi](views.md#view-vw_tile_index_ndvi)
