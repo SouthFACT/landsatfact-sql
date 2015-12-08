@@ -6,7 +6,8 @@ CREATE OR REPLACE VIEW public.vw_archive_product_dates AS
  SELECT DISTINCT products.product_date,
     products.product_type
    FROM products
-  ORDER BY products.product_date DESC;
+  WHERE coalesce(products.analysis_source,'')::text<> 'CR'
+ORDER BY products.product_date DESC;
 
 ALTER TABLE public.vw_archive_product_dates
   OWNER TO root;
