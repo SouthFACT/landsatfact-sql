@@ -26,6 +26,20 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
+### view [vw_downlovw_customrequets_hungad_scenes](views/vw_customrequets_hung.sql)
+
+Used for finding hung or custom request with errors in process.
+```sql
+Columns
+  aoi_id integer
+  current_status varchar(150)
+  started_at timestamp
+  stoped_at  timestamp
+  time_since_request text
+  scenes text
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### view [vw_download_scenes](views/vw_download_scenes.sql)
 
 Used for... in function?
