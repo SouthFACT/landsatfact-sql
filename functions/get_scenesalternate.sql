@@ -49,7 +49,7 @@ $BODY$
            FROM wrs2_codes as wrs
              LEFT JOIN landsat_metadata as lm ON
                wrs2_code = substr(lm.scene_id,4,6)
-          WHERE wrs2_code = $1 and lm.cc_full < 90
+          WHERE wrs2_code = $1 
           ORDER BY lm.acquisition_date' USING wrs2_code, CustomRequest_Date;
   RETURN;
   END
