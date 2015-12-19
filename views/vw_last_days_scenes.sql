@@ -16,7 +16,7 @@ CREATE OR REPLACE VIEW public.vw_last_days_scenes AS
     landsat_metadata.cc_quad_lr,
     landsat_metadata.data_type_l1
    FROM landsat_metadata
-  WHERE landsat_metadata.acquisition_date > ('now'::text::date - '2 days'::interval day);
+  WHERE landsat_metadata.acquisition_date > ('now'::text::date - '3 days'::interval day);
 
 ALTER TABLE public.vw_last_days_scenes
   OWNER TO root;
