@@ -11,7 +11,7 @@ CREATE OR REPLACE VIEW public.vw_last_days_products AS
     extracted_imagery.quad_id
    FROM products
    JOIN extracted_imagery ON products.input2::text = extracted_imagery.quad_scene::text
-  WHERE products.product_date > ('now'::text::date - '2 days'::interval day)
+  WHERE products.product_date > ('now'::text::date - '3 days'::interval day)
   ORDER BY products.product_date DESC;
 
 ALTER TABLE public.vw_last_days_products
