@@ -144,6 +144,7 @@ CREATE OR REPLACE FUNCTION public.get_customrequest_status_bynode(cr_node_id var
 * table of data type [custom_requests_drupalstatus](datatypes.md#type-custom_requests_drupalstatus)
 ```
   node_id character varying(30) node_id of custom request
+  user_id character varying(30) user_id of custom request
   aoi_name character varying(200) name of custom request
   status character varying(150), the current status which in this case should always be "Pending
  status_date timestamp without time zone, the date updated
@@ -162,6 +163,65 @@ node_id | user_id |  aoi_name  |      status      |        status_date
 700     | 99      | Daveism BC | Process Start    | 2015-12-04 19:00:01.711851
 700     | 99      | Daveism BC | Process Complete | 2015-12-04 19:12:15.794222
 700     | 99      | Daveism BC | Completed        | 2015-12-04 19:35:05.778281
+(4 rows)
+```
+
+Back to [Table of contents](README.md)
+br><br>
+### function [get_customrequest_status_byuser](functions/get_customrequest_status_byuser.sql)
+Function to get the all status of a custom request for used to provide status to user in Drupal
+```sql
+CREATE OR REPLACE FUNCTION public.get_customrequest_status_byuser(cr_node_id varchar(25))
+    RETURNS SETOF custom_requests_drupalstatus AS
+```
+**requires**
+* cr_node_id::string - node_id of a custom request
+
+
+**returns**
+* table of data type [custom_requests_drupalstatus](datatypes.md#type-custom_requests_drupalstatus)
+```
+  node_id character varying(30) node_id of custom request
+  user_id character varying(30) user_id of custom request
+  aoi_name character varying(200) name of custom request
+  status character varying(150), the current status which in this case should always be "Pending
+ status_date timestamp without time zone, the date updated
+```
+**Example:**
+
+```sql
+SELECT * FROM get_customrequest_status_byuser('99');
+```
+
+**Returns:**
+```sql
+node_id | user_id |                     aoi_name                      |      status      |        status_date         
+---------+---------+---------------------------------------------------+------------------+----------------------------
+ 664     | 99      | test-goal                                         | Pending          | 2015-11-10 15:56:18.172724
+ 664     | 99      | test-goal                                         | Process Start    | 2015-12-04 16:52:48.168791
+ 664     | 99      | test-goal                                         | Process Complete | 2015-12-04 16:52:48.182083
+ 664     | 99      | test-goal                                         | Completed        | 2015-12-04 19:35:03.890516
+ 665     | 99      | test-ga-cr1                                       | Pending          | 2015-11-10 15:59:04.852561
+ 665     | 99      | test-ga-cr1                                       | Process Start    | 2015-11-18 20:27:27.852247
+ 665     | 99      | test-ga-cr1                                       | Process Complete | 2015-11-18 20:34:41.67022
+ 665     | 99      | test-ga-cr1                                       | Completed        | 2015-12-04 19:35:04.267007
+ 666     | 99      | test-ga-cr2                                       | Pending          | 2015-11-10 16:15:27.280243
+ 666     | 99      | test-ga-cr2                                       | Process Start    | 2015-11-18 20:35:10.78902
+ 666     | 99      | test-ga-cr2                                       | Process Complete | 2015-11-18 20:39:42.643833
+ 666     | 99      | test-ga-cr2                                       | Completed        | 2015-12-04 19:35:04.639956
+ 667     | 99      | test-ga-cr3                                       | Pending          | 2015-11-10 16:31:39.831295
+ 667     | 99      | test-ga-cr3                                       | Process Start    | 2015-11-18 20:40:03.31117
+ 667     | 99      | test-ga-cr3                                       | Process Complete | 2015-11-18 20:47:58.039083
+ 667     | 99      | test-ga-cr3                                       | Completed        | 2015-12-04 19:35:05.016011
+ 668     | 99      | test-ga-cr4                                       | Pending          | 2015-11-10 16:37:37.719004
+ 668     | 99      | test-ga-cr4                                       | Process Start    | 2015-11-18 20:48:31.099426
+ 668     | 99      | test-ga-cr4                                       | Process Complete | 2015-11-18 20:51:44.547952
+ 668     | 99      | test-ga-cr4                                       | Completed        | 2015-12-04 19:35:05.401582
+ 700     | 99      | Daveism BC                                        | Pending          | 2015-12-04 15:29:53.686619
+ 700     | 99      | Daveism BC                                        | Process Start    | 2015-12-04 19:00:01.711851
+ 700     | 99      | Daveism BC                                        | Process Complete | 2015-12-04 19:12:15.794222
+ 700     | 99      | Daveism BC                                        | Completed        | 2015-12-04 19:35:05.778281
+ (24 Rows)
 ```
 
 Back to [Table of contents](README.md)
