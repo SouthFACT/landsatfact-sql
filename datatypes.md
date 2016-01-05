@@ -21,6 +21,22 @@ Data type used to return a table of pending custom requests from the functions:
 
 Back to [Table of contents](README.md)
 <br><br>
+### Type [custom_requests_drupalstatus](datatypes/custom_requests_drupalstatus.sql)
+
+```sql
+CREATE TYPE custom_requests_drupalstatus as (
+  node_id character varying(30),
+  aoi_name character varying(200),
+  status character varying(150),
+  status_date ::timestamp without time zone
+);
+
+```
+Data type used to return a table of  custom quads from the functions:
+* [get_customrequest_status_bynode](functions.md#function-get_customrequest_status_bynode)
+
+Back to [Table of contents](README.md)
+<br><br>
 ### Type [custom_request_quads](datatypes/custom_request_quads.sql)
 
 ```sql

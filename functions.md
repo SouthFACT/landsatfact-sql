@@ -130,6 +130,42 @@ SELECT * FROM get_countyByGeoid(37021);
 
 Back to [Table of contents](README.md)
 <br><br>
+### function [get_customrequest_status_bynode](functions/get_customrequest_status_bynode.sql)
+Function to get the all status of a custom request for used to provide status to user in Drupal
+```sql
+CREATE OR REPLACE FUNCTION public.get_customrequest_status_bynode(cr_node_id varchar(25))
+    RETURNS SETOF custom_requests_drupalstatus AS
+```
+**requires**
+* cr_node_id::string - node_id of a custom request
+
+
+**returns**
+* table of data type [custom_requests_drupalstatus](datatypes.md#type-custom_requests_drupalstatus)
+```
+  node_id character varying(30) node_id of custom request
+  aoi_name character varying(200) name of custom request
+  status character varying(150), the current status which in this case should always be "Pending
+ status_date timestamp without time zone, the date updated
+```
+**Example:**
+
+```sql
+SELECT * FROM custom_requests_drupalstatus('700');
+```
+
+**Returns:**
+```sql
+node_id |  aoi_name  |      status      |        status_date         
+---------+------------+------------------+----------------------------
+700     | Daveism BC | Pending          | 2015-12-04 15:29:53.686619
+700     | Daveism BC | Process Start    | 2015-12-04 19:00:01.711851
+700     | Daveism BC | Process Complete | 2015-12-04 19:12:15.794222
+700     | Daveism BC | Completed        | 2015-12-04 19:35:05.778281
+(4 rows)
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### function [get_customRequestsQuads](functions/get_customrequestsquads.sql)
 Function to a table or list of pending custom requests..
 ```sql
