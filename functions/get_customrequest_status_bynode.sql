@@ -14,6 +14,7 @@ $BODY$
 
     --returns a postgres table defined by the type custom_requests_drupalstatus
     --  node_id character varying(30) node_id of custom request
+    --  user_id character varying(30) user_id of custom request
     --  aoi_name character varying(200) name of custom request
     --  status character varying(150), the current status which in this case should always be "Pending
     --  status_date timestamp without time zone, the date updated
@@ -25,6 +26,7 @@ $BODY$
   RETURN QUERY EXECUTE
           ' SELECT
     (SELECT ua.node_id FROM user_aoi as ua WHERE ua.aoi_id = cr_dates.aoi_id) as node_id,
+    (SELECT ua.user_id FROM user_aoi as ua WHERE ua.aoi_id = cr_dates.aoi_id) as user_id,
     (SELECT ua.aoi_name FROM user_aoi as ua WHERE ua.aoi_id = cr_dates.aoi_id) as aoi_name,
     ( SELECT type.status
            FROM custom_request_status_types type

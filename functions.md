@@ -151,18 +151,17 @@ CREATE OR REPLACE FUNCTION public.get_customrequest_status_bynode(cr_node_id var
 **Example:**
 
 ```sql
-SELECT * FROM custom_requests_drupalstatus('700');
+SELECT * FROM get_customrequest_status_bynode('700');
 ```
 
 **Returns:**
 ```sql
-node_id |  aoi_name  |      status      |        status_date         
----------+------------+------------------+----------------------------
-700     | Daveism BC | Pending          | 2015-12-04 15:29:53.686619
-700     | Daveism BC | Process Start    | 2015-12-04 19:00:01.711851
-700     | Daveism BC | Process Complete | 2015-12-04 19:12:15.794222
-700     | Daveism BC | Completed        | 2015-12-04 19:35:05.778281
-(4 rows)
+node_id | user_id |  aoi_name  |      status      |        status_date         
+---------+---------+------------+------------------+----------------------------
+700     | 99      | Daveism BC | Pending          | 2015-12-04 15:29:53.686619
+700     | 99      | Daveism BC | Process Start    | 2015-12-04 19:00:01.711851
+700     | 99      | Daveism BC | Process Complete | 2015-12-04 19:12:15.794222
+700     | 99      | Daveism BC | Completed        | 2015-12-04 19:35:05.778281
 ```
 
 Back to [Table of contents](README.md)
