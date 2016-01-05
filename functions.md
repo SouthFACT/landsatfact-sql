@@ -164,6 +164,7 @@ node_id |  aoi_name  |      status      |        status_date
 700     | Daveism BC | Completed        | 2015-12-04 19:35:05.778281
 (4 rows)
 ```
+
 Back to [Table of contents](README.md)
 <br><br>
 ### function [get_customRequestsQuads](functions/get_customrequestsquads.sql)

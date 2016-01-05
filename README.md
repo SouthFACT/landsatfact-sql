@@ -7,6 +7,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [get_aoi_id_by_nodeid](functions.md#function-get_aoi_id_by_nodeid)
 * [get_completedcustomrequests](functions.md#function-get_completedcustomrequests)
 * [get_countyByGeoid](functions.md#function-get_countybygeoid)
+* [get_customrequest_status_bynode](functions.md#function-get_customrequest_status_bynode)
 * [get_customRequestsQuads](functions.md#function-get_customrequestsquads)
 * [get_pendingCustomRequests](functions.md#function-get_pendingcustomrequests)
 * [get_processCompleteCustomRequests](functions.md#function-get_processcompletecustomrequests)
@@ -58,6 +59,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 ### Landsat FACT SQL Data Types
 * [All Types](datatypes.md)
 * [scene_geojson](datatypes.md#type-scene_geojson)
+* [custom_requests_drupalstatus](datatypes.md#type-custom_requests_drupalstatus)
 * [scene_url](datatypes.md#type-scene_url)
 * [custom_requests_pending](datatypes.md#type-custom_requests_pending)
 * [custom_request_quads](datatypes.md#type-custom_request_quads)
