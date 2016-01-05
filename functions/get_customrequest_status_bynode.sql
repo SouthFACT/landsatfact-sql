@@ -6,7 +6,7 @@ CREATE OR REPLACE FUNCTION public.get_customrequest_status_bynode(cr_node_id var
     RETURNS SETOF custom_requests_drupalstatus AS
 $BODY$
 
-    --get the all status for by the drupal node of a custom request
+    --get the all status' for a node 
     -- used to provide status to user in drupal
 
     --requires one argument

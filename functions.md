@@ -131,7 +131,7 @@ SELECT * FROM get_countyByGeoid(37021);
 Back to [Table of contents](README.md)
 <br><br>
 ### function [get_customrequest_status_bynode](functions/get_customrequest_status_bynode.sql)
-Function to get the all status of a custom request for used to provide status to user in Drupal
+Function to get the all status's of a custom request for a node.  This is used provide status to a user in Drupal
 ```sql
 CREATE OR REPLACE FUNCTION public.get_customrequest_status_bynode(cr_node_id varchar(25))
     RETURNS SETOF custom_requests_drupalstatus AS
@@ -169,7 +169,7 @@ node_id | user_id |  aoi_name  |      status      |        status_date
 Back to [Table of contents](README.md)
 br><br>
 ### function [get_customrequest_status_byuser](functions/get_customrequest_status_byuser.sql)
-Function to get the all status of a custom request for used to provide status to user in Drupal
+Function to get the all status's of a custom request for a user.  This is used provide status to a user in Drupal
 ```sql
 CREATE OR REPLACE FUNCTION public.get_customrequest_status_byuser(cr_node_id varchar(25))
     RETURNS SETOF custom_requests_drupalstatus AS
