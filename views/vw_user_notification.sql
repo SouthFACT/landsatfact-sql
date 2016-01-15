@@ -9,8 +9,8 @@ CREATE OR REPLACE VIEW public.vw_user_notification AS
      user_aoi.aoi_name,
      vw_last_days_products.product_type,
      st_extent(st_transform(user_aoi.geom, 900913))::text AS extent,
-     ((((('http://landsatfact-map-dev.nemac.org/?theme=SE&layers='::text ||
-        CASE WHEN vw_last_days_products.product_type = 'SWIR' THEN 'ALC' ELSE '' END || 
+     ((((('http://www.landsatfact.com/map/?theme=SE&layers='::text ||
+        CASE WHEN vw_last_days_products.product_type = 'SWIR' THEN 'ALC' ELSE '' END ||
         vw_last_days_products.product_type::text) || date_part('year'::text, vw_last_days_products.product_date)) || date_part('month'::text, vw_last_days_products.product_date)) || (( SELECT
                  CASE
                      WHEN length(date_part('day'::text, vw_last_days_products.product_date)::text) = 1 THEN '0'::text || date_part('day'::text, vw_last_days_products.product_date)::text
