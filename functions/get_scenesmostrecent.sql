@@ -58,7 +58,7 @@ $BODY$
 	          lm.scene_id::character varying(35),
 	          wrs2_code::character varying(6),
 	          lm.acquisition_date::date,
-            lm.browse_url::varchar(150) as browse_url,
+            (''http://landsat-thumbnails.s3-website-us-east-1.amazonaws.com/'' ||lm.scene_id || ''.jpg'')::varchar(150) as browse_url,
             st_asgeojson(geom) as geojson
            FROM wrs2_codes as wrs
              LEFT JOIN landsat_metadata as lm ON
