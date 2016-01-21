@@ -8,7 +8,9 @@ CREATE OR REPLACE VIEW public.vw_viewer_quads AS
     max(products.product_date) AS last_update,
     wc.proj_wkt AS srs,
     products.input1,
-    products.input2
+    (date (SUBSTR(products.input1::text, 10, 4) || '-01-01')::date  + ((SUBSTR(products.input1::text, 14, 3)::integer)-1)::integer  )::date input1_date,
+    products.input2,
+    (date (SUBSTR(products.input2::text, 10, 4) || '-01-01')::date  + ((SUBSTR(products.input2::text, 14, 3)::integer)-1)::integer  )::date input2_date
    FROM extracted_imagery,
     landsat_quads lq,
     wrs2_codes wc,
