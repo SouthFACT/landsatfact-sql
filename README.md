@@ -28,6 +28,8 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [All views](views.md)
 * [test_vw_user_notification](views.md#view-test_vw_user_notification)
 * [vw_archive_product_dates](views.md#view-vw_archive_product_dates)
+* [vw_customrequets_all_status](views.md#view-vw_customrequets_all_status)
+* [vw_customrequets_hung](views.md#view-vw_customrequets_hung)
 * [vw_download_scenes](views.md#view-vw_download_scenes)
 * [vw_initial_mosaic_cloud](views.md#view-vw_initial_mosaic_cloud)
 * [vw_initial_mosaic_gap](views.md#view-vw_initial_mosaic_gap)
