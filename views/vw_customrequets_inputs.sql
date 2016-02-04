@@ -1,4 +1,7 @@
-CREATE OR REPLACE VIEW public.vw_customrequets_inputs AS
+
+-- DROP VIEW public.vw_customrequest_inputs;
+
+CREATE OR REPLACE VIEW public.vw_customrequest_inputs AS
   WITH aoi as(
   SELECT aoi_id as id from custom_request_scenes group by aoi_id
   )
@@ -10,7 +13,7 @@ CREATE OR REPLACE VIEW public.vw_customrequets_inputs AS
   from aoi, get_customrequestsquads(aoi.id) as gq
   group by id,quad_id;
 
-ALTER TABLE public.vw_customrequets_hung OWNER TO root;
-GRANT ALL ON TABLE public.vw_customrequets_hung TO root;
-GRANT SELECT ON TABLE public.vw_customrequets_hung TO readonly;
-GRANT ALL ON TABLE public.vw_customrequets_hung TO dataonly;
+ALTER TABLE public.vw_customrequest_inputs OWNER TO root;
+GRANT ALL ON TABLE public.vw_customrequest_inputs TO root;
+GRANT SELECT ON TABLE public.vw_customrequest_inputs TO readonly;
+GRANT ALL ON TABLE public.vw_customrequest_inputs TO dataonly;
