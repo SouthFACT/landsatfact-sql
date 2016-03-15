@@ -16,7 +16,7 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
-### view [vw_downlovw_customrequets_hungad_scenes](views/vw_customrequets_hung.sql)
+### view [vw_customrequets_hung](views/vw_customrequets_hung.sql)
 
 Used for finding hung or custom request with errors in process.
 ```sql
