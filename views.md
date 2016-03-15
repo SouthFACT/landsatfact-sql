@@ -21,7 +21,10 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_custom_requests_for_viewer](views/vw_custom_requests_for_viewer.sql)
 
-View that provides a list of custom requests that is used by [makeviewerconfig.py](https://github.com/nemac/landsatfact-data/blob/master/msconfig/makeviewerconfig.py#L222) to generate the list of custom request layers in the Map Viewer.
+View that provides a list of custom requests.
+
+**NOTES**
+  * Used by [makeviewerconfig.py](https://github.com/nemac/landsatfact-data/blob/master/msconfig/makeviewerconfig.py#L222) to generate the list of custom request layers in the Map Viewer.
 ```sql
 Columns
     oid
