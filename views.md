@@ -372,9 +372,21 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
+### view [vw_viewer_quads](views/vw_viewer_quad_history.sql)
+
+View that shows the Landsat Quads (History) layer in the Map Viewer, along with the history metadata. The metadata can be viewed using the Identify feature in the Map Viewer. Each record shows metadata of the LCV product history for each quad. The update_history field shows the input1, input2 and ordinal dates for every LCV product in the quad's history.
+```sql
+Columns
+    "oid" character varying (8)
+    quad_id
+    geom geometry
+    update_history
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### view [vw_viewer_quads](views/vw_viewer_quads.sql)
 
-View that shows the Landsat Quads (Latest Change) layer in the Map Viewer, along with the latest change metadata. The metadata can be viewer using the Identify feature in the Map Viewer. Each record shows metadata of the last update for each quad (date last updated, input1, input2, with ordinal dates for each)
+View that shows the Landsat Quads (Latest Change) layer in the Map Viewer, along with the latest change metadata. The metadata can be viewed using the Identify feature in the Map Viewer. Each record shows metadata of the last update for each quad (date last updated, input1, input2, with ordinal dates for each)
 ```sql
 Columns
     "oid" character varying (8)
