@@ -5,7 +5,10 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_archive_product_dates](views/vw_archive_product_dates.sql)
 
-Used for... in function?
+View that display the date for every LCV product.
+
+**NOTES**
+  * Used by makeviewconfig.py to generate the list of archive layers in the Map Viewer's Table of Contents.
 ```sql
 Columns
     product_date date
@@ -13,6 +16,111 @@ Columns
     node_id character varying (30)
     extent text
     lsf_url text
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_custom_request_tile_index_cloud](views/vw_custom_request_tile_index_cloud.sql)
+
+View that serves as a tile index for custom request layers in the Map Viewer
+
+**NOTES**
+  * location stores the path to the tif file
+  * geom is the vector area for the tif file to be displayed within
+  * srs is the spatial reference system of the tif
+  * aoi is used by Mapserver which queries the custom request files for a specifc aoi. There is an "AOI=" parameter in the WMS GetMap requests that Mapserver uses.
+```sql
+Columns
+    location
+    oid
+    geom
+    product_date
+    srs
+    quad_id
+    aoi
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_custom_request_tile_index_gap](views/vw_custom_request_tile_index_gap.sql)
+ 
+View that serves as a tile index for custom request layers in the Map Viewer
+ 
+**NOTES**
+  * location stores the path to the tif file
+  * geom is the vector area for the tif file to be displayed within
+  * srs is the spatial reference system of the tif
+  * aoi is used by Mapserver which queries the custom request files for a specifc aoi. There is an "AOI=" parameter in the WMS GetMap requests that Mapserver uses.
+```sql
+Columns
+    location
+    oid
+    geom
+    product_date
+    srs
+    quad_id
+    aoi
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_custom_request_tile_index_ndmi](views/vw_custom_request_tile_index_ndmi.sql)
+ 
+View that serves as a tile index for custom request layers in the Map Viewer
+ 
+**NOTES**
+  * location stores the path to the tif file
+  * geom is the vector area for the tif file to be displayed within
+  * srs is the spatial reference system of the tif
+  * aoi is used by Mapserver which queries the custom request files for a specifc aoi. There is an "AOI=" parameter in the WMS GetMap requests that Mapserver uses.
+```sql
+Columns
+    location
+    oid
+    geom
+    product_date
+    srs
+    quad_id
+    aoi
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_custom_request_tile_index_ndvi](views/vw_custom_request_tile_index_ndvi.sql)
+ 
+View that serves as a tile index for custom request layers in the Map Viewer
+ 
+**NOTES**
+  * location stores the path to the tif file
+  * geom is the vector area for the tif file to be displayed within
+  * srs is the spatial reference system of the tif
+  * aoi is used by Mapserver which queries the custom request files for a specifc aoi. There is an "AOI=" parameter in the WMS GetMap requests that Mapserver uses.
+```sql
+Columns
+    location
+    oid
+    geom
+    product_date
+    srs
+    quad_id
+    aoi
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_custom_request_tile_index_swir](views/vw_custom_request_tile_index_swir.sql)
+ 
+View that serves as a tile index for custom request layers in the Map Viewer
+ 
+**NOTES**
+  * location stores the path to the tif file
+  * geom is the vector area for the tif file to be displayed within
+  * srs is the spatial reference system of the tif
+  * aoi is used by Mapserver which queries the custom request files for a specifc aoi. There is an "AOI=" parameter in the WMS GetMap requests that Mapserver uses.
+```sql
+Columns
+    location
+    oid
+    geom
+    product_date
+    srs
+    quad_id
+    aoi
 ```
 Back to [Table of contents](README.md)
 <br><br>
