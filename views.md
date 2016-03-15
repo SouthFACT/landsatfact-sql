@@ -51,11 +51,11 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
-### view [vw_last_days_products](viewws/vw_last_days_products.sql)
+### view [vw_last_days_products](views/vw_last_days_products.sql)
 
-View that shows the latest products. 
+View that shows the latest products.
 **NOTES**
-* Used by the python scripts to generate a new latest change mosaic using gdal. 
+* Used by the python scripts to generate a new latest change mosaic using gdal.
 ```sql
 Columns
     product_id character varying (100)
@@ -69,9 +69,9 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_last_days_scenes](views/vw_last_days_scenes.sql)
 
-View that displays the latest scene records from the landsat_metadata table. 
+View that displays the latest scene records from the landsat_metadata table.
 **NOTES**
-* Used by download_landsat_data.php to download the scenes presented in this view. 
+* Used by download_landsat_data.php to download the scenes presented in this view.
 ```sql
 Columns
     scene_id character varying (35)
@@ -91,7 +91,7 @@ Back to [Table of contents](README.md)
 <br><br>
 views.md#view-
 ### view [vw_quad_latest_update](views/vw_quad_latest_update.sql)
-This view is used by vw_viewer_quads to show the latest change metadata. 
+This view is used by vw_viewer_quads to show the latest change metadata.
 
 **NOTES**
 * rank applies a ranking to each product and the view's WHERE latestquads.rank = 1 chooses the latest product
@@ -211,7 +211,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_gap](views/vw_tile_index_gap.sql)
 
-UView used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver). 
+UView used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver).
 ```sql
 Columns
     location text
@@ -224,7 +224,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_ndmi](views/vw_tile_index_ndmi.sql)
 
-View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver). 
+View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver).
 ```sql
 Columns
     location text
@@ -237,7 +237,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_ndvi](views/vw_tile_index_ndvi.sql)
 
-View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver). 
+View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver).
 ```sql
 Columns
     location text
@@ -251,7 +251,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_swir](views/vw_tile_index_swir.sql)
 
-View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver). 
+View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver).
 ```sql
 Columns
     location text
@@ -264,7 +264,7 @@ Back to [Table of contents](README.md)
 
 ### view [vw_user_notification](views/vw_user_notification.sql)
 
-View with fields used in notification emails, including the user and aoi names and extent used in the Share URLs sent to teh user so they are zoomed to the user's aoi. 
+View with fields used in notification emails, including the user and aoi names and extent used in the Share URLs sent to teh user so they are zoomed to the user's aoi.
 ```sql
 Columns
     aoi_id integer
