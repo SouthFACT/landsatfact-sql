@@ -96,7 +96,7 @@ views.md#view-
 This view is used by vw_viewer_quads to show the latest change metadata.
 
 **NOTES**
-* rank applies a ranking to each product and the view's WHERE latestquads.rank = 1 chooses the latest product
+* rank applies a ranking to each product and the view's "WHERE latestquads.rank = 1" chooses the latest product
 
 ```sql
 Columns
