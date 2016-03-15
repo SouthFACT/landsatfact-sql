@@ -54,6 +54,7 @@ Back to [Table of contents](README.md)
 ### view [vw_last_days_products](viewws/vw_last_days_products.sql)
 
 View that shows the latest products. 
+
 **NOTES**
 * Used by the python scripts to generate a new latest change mosaic using gdal. 
 ```sql
@@ -70,6 +71,7 @@ Back to [Table of contents](README.md)
 ### view [vw_last_days_scenes](views/vw_last_days_scenes.sql)
 
 View that displays the latest scene records from the landsat_metadata table. 
+
 **NOTES**
 * Used by download_landsat_data.php to download the scenes presented in this view. 
 ```sql
