@@ -130,93 +130,38 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
-### view [vw_latest_quads_cloud](views/vw_latest_quads_cloud.sql)
+views.md#view-
+### view [vw_quad_latest_update](views/vw_quad_latest_update.sql)
+This view is used by vw_viewer_quads to show the latest change metadata.
 
-Used for... in function?
+**NOTES**
+* rank applies a ranking to each product and the view's WHERE latestquads.rank = 1 chooses the latest product
+
 ```sql
 Columns
-    location text
+  oid
+  geom
+  last_update
+  rank
+  srs
+  input1
+  input1_date
+  input2
+  input2_date
 ```
 Back to [Table of contents](README.md)
 <br><br>
-### view [vw_latest_quads_cloud_new](views/vw_latest_quads_cloud_new.sql)
+views.md#view-
+### view [vw_quad_lc_history](views/vw_quad_lc_history.sql)
+This view is used by vw_viewer_quad_history to show the quad history metadata.
 
-Used for... in function?
+**NOTES**
+* update_history aggregates the input1, input2, and ordinal dates for every LCV product in each quads product history
+
 ```sql
 Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_latest_quads_gap](views/vw_latest_quads_gap.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_latest_quads_gap_new](views/vw_latest_quads_gap_new.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_latest_quads_ndmi](views/vw_latest_quads_ndmi.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_latest_quads_ndmi_new](views/vw_latest_quads_ndmi_new.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_latest_quads_ndvi](views/vw_latest_quads_ndvi.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_latest_quads_ndvi_new](views/vw_latest_quads_ndvi_new.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_latest_quads_swir](views/vw_latest_quads_swir.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_latest_quads_swir_new](views/vw_latest_quads_swir_new.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
+  quad_id
+  update_history
 ```
 Back to [Table of contents](README.md)
 <br><br>
@@ -372,9 +317,9 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
-### view [vw_viewer_quads](views/vw_viewer_quad_history.sql)
+### view [vw_viewer_quad_history](views/vw_viewer_quad_history.sql)
 
-View that shows the Landsat Quads (History) layer in the Map Viewer, along with the history metadata. The metadata can be viewed using the Identify feature in the Map Viewer. Each record shows metadata of the LCV product history for each quad. The update_history field shows the input1, input2 and ordinal dates for every LCV product in the quad's history.
+View that shows the Landsat Quads (History) layer in the Map Viewer, along with the history metadata. The metadata can be viewed using the Identify feature in the Map Viewer. Each record shows metadata of the LCV product history for each quad. The update_history field joins records from the view "vw_quad_lc_history" to show the input1, input2 and ordinal dates for every LCV product in the quad's history.
 ```sql
 Columns
     "oid" character varying (8)
