@@ -57,7 +57,6 @@ View that shows the latest products.
 =======
 View that shows the latest products. 
 
->>>>>>> origin/master
 **NOTES**
 * Used by the python scripts to generate a new latest change mosaic using gdal.
 ```sql
