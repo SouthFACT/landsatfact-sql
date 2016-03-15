@@ -280,7 +280,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_customrequest](views/vw_tile_index_customrequest.sql)
 
-Used for... in function?
+
 ```sql
 Columns
     location text
@@ -294,7 +294,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_cloud](views/vw_tile_index_cloud.sql)
 
-Used for... in function?
+View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver).
 ```sql
 Columns
     location text
@@ -307,7 +307,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_gap](views/vw_tile_index_gap.sql)
 
-Used for... in function?
+UView used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver). 
 ```sql
 Columns
     location text
@@ -320,7 +320,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_ndmi](views/vw_tile_index_ndmi.sql)
 
-Used for... in function?
+View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver). 
 ```sql
 Columns
     location text
@@ -333,7 +333,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_ndvi](views/vw_tile_index_ndvi.sql)
 
-Used for... in function?
+View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver). 
 ```sql
 Columns
     location text
@@ -347,7 +347,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_swir](views/vw_tile_index_swir.sql)
 
-Used for... in function?
+View used as tile indexes by Mapserver to display the archive layers in the Map Viewer. The location contains the path to the product, the geom is the quad vector "tile", product date is the date of the product, and the srs is the spatial reference system of the geotiff file (used by Mapserver). 
 ```sql
 Columns
     location text
@@ -374,7 +374,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_viewer_quads](views/vw_viewer_quads.sql)
 
-Used for... in function?
+View that shows the Landsat Quads (Latest Change) layer in the Map Viewer, along with the latest change metadata. The metadata can be viewer using the Identify feature in the Map Viewer. Each record shows metadata of the last update for each quad (date last updated, input1, input2, with ordinal dates for each)
 ```sql
 Columns
     "oid" character varying (8)
