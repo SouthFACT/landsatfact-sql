@@ -2,16 +2,6 @@
 PostGreSQL views used by Landsat FACT.
 
 Back to [Table of contents](README.md)
-
-### view [test_vw_user_notification](views/test_vw_user_notification.sql)
-
-Used for... in function?
-```sql
-Columns
-    aoi_id integer
-    product_type character varying (6)
-```
-Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_archive_product_dates](views/vw_archive_product_dates.sql)
 
@@ -367,6 +357,20 @@ Columns
     srs character varying (600)
 ```
 Back to [Table of contents](README.md)
+
+### view [vw_user_notification](views/vw_user_notification.sql)
+
+View with fields used in notification emails, including the user and aoi names and extent used in the Share URLs sent to teh user so they are zoomed to the user's aoi. 
+```sql
+Columns
+    aoi_id integer
+    user_id
+    node_id
+    aoi_name
+    product_type character varying (6)
+    extent
+```
+Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_viewer_quads](views/vw_viewer_quads.sql)
 
@@ -374,12 +378,13 @@ Used for... in function?
 ```sql
 Columns
     "oid" character varying (8)
+    quad_id
     geom geometry
     last_update date
-    srs character varying (600)
-    lsf_url text
     input1 character varying (40)
+    input1_date
     input2 character varying (40)
+    input2_date
 ```
 Back to [Table of contents](README.md)
 <br><br>
