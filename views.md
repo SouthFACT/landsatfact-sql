@@ -8,7 +8,7 @@ Back to [Table of contents](README.md)
 View that display the date for every LCV product.
 
 **NOTES**
-  * Used by makeviewconfig.py to generate the list of archive layers in the Map Viewer's Table of Contents.
+  * Used by [makeviewerconfig.py](https://github.com/nemac/landsatfact-data/blob/master/msconfig/makeviewerconfig.py#L113) to generate the list of archive layers in the Map Viewer's Table of Contents.
 ```sql
 Columns
     product_date date
