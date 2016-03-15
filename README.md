@@ -26,7 +26,6 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 
 ### Landsat FACT SQL Views
 * [All views](views.md)
-* [test_vw_user_notification](views.md#view-test_vw_user_notification)
 * [vw_archive_product_dates](views.md#view-vw_archive_product_dates)
 * [vw_customrequets_all_status](views.md#view-vw_customrequets_all_status)
 * [vw_customrequets_hung](views.md#view-vw_customrequets_hung)
@@ -38,16 +37,6 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [vw_initial_mosaic_swir](views.md#view-vw_initial_mosaic_swir)
 * [vw_last_days_products](viewws/vw_last_days_products)
 * [vw_last_days_scenes](views.md#view-vw_last_days_scenes)
-* [vw_latest_quads_cloud](views.md#view-vw_latest_quads_cloud)
-* [vw_latest_quads_cloud_new](views.md#view-vw_latest_quads_cloud_new)
-* [vw_latest_quads_gap](views.md#view-vw_latest_quads_gap)
-* [vw_latest_quads_gap_new](views.md#view-vw_latest_quads_gap_new)
-* [vw_latest_quads_ndmi](views.md#view-vw_latest_quads_ndmi)
-* [vw_latest_quads_ndmi_new](views.md#view-vw_latest_quads_ndmi_new)
-* [vw_latest_quads_ndvi](views.md#view-vw_latest_quads_ndvi)
-* [vw_latest_quads_ndvi_new](views.md#view-vw_latest_quads_ndvi_new)
-* [vw_latest_quads_swir](views.md#view-vw_latest_quads_swir)
-* [vw_latest_quads_swir_new](views.md#view-vw_latest_quads_swir_new)
 * [vw_quilt](views.md#view-vw_quilt)
 * [vw_reclass_products](views.md#view-vw_reclass_products)
 * [vw_scenes_less_five](views.md#view-vw_scenes_less_five)
@@ -57,6 +46,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [vw_tile_index_ndmi](views.md#view-vw_tile_index_ndmi)
 * [vw_tile_index_ndvi](views.md#view-vw_tile_index_ndvi)
 * [vw_tile_index_swir](views.md#view-vw_tile_index_swir)
+* [vw_user_notification](views.md#view-vw_user_notification)
 * [vw_viewer_quads](views.md#view-vw_viewer_quads)
 
 ### Landsat FACT SQL Data Types
