@@ -53,8 +53,6 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_last_days_products](views/vw_last_days_products.sql)
 
-View that shows the latest products.
-=======
 View that shows the latest products. 
 
 **NOTES**
@@ -72,8 +70,6 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_last_days_scenes](views/vw_last_days_scenes.sql)
 
-View that displays the latest scene records from the landsat_metadata table.
-=======
 View that displays the latest scene records from the landsat_metadata table. 
 
 **NOTES**
