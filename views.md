@@ -51,51 +51,6 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
-### view [vw_initial_mosaic_cloud](views/vw_initial_mosaic_cloud.sql)
-
-Used for... in function?
-```sql
-Columns
-    location  text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_initial_mosaic_gap](views/vw_initial_mosaic_gap.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [w_initial_mosaic_ndmi](views/vw_initial_mosaic_ndmi.sql)
-
-Used for... in function
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_initial_mosaic_ndvi](views/vw_initial_mosaic_ndvi.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
-### view [vw_initial_mosaic_swir](views/vw_initial_mosaic_swir.sql)
-
-Used for... in function?
-```sql
-Columns
-    location text
-```
-Back to [Table of contents](README.md)
-<br><br>
 ### view [vw_last_days_products](viewws/vw_last_days_products.sql)
 
 Used for... in function?
