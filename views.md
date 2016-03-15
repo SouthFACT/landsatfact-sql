@@ -53,7 +53,9 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_last_days_products](viewws/vw_last_days_products.sql)
 
-Used for... in function?
+View that shows the latest products. 
+**NOTES**
+* Used by the python scripts to generate a new latest change mosaic using gdal. 
 ```sql
 Columns
     product_id character varying (100)
@@ -67,7 +69,9 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_last_days_scenes](views/vw_last_days_scenes.sql)
 
-Used for... in function?
+View that displays the latest scene records from the landsat_metadata table. 
+**NOTES**
+* Used by download_landsat_data.php to download the scenes presented in this view. 
 ```sql
 Columns
     scene_id character varying (35)
@@ -87,7 +91,7 @@ Back to [Table of contents](README.md)
 <br><br>
 views.md#view-
 ### view [vw_quad_latest_update](views/vw_quad_latest_update.sql)
-This view is used by vw_viewer_quads to show the latest change metadata.
+This view is used by vw_viewer_quads to show the latest change metadata. 
 
 **NOTES**
 * rank applies a ranking to each product and the view's WHERE latestquads.rank = 1 chooses the latest product
