@@ -186,7 +186,6 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_tile_index_customrequest](views/vw_tile_index_customrequest.sql)
 
-
 ```sql
 Columns
     location text
