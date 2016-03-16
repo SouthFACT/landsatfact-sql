@@ -433,3 +433,14 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
+### view [vw_wms_params_for_geopdf](views/vw_wms_params_for_geopdf.sql)
+
+View that shows the Landsat Quads (Latest Change) layer in the Map Viewer, along with the latest change metadata. The metadata can be viewed using the Identify feature in the Map Viewer. Each record shows metadata of the last update for each quad (date last updated, input1, input2, with ordinal dates for each) which is joined from the view [vw_quad_latest_update](https://github.com/nemac/landsatfact-sql/blob/master/views/vw_quad_latest_update.sql)
+```sql
+Columns
+    aoi_id
+    extent
+    aoi_type
+```
+Back to [Table of contents](README.md)
+<br><br>
