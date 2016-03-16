@@ -52,6 +52,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [vw_user_notification](views.md#view-vw_user_notification)
 * [vw_viewer_quad_history](views.md#view-vw_viewer_quad_history)
 * [vw_viewer_quads](views.md#view-vw_viewer_quads)
+* [vw_wms_params_for_geopdf](views.md#view-vw_wms_params_for_geopdf)
 
 ### Landsat FACT SQL Data Types
 * [All Types](datatypes.md)
