@@ -2,7 +2,7 @@
 
 -- DROP VIEW public.vw_user_notification;
 
-CREATE OR REPLACE VIEW public.vw_user_notification AS 
+CREATE OR REPLACE VIEW public.vw_user_notification AS
  SELECT DISTINCT user_aoi.aoi_id,
     user_aoi.user_id,
     user_aoi.node_id,
@@ -17,7 +17,7 @@ CREATE OR REPLACE VIEW public.vw_user_notification AS
    FROM landsat_quads,
     vw_last_days_products,
     user_aoi
-  WHERE landsat_quads.quad_id::text = vw_last_days_products.quad_id::text AND st_intersects(user_aoi.geom, landsat_quads.geom) AND (vw_last_days_products.product_type::text <> ALL (ARRAY['GAP'::character varying::text, 'CLOUD'::character varying::text]))
+  WHERE user_aoi.aoi_type='subscription' AND landsat_quads.quad_id::text = vw_last_days_products.quad_id::text AND st_intersects(user_aoi.geom, landsat_quads.geom) AND (vw_last_days_products.product_type::text <> ALL (ARRAY['GAP'::character varying::text, 'CLOUD'::character varying::text]))
   GROUP BY user_aoi.node_id, user_aoi.aoi_id, user_aoi.user_id, vw_last_days_products.product_type, vw_last_days_products.product_date
   ORDER BY user_aoi.user_id, user_aoi.node_id;
 
