@@ -3,7 +3,7 @@
 -- DROP VIEW public.vw_tile_index_gap;
 
 CREATE OR REPLACE VIEW public.vw_tile_index_gap AS
- SELECT '/lsfdata/products/gap_mask/'::text || products.product_id::text AS location,
+ SELECT (SELECT path_data from lsf_enviroments) || '/gap_mask/'::text || products.product_id::text AS location,
     extracted_imagery.quad_id AS oid,
     lq.geom,
     products.product_date,
