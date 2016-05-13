@@ -1,7 +1,7 @@
 ﻿-- DROP VIEW public.vw_custom_request_tile_index_swir;
 
 CREATE OR REPLACE VIEW public.vw_custom_request_tile_index_swir AS
- SELECT '/lsfdata/products/swir/'::text || products.product_id::text AS location,
+ SELECT (SELECT path_data from lsf_enviroments) || '/swir/'::text || products.product_id::text AS location,
     extracted_imagery.quad_id AS oid,
     lq.geom,
     products.product_date,
