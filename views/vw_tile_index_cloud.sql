@@ -3,7 +3,7 @@
 -- DROP VIEW public.vw_tile_index_cloud;
 
 CREATE OR REPLACE VIEW public.vw_tile_index_cloud AS
- SELECT '/lsfdata/products/cloud_mask/'::text || products.product_id::text AS location,
+ SELECT (SELECT path_data from lsf_enviroments) || '/cloud_mask/'::text || products.product_id::text AS location,
     extracted_imagery.quad_id AS oid,
     lq.geom,
     products.product_date,
