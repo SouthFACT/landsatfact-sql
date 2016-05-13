@@ -3,7 +3,7 @@
 -- DROP VIEW public.vw_custom_request_tile_index_ndvi;
 
 CREATE OR REPLACE VIEW public.vw_custom_request_tile_index_ndvi AS
- SELECT '/lsfdata/products/ndvi/'::text || products.product_id::text AS location,
+ SELECT (SELECT path_data from lsf_enviroments) || '/ndvi/'::text || products.product_id::text AS location,
     extracted_imagery.quad_id AS oid,
     lq.geom,
     products.product_date,
