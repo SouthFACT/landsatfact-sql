@@ -3,7 +3,7 @@
 -- DROP VIEW public.vw_tile_index_swir;
 
 CREATE OR REPLACE VIEW public.vw_tile_index_swir AS
- SELECT '/lsfdata/products/swir/16bit/'::text || products.product_id::text AS location,
+ SELECT (select path_data from lsf_enviroments) || '/swir/16bit/'::text || products.product_id::text AS location,
     extracted_imagery.quad_id AS oid,
     lq.geom,
     products.product_date,
