@@ -9,7 +9,7 @@ CREATE OR REPLACE VIEW public.vw_user_notification AS
     user_aoi.aoi_name,
     vw_last_days_products.product_type,
     st_extent(st_transform(user_aoi.geom, 900913))::text AS extent,
-    (((((('http://www.landsatfact.com/map/?theme=SE&layers='::text ||
+    (((((('http://' ||(SELECT url_website from lsf_enviroments) || '/map/?theme=SE&layers='::text ||
         CASE
             WHEN vw_last_days_products.product_type::text = 'SWIR'::text THEN 'ALC'::text
             ELSE ''::text
