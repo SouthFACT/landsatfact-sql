@@ -1,6 +1,6 @@
 ﻿CREATE OR REPLACE VIEW public.vw_tile_index_customrequest AS
 	SELECT
-	  '/lsfdata/products/'::text ||
+	  (SELECT path_data from lsf_enviroments)::text || '/' ||
 		(CASE WHEN product_type = 'GAP'OR  product_type = 'CLOUD'
 			THEN  lower(product_type) || '_mask' ELSE  lower(product_type)    END) ::text
 		||  '/'::text || products.product_id::text AS location,
