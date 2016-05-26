@@ -20,6 +20,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [insert_user_aoi_by_county](functions.md#function-insert_user_aoi_by_county)
 * [insert_user_aoi_by_geojson](functions.md#function-insert_user_aoi_by_geojson)
 * [is_validSceneIntersects](functions.md#function-is_validsceneintersects)
+* [keys_and_values](functions.md#function-keys_and_values)\
 * [update_custom_request_status](functions.md#function-update_custom_request_status)
 * [update_user_aoi_by_county](functions.md#function-update_user_aoi_by_county)
 * [update_user_aoi_by_geojson](functions.md#function-update_user_aoi_by_geojson)
