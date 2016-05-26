@@ -675,6 +675,43 @@ t
 ```
 Back to [Table of contents](README.md)
 <br><br>
+
+
+### function [keys_and_values](functions/keys_and_values.sql)
+function ????
+```sql
+keys_and_values(
+      cols text,
+      vals text.
+      scene text)
+  RETURNS null
+```
+**requires**
+*
+
+**returns**
+* Null
+  *
+
+
+**Example:**
+
+**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
+```sql
+SELECT * FROM is_validSceneIntersects('some geojson',4);
+```
+**Returns:**
+```sql
+is_validSceneIntersects
+------------------------
+t
+(1 row)
+```
+Back to [Table of contents](README.md)
+<br><br>
+
+
+
 ### function [update_custom_request_status](functions/update_custom_request_status.sql)
 function updates the custom_request_dates table with the users status and the current date time.
 ```sql
