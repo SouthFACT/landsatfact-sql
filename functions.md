@@ -687,10 +687,12 @@ keys_and_values(
   RETURNS integer
 ```
 **requires**
-*
+* cols
+* vals 
+* scene the scene id in text
 
 **returns**
-* Integer l1_key.
+* l1_key integer
 
 **Example:**
 ```sql
