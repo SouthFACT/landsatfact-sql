@@ -678,40 +678,34 @@ Back to [Table of contents](README.md)
 
 
 ### function [keys_and_values](functions/keys_and_values.sql)
-function ????
+This function handles the addition of a row to the level1_metadata table and putting the row's key in landsat_metadata. It INSERTs the columns and values passed as the first 2 arguments. The third argument is the scene_id key used to identify the row in landsat_metadata to be updated with a foreign key to the new level1_metadata row.
 ```sql
 keys_and_values(
       cols text,
       vals text.
       scene text)
-  RETURNS null
+  RETURNS integer
 ```
 **requires**
 *
 
 **returns**
-* Null
-  *
-
+* Integer l1_key.
 
 **Example:**
-
-**Note:** replace *some geojson* with [sample GeoJSON](sampledata/buncombecounty.geojson?short_path=f249f19)
 ```sql
-SELECT * FROM is_validSceneIntersects('some geojson',4);
+select * from select * from keys_and_values('(reflectance_add_band_5,radiance_maximum_band_3,radiance_maximum_band_4,radiance_maximum_band_5,radiance_maximum_band_6,radiance_maximum_band_7,sun_elevation,radiance_add_band_6_VCID_2,radiance_mult_band_6_VCID_2,reflectance_add_band_4,reflectance_mult_band_3,reflectance_mult_band_5,reflectance_mult_band_4,reflectance_mult_band_7,earth_sun_distance,radiance_add_band_3,radiance_add_band_5,radiance_add_band_4,radiance_add_band_7,radiance_add_band_6,radiance_mult_band_7,radiance_mult_band_6,radiance_mult_band_5,radiance_mult_band_4,radiance_mult_band_3,reflectance_add_band_7,reflectance_maximum_band_7,reflectance_maximum_band_4,reflectance_maximum_band_5,reflectance_add_band_3,reflectance_maximum_band_3)', '(-0.015838,152.9,241.1,31.06,17.04,10.8,59.19782167,3.1628,0.037205,-0.018452,0.0012754,0.001775,0.0029468,0.0016979,1.005131,-5.62165,-1.12622,-6.06929,-0.3939,-0.06709,0.043898,0.067087,0.12622,0.96929,0.62165,-0.015235,0.417722,0.73298,0.436782,-0.011534,0.313698)','LE70310342016112EDC01');
 ```
+
 **Returns:**
 ```sql
-is_validSceneIntersects
+keys_and_values
 ------------------------
-t
+2000224
 (1 row)
 ```
 Back to [Table of contents](README.md)
 <br><br>
-
-
-
 ### function [update_custom_request_status](functions/update_custom_request_status.sql)
 function updates the custom_request_dates table with the users status and the current date time.
 ```sql

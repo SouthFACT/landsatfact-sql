@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE VIEW public.vw_tile_index_customrequest AS
+﻿CREATE OR REPLACE VIEW public."vw_tile_index_customrequestForDelete" AS
 	SELECT
 	  (SELECT path_data from lsf_enviroments)::text || '/' ||
 		(CASE WHEN product_type = 'GAP'OR  product_type = 'CLOUD'
@@ -21,7 +21,7 @@
 	  AND lq.wrs2_code::text = wc.wrs2_code::text
 	ORDER BY products.product_date DESC;
 
-ALTER TABLE public.vw_tile_index_customrequest OWNER TO root;
-GRANT ALL ON TABLE public.vw_tile_index_customrequest TO root;
-GRANT SELECT ON TABLE public.vw_tile_index_customrequest TO readonly;
-GRANT ALL ON TABLE public.vw_tile_index_customrequest TO dataonly;
+ALTER TABLE public."vw_tile_index_customrequestForDelete" OWNER TO root;
+GRANT ALL ON TABLE public."vw_tile_index_customrequestForDelete" TO root;
+GRANT SELECT ON TABLE public."vw_tile_index_customrequestForDelete" TO readonly;
+GRANT ALL ON TABLE public."vw_tile_index_customrequestForDelete" TO dataonly;
