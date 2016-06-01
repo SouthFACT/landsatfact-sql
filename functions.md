@@ -274,6 +274,38 @@ aoi_id | quad_id  |       scene_id        | quad_order | wrs2_code | scene_date 
 ```
 
 Back to [Table of contents](README.md)
+
+<br><br>
+### function [get_customRequestURLByNodeId](functions/get_customRequestURLByNodeId.sql)
+function gets the url of custom requestby it's drupal node_id.
+ needed for providing download links for custom requests in the drupal status page.
+```sql
+get_customRequestURLByNodeId(pass_node_id text)
+    RETURNS text AS
+```
+**requires**
+*   node_id character varying(30) node_id of custom request
+
+**returns**
+```
+url of type text
+```
+
+**Example:**
+
+```sql
+select get_customRequestURLByNodeId('827')
+```
+
+**Returns:**
+```sql
+get_customrequesturlbynodeid
+------------------------------
+daveism_399.zip
+(1 row)
+```
+
+Back to [Table of contents](README.md)
 <br><br>
 ### function [get_pendingcustomrequests](functions/get_pendingcustomrequests.sql)
 Function to a table or list of pending custom requests..
@@ -688,7 +720,7 @@ keys_and_values(
 ```
 **requires**
 * cols
-* vals 
+* vals
 * scene the scene id in text
 
 **returns**

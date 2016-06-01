@@ -10,6 +10,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [get_customrequest_status_bynode](functions.md#function-get_customrequest_status_bynode)
 * [get_customrequest_status_byuser](functions.md#function-get_customrequest_status_byuser)
 * [get_customRequestsQuads](functions.md#function-get_customrequestsquads)
+* [get_customRequestURLByNodeId](functions.md#function-get_customRequestURLByNodeId)
 * [get_pendingCustomRequests](functions.md#function-get_pendingcustomrequests)
 * [get_processCompleteCustomRequests](functions.md#function-get_processcompletecustomrequests)
 * [get_scenesAlternate](functions.md#function-get_scenesalternate)
