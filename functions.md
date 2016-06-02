@@ -232,7 +232,7 @@ function to get the que and estimated time based on current average time complet
 
 ```sql
 get_customRequestQue_by_aoi_id(pass_aoi_id text))
-    RETURNS texr
+    RETURNS text
 ```
 **requires**
 * pass_aoi_id::text - aoi_id of a custom request
@@ -258,7 +258,38 @@ Your custom request is number 2 in the que and should take about 02:44:00 to com
 ```
 
 Back to [Table of contents](README.md)
+<br><br>
+### function [get_customRequestQue_by_node_id](functions/get_customRequestQue_by_node_id.sql)
+function to get the que and estimated time based on current average time complete a custom request.
 
+```sql
+get_customRequestQue_by_node_id(pass_node_id text)
+    RETURNS text
+```
+**requires**
+* pass_node_id::text - aoi_id of a custom request
+
+
+**returns**
+* text message describing in Que and approximate time to complete
+```
+ret_message
+```
+**Example:**
+
+```sql
+select * from get_customRequestQue_by_node_id('1041');
+```
+
+**Returns:**
+```sql
+----------------------------------------------------------------------------------------
+Your custom request is number 2 in the que and should take about 02:44:00 to complete.
+(1 row)
+
+```
+
+Back to [Table of contents](README.md)
 <br><br>
 ### function [get_customRequestsQuads](functions/get_customrequestsquads.sql)
 Function to a table or list of pending custom requests..
