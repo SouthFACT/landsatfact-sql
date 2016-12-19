@@ -1,0 +1,115 @@
+-- View: public.vw_product_list_cloud_for_vrt
+
+-- DROP VIEW public.vw_product_list_cloud_for_vrt;
+
+CREATE OR REPLACE VIEW public.vw_product_list_cloud_for_vrt AS 
+ SELECT products.product_date,
+    string_agg('/lsfdata-dev/products/cloud_mask/'::text || products.product_id::text, ' '::text) AS product_list
+   FROM products
+  WHERE products.analysis_source::text = 'LCV'::text AND products.product_type::text = 'CLOUD'::text AND (products.product_date = '2016-12-13'::date OR products.product_date = '2016-11-15'::date)
+  GROUP BY products.product_date
+  ORDER BY products.product_date DESC;
+
+ALTER TABLE public.vw_product_list_cloud_for_vrt
+  OWNER TO root;
+GRANT ALL ON TABLE public.vw_product_list_cloud_for_vrt TO root;
+GRANT SELECT ON TABLE public.vw_product_list_cloud_for_vrt TO readonly;
+GRANT ALL ON TABLE public.vw_product_list_cloud_for_vrt TO dataonly;
+
+
+
+
+
+
+-- View: public.vw_product_list_gap_for_vrt
+
+-- DROP VIEW public.vw_product_list_gap_for_vrt;
+
+CREATE OR REPLACE VIEW public.vw_product_list_gap_for_vrt AS 
+ SELECT products.product_date,
+    string_agg('/lsfdata-dev/products/gap_mask/'::text || products.product_id::text, ' '::text) AS product_list
+   FROM products
+  WHERE products.analysis_source::text = 'LCV'::text AND products.product_type::text = 'GAP'::text AND (products.product_date = '2016-12-13'::date OR products.product_date = '2016-11-15'::date)
+  GROUP BY products.product_date
+  ORDER BY products.product_date DESC;
+
+ALTER TABLE public.vw_product_list_gap_for_vrt
+  OWNER TO root;
+GRANT ALL ON TABLE public.vw_product_list_gap_for_vrt TO root;
+GRANT SELECT ON TABLE public.vw_product_list_gap_for_vrt TO readonly;
+GRANT ALL ON TABLE public.vw_product_list_gap_for_vrt TO dataonly;
+
+
+
+
+
+
+
+-- View: public.vw_product_list_ndmi_for_vrt
+
+-- DROP VIEW public.vw_product_list_ndmi_for_vrt;
+
+CREATE OR REPLACE VIEW public.vw_product_list_ndmi_for_vrt AS 
+ SELECT products.product_date,
+    string_agg('/lsfdata-dev/products/ndmi/'::text || products.product_id::text, ' '::text) AS product_list
+   FROM products
+  WHERE products.analysis_source::text = 'LCV'::text AND products.product_type::text = 'NDMI'::text AND (products.product_date = '2016-12-13'::date OR products.product_date = '2016-11-15'::date)
+  GROUP BY products.product_date
+  ORDER BY products.product_date DESC;
+
+ALTER TABLE public.vw_product_list_ndmi_for_vrt
+  OWNER TO root;
+GRANT ALL ON TABLE public.vw_product_list_ndmi_for_vrt TO root;
+GRANT SELECT ON TABLE public.vw_product_list_ndmi_for_vrt TO readonly;
+GRANT ALL ON TABLE public.vw_product_list_ndmi_for_vrt TO dataonly;
+
+
+
+
+
+
+
+
+-- View: public.vw_product_list_ndvi_for_vrt
+
+-- DROP VIEW public.vw_product_list_ndvi_for_vrt;
+
+CREATE OR REPLACE VIEW public.vw_product_list_ndvi_for_vrt AS 
+ SELECT products.product_date,
+    string_agg('/lsfdata-dev/products/ndvi/'::text || products.product_id::text, ' '::text) AS product_list
+   FROM products
+  WHERE products.analysis_source::text = 'LCV'::text AND products.product_type::text = 'NDVI'::text AND (products.product_date = '2016-12-13'::date OR products.product_date = '2016-11-15'::date)
+  GROUP BY products.product_date
+  ORDER BY products.product_date DESC;
+
+ALTER TABLE public.vw_product_list_ndvi_for_vrt
+  OWNER TO root;
+GRANT ALL ON TABLE public.vw_product_list_ndvi_for_vrt TO root;
+GRANT SELECT ON TABLE public.vw_product_list_ndvi_for_vrt TO readonly;
+GRANT ALL ON TABLE public.vw_product_list_ndvi_for_vrt TO dataonly;
+
+
+
+
+
+
+
+
+-- View: public.vw_product_list_swir_for_vrt
+
+-- DROP VIEW public.vw_product_list_swir_for_vrt;
+
+CREATE OR REPLACE VIEW public.vw_product_list_swir_for_vrt AS 
+ SELECT products.product_date,
+    string_agg('/lsfdata-dev/products/swir/'::text || products.product_id::text, ' '::text) AS product_list,
+    products.product_type
+   FROM products
+  WHERE products.analysis_source::text = 'LCV'::text AND products.product_type::text = 'SWIR'::text AND products.product_date > '2016-12-13'::date
+  GROUP BY products.product_date, products.product_type
+  ORDER BY products.product_date DESC;
+
+ALTER TABLE public.vw_product_list_swir_for_vrt
+  OWNER TO root;
+GRANT ALL ON TABLE public.vw_product_list_swir_for_vrt TO root;
+GRANT SELECT ON TABLE public.vw_product_list_swir_for_vrt TO readonly;
+GRANT ALL ON TABLE public.vw_product_list_swir_for_vrt TO dataonly;
