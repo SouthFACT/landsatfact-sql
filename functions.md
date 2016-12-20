@@ -2,9 +2,33 @@
 A List of PostGreSQL functions used by landsat FACT.
 
 Back to [Table of contents](README.md)
+<br><br>
+### function [edit_function](functions/edit_function.sql)
+Trigger Function to manage adds/inserts to metadata table. this timestamps a field in the landsat_metadata table when anything is inserted - added_date
 
+**requires**
+* Nothing
+
+**returns**
+* Nothing this is an edit trigger
+```
+Nothing
+```
+
+**Example:**
+```sql
+Nothing
+```
+
+**Returns:**
+```
+Nothing
+```
+
+Back to [Table of contents](README.md)
+<br><br>
 ### function [delete_user_aoi_by_nid](functions/delete_user_aoi_by_nid.sql)
-Function to delete a record from the subscription/custom request table.  User has indicated they no longer want subscription or cancel's custom request.
+Function to delete a record from the subscription/custom request table.  User has indicated they no longer want subscription or cancel's custom request - modified_date.
 ```sql
 delete_user_aoi_by_nid(nid text) RETURNS void
 ```
@@ -57,6 +81,30 @@ get_aoi_id_by_nodeid
 ----------------------
                  181
 (1 row)
+```
+
+Back to [Table of contents](README.md)
+<br><br>
+### function [edit_function](functions/edit_function.sql)
+Trigger Function to setup edits to metadata table. this timestamps a field in the landsat_metadata table when anything is edited
+
+**requires**
+* Nothing
+
+**returns**
+* Nothing this is an edit trigger
+```
+Nothing
+```
+
+**Example:**
+```sql
+Nothing
+```
+
+**Returns:**
+```
+Nothing
 ```
 
 Back to [Table of contents](README.md)
