@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.vw_quad_latest_update AS 
+CREATE OR REPLACE VIEW public.vw_quad_latest_update AS
  WITH latestquads AS (
          SELECT extracted_imagery.quad_id AS oid,
             lq.geom,
@@ -13,7 +13,7 @@ CREATE OR REPLACE VIEW public.vw_quad_latest_update AS
             landsat_quads lq,
             wrs2_codes wc,
             products
-          WHERE products.input1::text = extracted_imagery.quad_scene::text AND extracted_imagery.quad_id::text = lq.quad_id::text AND lq.wrs2_code::text = wc.wrs2_code::text AND products.analysis_source::text = 'LCV'::text
+          WHERE products.input1::text = extracted_imagery.quad_scene::text AND extracted_imagery.quad_id::text = lq.quad_id::text AND lq.wrs2_code::text = wc.wrs2_code::text AND products.analysis_source::text = 'LCV'::text AND products.disk_status::text = 'on_disk'::text
           GROUP BY extracted_imagery.quad_id, lq.geom, wc.proj_wkt, products.input1, products.input2
           ORDER BY extracted_imagery.quad_id, row_number() OVER (PARTITION BY extracted_imagery.quad_id ORDER BY max(products.product_date) DESC)
         )
