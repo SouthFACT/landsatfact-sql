@@ -1,0 +1,8 @@
+CREATE TYPE public.notification_metadata AS
+   (node_id character varying(30),
+    product_date date,
+    extent text,
+    input1 text,
+    input2 text);
+ALTER TYPE public.notification_metadata
+  OWNER TO root;
