@@ -24,8 +24,8 @@ RETURN QUERY EXECUTE
 SELECT DISTINCT scenes.node_id,
                                  p.product_date,
                                  extent.extent,
-                                 substring(p.input1::text from 0 for 16) AS input1,
-                                 substring(p.input2::text from 0 for 16) AS input2
+                                 substring(p.input1::text from 0 for 17) AS input1,
+                                 substring(p.input2::text from 0 for 17) AS input2
 FROM products p,
            scenes,
            extent
