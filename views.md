@@ -278,7 +278,20 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
-views.md#view-
+### view [vw_missed_lcv](views/vw_missed_lcv.sql)
+
+sometimes metadata for scenes is updated later and is missed in initial LCV run. This make sure we find the "missed" scenes
+
+```sql
+Columns
+  scene_id character varying (35)
+  days_ago double precision
+  process text
+  process_status text
+  process_message text
+```
+Back to [Table of contents](README.md)
+
 ### view [vw_quad_latest_update](views/vw_quad_latest_update.sql)
 This view is used by vw_viewer_quads to show the latest change metadata.
 

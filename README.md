@@ -47,6 +47,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [vw_download_scenes](views.md#view-vw_download_scenes)
 * [vw_last_days_products](viewws/vw_last_days_products)
 * [vw_last_days_scenes](views.md#view-vw_last_days_scenes)
+* [vw_missed_lcv](views.md#view-vw_missed_lcv)
 * [vw_quad_latest_update](views.md#view-vw_quad_latest_update)
 * [vw_quad_lc_history](views.md#view-vw_quad_lc_history)
 * [vw_quilt](views.md#view-vw_quilt)
