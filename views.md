@@ -160,7 +160,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_failed_dn](views/vw_failed_dn.sql)
 
-During LCV l1_metadata sometimes fails to write to the DB.  This view identifies scenes where this happens.  This view is used to re-run writing of l1 metadata.
+During LCV minimum_dn sometimes fails to write to the DB.  This view identifies scenes where this happens.  This view is used to re-run writing of minimum_dn to the DB.
 
 ```sql
 Columns
