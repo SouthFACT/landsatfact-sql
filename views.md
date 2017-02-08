@@ -61,9 +61,9 @@ Columns
 Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_custom_request_tile_index_gap](views/vw_custom_request_tile_index_gap.sql)
- 
+
 View that serves as a tile index for custom request layers in the Map Viewer
- 
+
 **NOTES**
   * location stores the path to the tif file
   * geom is the vector area for the tif file to be displayed within
@@ -82,9 +82,9 @@ Columns
 Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_custom_request_tile_index_ndmi](views/vw_custom_request_tile_index_ndmi.sql)
- 
+
 View that serves as a tile index for custom request layers in the Map Viewer
- 
+
 **NOTES**
   * location stores the path to the tif file
   * geom is the vector area for the tif file to be displayed within
@@ -103,9 +103,9 @@ Columns
 Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_custom_request_tile_index_ndvi](views/vw_custom_request_tile_index_ndvi.sql)
- 
+
 View that serves as a tile index for custom request layers in the Map Viewer
- 
+
 **NOTES**
   * location stores the path to the tif file
   * geom is the vector area for the tif file to be displayed within
@@ -124,9 +124,9 @@ Columns
 Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_custom_request_tile_index_swir](views/vw_custom_request_tile_index_swir.sql)
- 
+
 View that serves as a tile index for custom request layers in the Map Viewer
- 
+
 **NOTES**
   * location stores the path to the tif file
   * geom is the vector area for the tif file to be displayed within
@@ -158,6 +158,65 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
+### view [vw_failed_dn](views/vw_failed_dn.sql)
+
+During LCV l1_metadata sometimes fails to write to the DB.  This view identifies scenes where this happens.  This view is used to re-run writing of l1 metadata.
+
+```sql
+Columns
+  scene_id character varying (35)
+  days_ago double precision
+  process text
+  process_status text
+  process_message text
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_failed_l1metadata](views/vw_failed_l1metadata.sql)
+
+During LCV l1_metadata sometimes fails to write to the DB.  This view identifies scenes where this happens.  This view is used to re-run writing of l1 metadata.
+
+```sql
+Columns
+  scene_id character varying (35)
+  days_ago double precision
+  process text
+  process_status text
+  process_message text
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_failed_products](views/vw_failed_products.sql)
+
+used to find scenes that failed LCV process.  Most failures never make it to the write to products table.  This view identifies the scenes where this happened.  This is used re-run failed LCV's
+
+```sql
+Columns
+  scene_id character varying (35)
+  days_ago double precision
+  process text
+  process_status text
+  process_message text
+```
+Back to [Table of contents](README.md)
+<br><br>
+### view [vw_last_days_products](views/vw_last_days_products.sql)
+
+View that shows the latest products.
+
+**NOTES**
+* Used by the python scripts to generate a new latest change mosaic using gdal.
+```sql
+Columns
+    product_id character varying (100)
+    input1 character varying (40)
+    input2 character varying (40)
+    product_type character varying (6)
+    product_date date
+    quad_id input2 character varying (8)
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### view [vw_download_scenes](views/vw_download_scenes.sql)
 
 Used for... in function?
@@ -181,7 +240,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_last_days_products](views/vw_last_days_products.sql)
 
-View that shows the latest products. 
+View that shows the latest products.
 
 **NOTES**
 * Used by the python scripts to generate a new latest change mosaic using gdal.
@@ -198,7 +257,7 @@ Back to [Table of contents](README.md)
 <br><br>
 ### view [vw_last_days_scenes](views/vw_last_days_scenes.sql)
 
-View that displays the latest scene records from the landsat_metadata table. 
+View that displays the latest scene records from the landsat_metadata table.
 
 **NOTES**
 * Used by download_landsat_data.php to download the scenes presented in this view.
