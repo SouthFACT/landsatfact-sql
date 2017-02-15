@@ -1,0 +1,13 @@
+CREATE OR REPLACE VIEW public.vw_custom_requests_for_vrt_gap AS 
+ SELECT vw_custom_request_tile_index_gap.aoi,
+    string_agg(vw_custom_request_tile_index_gap.location, ' '::text) AS product_list
+   FROM vw_custom_request_tile_index_gap,
+    vw_custom_requests_for_viewer
+  WHERE vw_custom_request_tile_index_gap.aoi = vw_custom_requests_for_viewer.aoi
+  GROUP BY vw_custom_request_tile_index_gap.aoi;
+
+ALTER TABLE public.vw_custom_requests_for_vrt_gap
+  OWNER TO root;
+GRANT ALL ON TABLE public.vw_custom_requests_for_vrt_gap TO root;
+GRANT SELECT ON TABLE public.vw_custom_requests_for_vrt_gap TO readonly;
+GRANT ALL ON TABLE public.vw_custom_requests_for_vrt_gap TO dataonly;
