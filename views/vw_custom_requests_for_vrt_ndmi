@@ -1,0 +1,13 @@
+CREATE OR REPLACE VIEW public.vw_custom_requests_for_vrt_ndmi AS 
+ SELECT vw_custom_request_tile_index_ndmi.aoi,
+    string_agg(vw_custom_request_tile_index_ndmi.location, ' '::text) AS product_list
+   FROM vw_custom_request_tile_index_ndmi,
+    vw_custom_requests_for_viewer
+  WHERE vw_custom_request_tile_index_ndmi.aoi = vw_custom_requests_for_viewer.aoi
+  GROUP BY vw_custom_request_tile_index_ndmi.aoi;
+
+ALTER TABLE public.vw_custom_requests_for_vrt_ndmi
+  OWNER TO root;
+GRANT ALL ON TABLE public.vw_custom_requests_for_vrt_ndmi TO root;
+GRANT SELECT ON TABLE public.vw_custom_requests_for_vrt_ndmi TO readonly;
+GRANT ALL ON TABLE public.vw_custom_requests_for_vrt_ndmi TO dataonly;
