@@ -15,8 +15,7 @@ CREATE OR REPLACE VIEW public.vw_custom_requests_for_viewer AS
     custom_request_scenes c,
     custom_requests,
     custom_request_dates
-  WHERE products.analysis_source::text = 'CR'::text AND products.input1::text = extracted_imagery.quad_scene::text AND extracted_imagery.quad_id::text = lq.quad_id::text AND lq.wrs2_code::text = wc.wrs2_code::text AND c.scene_id::text = extracted_imagery.scene_id::text AND custom_requests.aoi_id = c.aoi_id AND custom_request_dates.aoi_id = c.aoi_id AND custom_request_dates.custom_request_status_id = 4
-  ORDER BY custom_requests.request_id;
+  WHERE custom_request_dates.custom_request_date > ('now'::text::date - '45 days'::interval day) AND products.analysis_source::text = 'CR'::text AND products.input1::text = extracted_imagery.quad_scene::text AND extracted_imagery.quad_id::text = lq.quad_id::text AND lq.wrs2_code::text = wc.wrs2_code::text AND c.scene_id::text = extracted_imagery.scene_id::text AND custom_requests.aoi_id = c.aoi_id AND custom_request_dates.aoi_id = c.aoi_id AND custom_request_dates.custom_request_status_id = 4;
 
 ALTER TABLE public.vw_custom_requests_for_viewer
   OWNER TO root;
