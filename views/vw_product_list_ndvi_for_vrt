@@ -1,0 +1,17 @@
+CREATE OR REPLACE VIEW public.vw_product_list_ndvi_for_vrt AS 
+ SELECT products.product_date::text AS product_date,
+    string_agg('/lsfdata-dev/products/ndvi/'::text || products.product_id::text, ' '::text) AS product_list
+   FROM products
+  WHERE products.analysis_source::text = 'LCV'::text AND products.product_type::text = 'NDVI'::text AND products.product_date > '2016-12-13'::date
+  GROUP BY products.product_date
+UNION
+ SELECT 'cr_'::text || vw_custom_requests_for_vrt_ndvi.aoi::text AS product_date,
+    vw_custom_requests_for_vrt_ndvi.product_list
+   FROM vw_custom_requests_for_vrt_ndvi
+  ORDER BY 1 DESC;
+
+ALTER TABLE public.vw_product_list_ndvi_for_vrt
+  OWNER TO root;
+GRANT ALL ON TABLE public.vw_product_list_ndvi_for_vrt TO root;
+GRANT SELECT ON TABLE public.vw_product_list_ndvi_for_vrt TO readonly;
+GRANT ALL ON TABLE public.vw_product_list_ndvi_for_vrt TO dataonly;
