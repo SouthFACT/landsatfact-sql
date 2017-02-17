@@ -1,6 +1,6 @@
 CREATE OR REPLACE VIEW public.vw_product_list_for_vrt AS 
  SELECT products.product_date,
-    string_agg('/lsfdata-dev/products/ndvi/'::text || products.product_id::text, ' '::text) AS product_list,
+    string_agg('/lsfdata/products/ndvi/'::text || products.product_id::text, ' '::text) AS product_list,
     products.product_type
    FROM products
   WHERE products.analysis_source::text = 'LCV'::text AND products.product_date > '2016-12-13'::date
