@@ -1,10 +1,11 @@
 CREATE OR REPLACE VIEW public.vw_custom_requests_for_vrt_swir AS 
  SELECT vw_custom_request_tile_index_swir.aoi,
-    string_agg(vw_custom_request_tile_index_swir.location, ' '::text) AS product_list
+    string_agg(vw_custom_request_tile_index_swir.location, ' '::text) AS product_list,
+    vw_custom_requests_for_viewer.product_type
    FROM vw_custom_request_tile_index_swir,
     vw_custom_requests_for_viewer
-  WHERE vw_custom_request_tile_index_swir.aoi = vw_custom_requests_for_viewer.aoi
-  GROUP BY vw_custom_request_tile_index_swir.aoi;
+  WHERE vw_custom_request_tile_index_swir.aoi = vw_custom_requests_for_viewer.aoi AND vw_custom_requests_for_viewer.product_type::text = 'SWIR'::text
+  GROUP BY vw_custom_request_tile_index_swir.aoi, vw_custom_requests_for_viewer.product_type;
 
 ALTER TABLE public.vw_custom_requests_for_vrt_swir
   OWNER TO root;
