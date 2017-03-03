@@ -1,4 +1,4 @@
--- View: public.vw_failed_products
+﻿-- View: public.vw_failed_products
 
 -- DROP VIEW public.vw_failed_products;
 

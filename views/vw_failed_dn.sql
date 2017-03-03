@@ -1,6 +1,7 @@
--- View: public.vw_failed_dn
+﻿-- View: public.vw_failed_dn
 
 -- DROP VIEW public.vw_failed_dn;
+
 CREATE OR REPLACE VIEW public.vw_failed_dn AS
 WITH ailed_dn AS (SELECT
   lsfm.scene_id,

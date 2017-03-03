@@ -1,4 +1,4 @@
--- View: public.vw_failed_l1metadata
+﻿-- View: public.vw_failed_l1metadata
 
 -- DROP VIEW public.vw_failed_l1metadata;
 CREATE OR REPLACE VIEW public.vw_failed_l1metadata AS
