@@ -186,6 +186,23 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
+### view [vw_failed_lcv_quads](views/vw_failed_lcv_quad.sql)
+
+During LCV sometimes an error occurs and nothing is written to the products table.  This is usually an fmask error this id's the failed in the past 3 days so we can attempt to re-run lcv on failures.
+
+```sql
+Columns
+  scene_id character varying (35)
+  quad text
+  days_ago integer
+  acquisition_date date
+  added_date date
+  analysis_source character varying (6)
+  message_level text
+  message text
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### view [vw_failed_products](views/vw_failed_products.sql)
 
 used to find scenes that failed LCV process.  Most failures never make it to the write to products table.  This view identifies the scenes where this happened.  This is used re-run failed LCV's
