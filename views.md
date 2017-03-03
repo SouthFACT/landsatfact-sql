@@ -186,7 +186,7 @@ Columns
 ```
 Back to [Table of contents](README.md)
 <br><br>
-### view [vw_failed_lcv_quads](views/vw_failed_lcv_quad.sql)
+### view [vw_failed_lcv_quads](views/vw_failed_lcv_quads.sql)
 
 During LCV sometimes an error occurs and nothing is written to the products table.  This is usually an fmask error this id's the failed in the past 3 days so we can attempt to re-run lcv on failures.
 
