@@ -12,7 +12,7 @@ WITH failed_dn AS (SELECT
 FROM minimum_dn
   RIGHT JOIN (SELECT scene_id, acquisition_date, modified_date
 	FROM landsat_metadata
-	WHERE now()::date - landsat_metadata.acquisition_date::date <= 30 and now()::date - landsat_metadata.acquisition_date::date  > 0) AS lsfm
+	WHERE now()::date - landsat_metadata.acquisition_date::date <= 4 and now()::date - landsat_metadata.acquisition_date::date  > 0) AS lsfm
    ON minimum_dn.scene_id = lsfm.scene_id)
 SELECT * FROM failed_dn WHERE process_status = 'False';
 
