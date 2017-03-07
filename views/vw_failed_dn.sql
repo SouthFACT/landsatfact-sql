@@ -12,7 +12,7 @@ WITH ailed_dn AS (SELECT
 FROM minimum_dn
   RIGHT JOIN (SELECT scene_id, acquisition_date, modified_date
 	FROM landsat_metadata
-	WHERE landsat_metadata.acquisition_date >= ('now'::text::date - '3 days'::interval day) AND needs_processing = 'YES' AND  downloaded = 'YES') AS lsfm
+	WHERE landsat_metadata.acquisition_date >= ('now'::text::date - '3 days'::interval day)) AS lsfm
    ON minimum_dn.scene_id = lsfm.scene_id)
 SELECT * FROM ailed_dn WHERE process_status = 'False';
 

@@ -11,7 +11,7 @@ WITH level_1_metadata_fail AS (SELECT
 FROM level1_metadata
   RIGHT JOIN (SELECT scene_id, acquisition_date, modified_date, l1_key
 	FROM landsat_metadata
-	WHERE landsat_metadata.acquisition_date >= ('now'::text::date - '3 days'::interval day) AND needs_processing = 'YES' AND  downloaded = 'YES') AS lsfm
+	WHERE landsat_metadata.acquisition_date >= ('now'::text::date - '3 days'::interval day) ) AS lsfm
    ON level1_metadata.level1_id = lsfm.l1_key)
 SELECT * FROM level_1_metadata_fail WHERE process_status = 'False';
 
