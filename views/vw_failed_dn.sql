@@ -3,7 +3,7 @@
 -- DROP VIEW public.vw_failed_dn;
 
 CREATE OR REPLACE VIEW public.vw_failed_dn AS
-WITH ailed_dn AS (SELECT
+WITH failed_dn AS (SELECT
   lsfm.scene_id,
   date_part('day', age(now(), lsfm.acquisition_date)) days_ago,
   'WRITE DN'::text as process,
@@ -12,9 +12,9 @@ WITH ailed_dn AS (SELECT
 FROM minimum_dn
   RIGHT JOIN (SELECT scene_id, acquisition_date, modified_date
 	FROM landsat_metadata
-	WHERE landsat_metadata.acquisition_date >= ('now'::text::date - '3 days'::interval day)) AS lsfm
+	WHERE now()::date - landsat_metadata.acquisition_date::date <= 30 and now()::date - landsat_metadata.acquisition_date::date  > 0) AS lsfm
    ON minimum_dn.scene_id = lsfm.scene_id)
-SELECT * FROM ailed_dn WHERE process_status = 'False';
+SELECT * FROM failed_dn WHERE process_status = 'False';
 
 
 ALTER TABLE public.vw_failed_dn
