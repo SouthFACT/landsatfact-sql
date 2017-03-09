@@ -32,7 +32,7 @@ FROM products
 	LEFT OUTER JOIN landsat_quads ON
 		substr(lsfm.scene_id, 4, 6) = landsat_quads.wrs2_code
 	WHERE landsat_quads.wrs2_code IS NOT NULL
-		AND lsfm.acquisition_date >= ('now'::text::date - '3 days'::interval day) AND needs_processing = 'YES' AND  downloaded = 'YES'
+		AND (now()::date - lsfm.acquisition_date::date <= 4 and now()::date - lsfm.acquisition_date::date  > 0) AND needs_processing = 'YES' AND  downloaded = 'YES'
 	ORDER BY lsfm.scene_id ) as lsfm
    ON trim(input2)::text = trim(lsfm.quad)::text
 ORDER BY process, process_status, process_message, days_ago, scene_id)
