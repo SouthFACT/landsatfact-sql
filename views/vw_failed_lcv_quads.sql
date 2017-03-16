@@ -49,7 +49,7 @@ SELECT
 FROM potential_quads
    LEFT OUTER JOIN products
 	ON potential_quads.quad = products.input2
-WHERE now()::date - acquisition_date::date <= 5 and now()::date - acquisition_date::date  > 0
+WHERE now()::date - acquisition_date::date <= 4 and now()::date - acquisition_date::date  > 0
 ORDER BY
 	now()::date - acquisition_date::date,
 	CASE WHEN product_id is null THEN
