@@ -14,7 +14,7 @@ FROM minimum_dn
 	FROM landsat_metadata
 	WHERE now()::date - landsat_metadata.acquisition_date::date <= 4 and now()::date - landsat_metadata.acquisition_date::date  > 0) AS lsfm
    ON minimum_dn.scene_id = lsfm.scene_id)
-SELECT * FROM failed_dn WHERE process_status = 'False';
+SELECT * FROM failed_dn WHERE process_status = 'False' ORDER BY days_ago;
 
 
 ALTER TABLE public.vw_failed_dn
