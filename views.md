@@ -3,6 +3,19 @@ PostGreSQL views used by Landsat FACT.
 
 Back to [Table of contents](README.md)
 <br><br>
+### view [vw_aoi_alerts](views/vw_aoi_alerts.sql)
+
+View that lists products that intersect a user AOI (area of interest)
+
+**NOTES**
+
+```sql
+Columns
+    aoi_id integer
+    product_id character varying (100)
+```
+Back to [Table of contents](README.md)
+<br><br>
 ### view [vw_archive_product_dates](views/vw_archive_product_dates.sql)
 
 View that display the date for every LCV product.

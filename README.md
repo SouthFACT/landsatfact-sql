@@ -32,6 +32,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 
 ### Landsat FACT SQL Views
 * [All views](views.md)
+* [vw_aoi_alerts](views.md#view-vw_aoi_alerts)
 * [vw_archive_product_dates](views.md#view-vw_archive_product_dates)
 * [vw_custom_requests_for_viewer](views.md#view-vw_custom_requests_for_viewer)
 * [vw_custom_request_tile_index_cloud](views.md#view-vw_custom_request_tile_index_cloud)
