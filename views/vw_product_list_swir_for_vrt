@@ -1,14 +1,17 @@
 CREATE OR REPLACE VIEW public.vw_product_list_swir_for_vrt AS 
- SELECT products.product_date::text AS product_date,
-    string_agg('/lsfdata/products/swir/'::text || products.product_id::text, ' '::text) AS product_list,
-    products.product_type
+ SELECT DISTINCT ON (products.product_date) products.product_date::text AS vrt_name,
+    string_agg((SELECT path_data from lsf_enviroments) ||'/swir/'::text || products.product_id::text, ' '::text) AS product_list,
+    products.product_type,
+    products.product_date AS vrt_date
    FROM products
+     LEFT JOIN extracted_imagery ON products.input2::text = extracted_imagery.quad_scene::text
   WHERE products.analysis_source::text = 'LCV'::text AND products.product_type::text = 'SWIR'::text AND products.product_date > '2016-12-13'::date
   GROUP BY products.product_date, products.product_type
 UNION
- SELECT 'cr_'::text || vw_custom_requests_for_vrt_swir.aoi::text AS product_date,
+ SELECT 'cr_'::text || vw_custom_requests_for_vrt_swir.aoi::text AS vrt_name,
     vw_custom_requests_for_vrt_swir.product_list,
-    vw_custom_requests_for_vrt_swir.product_type
+    vw_custom_requests_for_vrt_swir.product_type,
+    'now'::text::date AS vrt_date
    FROM vw_custom_requests_for_vrt_swir
   ORDER BY 1 DESC;
 
