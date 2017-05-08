@@ -20,5 +20,7 @@ CREATE OR REPLACE VIEW public.vw_download_scenes AS
    FROM landsat_metadata
   ORDER BY "substring"(landsat_metadata.scene_id::text, 4, 6), "substring"(landsat_metadata.scene_id::text, 3, 1);
 
-ALTER TABLE public.vw_download_scenes
-  OWNER TO dataonly;
+  ALTER TABLE public.vw_download_scenes OWNER TO root;
+  GRANT ALL ON TABLE public.vw_download_scenes TO root;
+  GRANT SELECT ON TABLE public.vw_download_scenes TO readonly;
+  GRANT ALL ON TABLE public.vw_download_scenes TO dataonly;
