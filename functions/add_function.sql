@@ -6,6 +6,6 @@ CREATE FUNCTION add_stamp() RETURNS trigger AS $edit_stamp$
     END;
 $edit_stamp$ LANGUAGE plpgsql;
 
-   create TRIGGER add BEFORE INSERT
+CREATE TRIGGER add BEFORE INSERT
    ON public.landsat_metadata FOR EACH ROW
    EXECUTE PROCEDURE public.add_stamp();
