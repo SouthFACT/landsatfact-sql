@@ -957,7 +957,7 @@ Back to [Table of contents](README.md)
 ### function [write_aoi_events](functions/write_aoi_events.sql)
 records an aoi alert event 
 * inserts into the aoi_events table
-* inserts into the aoi_products tble
+* inserts into the aoi_products table
 
 
 ```sql
@@ -992,6 +992,7 @@ write_aoi_events
 ------------------------------
 t
 (1 row)
+```
 
 Back to [Table of contents](README.md) 
 <br><br>
