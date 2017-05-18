@@ -951,5 +951,47 @@ update_user_aoi_by_county
 t
 (1 row)
 ```
+
 Back to [Table of contents](README.md)
+<br><br>
+### function [write_aoi_events](functions/write_aoi_events.sql)
+records an aoi alert event 
+* inserts into the aoi_events table
+* inserts into the aoi_products tble
+
+
+```sql
+  write_aoi_events(
+	   aoi_id integer,
+	   acres_change float,
+	   percent_change float,
+	   acres_analyzed float,
+	   percent_analyzed_change float,
+	   smallest_patch float,
+	   largest_patch float,
+	   patch_count integer,
+	   swirs text)
+    RETURNS boolean
+```
+**requires**
+* aoi_id 
+* aoi_events table statistics: acres_change, percent_change, acres_analyzed, percent_analyzed_change, smallest_patch, and largest_patch
+* a list of swir files as text comma delimited string of the product_ids used to determine the statistics
+
+**returns**
+* True if succeeds and false if fails
+
+**Example**
+
+```sql
+select * from write_aoi_events(1,2.0,3.0,4.0,5.0, 6.0, 7.0, 8,'LE70250392017104EDC00UL_LE70250392017120EDC00UL_percent_SWIR.tif, LE70250382017104EDC00LL_LE70250382017120EDC00LL_percent_SWIR.tif');
+```
+**Returns:**
+```sql
+write_aoi_events
+------------------------------
+t
+(1 row)
+
+Back to [Table of contents](README.md) 
 <br><br>
