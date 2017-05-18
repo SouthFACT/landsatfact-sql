@@ -29,6 +29,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [update_custom_request_status](functions.md#function-update_custom_request_status)
 * [update_user_aoi_by_county](functions.md#function-update_user_aoi_by_county)
 * [update_user_aoi_by_geojson](functions.md#function-update_user_aoi_by_geojson)
+* [write_aoi_events](functions.md#function-write_aoi_events)
 
 ### Landsat FACT SQL Views
 * [All views](views.md)
