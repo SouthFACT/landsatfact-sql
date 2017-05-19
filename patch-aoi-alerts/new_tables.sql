@@ -12,7 +12,7 @@ CREATE SEQUENCE public.aoi_alerts_status_types_seq
   INCREMENT 1
   MINVALUE 1
   MAXVALUE 9223372036854775807
-  START 2
+  START 5
   CACHE 1;
   
 ALTER TABLE public.aoi_alerts_status_types_seq
