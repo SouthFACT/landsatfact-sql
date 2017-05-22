@@ -109,6 +109,41 @@ Nothing
 
 Back to [Table of contents](README.md)
 <br><br>
+### function [get_acres_aoi_alert_subscription](functions/get_acres_aoi_alert_subscription.sql)
+gets the acres of a aoi alert (subscriptions)
+
+**NOTES**  
+N/A
+
+```sql
+CREATE OR REPLACE FUNCTION public.get_acres_aoi_alert_subscription(
+    param_aoi_id integer
+)
+  RETURNS float AS
+```
+**requires**
+* aoi_id::integer unique id for the aoi alert
+
+**returns**
+* The acres of the aoi
+
+**Example**
+
+```sql
+select get_acres_aoi_alert_subscription(3004)
+```
+
+**Returns:**
+```sql
+----------------------------------
+                 1757.75398599716
+(1 row)
+```
+
+Back to [Table of contents](README.md)
+
+<br><br>
+
 ### function [get_completedcustomrequests](functions/get_completedcustomrequests.sql)
 Function to a table or list of completed custom requests..
 ```sql
@@ -684,6 +719,84 @@ t
 
 Back to [Table of contents](README.md)
 <br><br>
+### function [insert_alert_aoi](functions/insert_alert_aoi.sql)
+inserts a new record into aoi_alerts for aoi alert notifications
+* updates the table aoi_alerts
+
+**NOTES**  
+N/A
+
+```sql
+CREATE OR REPLACE FUNCTION public.insert_alert_aoi(
+    geojson text,
+    aoi_name text,
+    node_id text,
+    aoi_public boolean
+  )
+  RETURNS integer AS
+```
+**requires**
+* geojson::text geojson for the aoi alert
+* aoi_name::character varying (200) the name of the aoi alert
+* node_id::character varying (30) the drupal node id of the aoi alert
+* aoi_public::boolean boolean indicating if the aoi alert is public
+
+**returns**
+* New aoi_id
+
+**Example**
+
+```sql
+SELECT insert_alert_aoi('{"type":"MultiPolygon","coordinates":[[[[-76.718215976924,39.234380614382],[-76.723022495478,39.217359297766],[-76.70104983923,39.206186815499],[-76.692123447628,39.218423250987],[-76.718215976924,39.234380614382]]]]}','test 2 insert','99999',true::boolean);
+```
+**Returns:**
+```sql
+insert_alert_aoi
+------------------
+            3004
+(1 row)
+```
+
+Back to [Table of contents](README.md)
+<br><br>
+### function [insert_aoi_alert_subscription](functions/insert_aoi_alert_subscription.sql)
+inserts a new record into user_aoi_alerts for aoi alert notifications.  this associates a user to an aoi.
+* updates the table user_aoi_alerts
+
+**NOTES**  
+N/A
+
+```sql
+CREATE OR REPLACE FUNCTION public.insert_aoi_alert_subscription(
+    aoi_id integer,
+    user_id text
+  )
+  RETURNS boolean AS
+```
+**requires**
+* aoi_id::integer unique id for the aoi alert
+* user_id::character varying (30) the user id for the aoi alert from drupal
+
+**returns**
+* True if succeeds and false if fails
+
+**Example**
+
+```sql
+SELECT insert_aoi_alert_subscription(3004,'99')
+```
+
+**Returns:**
+```sql
+insert_aoi_alert_subscription
+-------------------------------
+t
+(1 row)
+```
+
+Back to [Table of contents](README.md)
+
+<br><br>
 ### function [insert_custom_request_scenes](functions/insert_custom_request_scenes.sql)
 function inserts record into insert_custom_request_scenes to record each scene used by a custom request.
 ```sql
@@ -820,8 +933,6 @@ t
 ```
 Back to [Table of contents](README.md)
 <br><br>
-
-
 ### function [keys_and_values](functions/keys_and_values.sql)
 This function handles the addition of a row to the level1_metadata table and putting the row's key in landsat_metadata. It INSERTs the columns and values passed as the first 2 arguments. The third argument is the scene_id key used to identify the row in landsat_metadata to be updated with a foreign key to the new level1_metadata row.
 ```sql
@@ -849,6 +960,37 @@ select * from select * from keys_and_values('(reflectance_add_band_5,radiance_ma
 keys_and_values
 ------------------------
 2000224
+(1 row)
+```
+Back to [Table of contents](README.md)
+<br><br>
+### function [remove_aoi_alert_subscription](functions/remove_aoi_alert_subscription.sql)
+inserts a new record into user_aoi_alerts for aoi alert notifications.  this associates a user to an aoi.
+
+```sql
+CREATE OR REPLACE FUNCTION public.remove_aoi_alert_subscription(
+    param_aoi_id integer,
+    param_user_id text
+  )
+  RETURNS boolean AS
+```
+**requires**
+*  aoi_id::integer aoi_id unique id for aoi alert
+*  user_id::character varying (30) the user id for the user susbcribing to the alert
+
+**returns**
+* true if succeeds and false if fails
+
+**Example:**
+```sql
+SELECT remove_aoi_alert_subscription(3001,'106')
+```
+
+**Returns:**
+```sql
+remove_aoi_alert_subscription
+-------------------------------
+t
 (1 row)
 ```
 Back to [Table of contents](README.md)
@@ -955,7 +1097,7 @@ t
 Back to [Table of contents](README.md)
 <br><br>
 ### function [write_aoi_events](functions/write_aoi_events.sql)
-records an aoi alert event 
+records an aoi alert event
 * inserts into the aoi_events table
 * inserts into the aoi_products table
 
@@ -974,7 +1116,7 @@ records an aoi alert event
     RETURNS boolean
 ```
 **requires**
-* aoi_id 
+* aoi_id
 * aoi_events table statistics: acres_change, percent_change, acres_analyzed, percent_analyzed_change, smallest_patch, and largest_patch
 * a list of swir files as text comma delimited string of the product_ids used to determine the statistics
 
@@ -994,5 +1136,5 @@ t
 (1 row)
 ```
 
-Back to [Table of contents](README.md) 
+Back to [Table of contents](README.md)
 <br><br>

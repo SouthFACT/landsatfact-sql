@@ -82,6 +82,24 @@ CREATE TRIGGER add BEFORE INSERT
    ON public.aoi_alerts FOR EACH ROW
    EXECUTE PROCEDURE public.add_stamp();
 
+
+CREATE SEQUENCE public.aoi_alerts_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 3000
+  CACHE 1;
+  
+ALTER TABLE public.aoi_alerts_seq
+  OWNER TO root;
+  
+GRANT ALL ON SEQUENCE public.aoi_alerts_seq TO root;
+GRANT SELECT ON SEQUENCE public.aoi_alerts_seq TO readonly;
+GRANT ALL ON SEQUENCE public.aoi_alerts_seq TO dataonly;
+
+ALTER TABLE public.aoi_alerts ALTER COLUMN aoi_id SET NOT NULL;
+ALTER TABLE public.aoi_alerts ALTER COLUMN aoi_id SET DEFAULT nextval('aoi_alerts_seq'::regclass);
+
    
 CREATE TABLE "aoi_events" (
   "aoi_event_id" integer,
