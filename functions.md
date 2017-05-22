@@ -110,7 +110,7 @@ Nothing
 Back to [Table of contents](README.md)
 <br><br>
 ### function [get_acres_aoi_alert_subscription](functions/get_acres_aoi_alert_subscription.sql)
-gets the acres of a aoi alert (subscriptions)
+gets the acres of an aoi alert (subscriptions)
 
 ```sql
 CREATE OR REPLACE FUNCTION public.get_acres_aoi_alert_subscription(
