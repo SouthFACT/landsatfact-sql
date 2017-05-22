@@ -119,7 +119,7 @@ CREATE OR REPLACE FUNCTION public.get_acres_aoi_alert_subscription(
   RETURNS float AS
 ```
 **requires**
-* aoi_id::integer unique id for the aoi alert
+* aoi_id integer unique id for the aoi alert
 
 **returns**
 * The acres of the aoi
@@ -731,10 +731,10 @@ CREATE OR REPLACE FUNCTION public.insert_alert_aoi(
   RETURNS integer AS
 ```
 **requires**
-* geojson::text geojson for the aoi alert
-* aoi_name::character varying (200) the name of the aoi alert
-* node_id::character varying (30) the drupal node id of the aoi alert
-* aoi_public::boolean boolean indicating if the aoi alert is public
+* geojson text geojson for the aoi alert
+* aoi_name character varying (200) the name of the aoi alert
+* node_id character varying (30) the drupal node id of the aoi alert
+* aoi_public boolean boolean indicating if the aoi alert is public
 
 **returns**
 * New aoi_id
@@ -767,8 +767,8 @@ CREATE OR REPLACE FUNCTION public.insert_aoi_alert_subscription(
   RETURNS boolean AS
 ```
 **requires**
-* aoi_id::integer unique id for the aoi alert
-* user_id::character varying (30) the user id for the aoi alert from drupal
+* aoi_id integer unique id for the aoi alert
+* user_id character varying (30) the user id for the aoi alert from drupal
 
 **returns**
 * True if succeeds and false if fails
@@ -968,8 +968,8 @@ CREATE OR REPLACE FUNCTION public.remove_aoi_alert_subscription(
   RETURNS boolean AS
 ```
 **requires**
-*  aoi_id::integer aoi_id unique id for aoi alert
-*  user_id::character varying (30) the user id for the user susbcribing to the alert
+*  aoi_id integer aoi_id unique id for aoi alert
+*  user_id character varying (30) the user id for the user susbcribing to the alert
 
 **returns**
 * true if succeeds and false if fails
