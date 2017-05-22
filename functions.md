@@ -112,9 +112,6 @@ Back to [Table of contents](README.md)
 ### function [get_acres_aoi_alert_subscription](functions/get_acres_aoi_alert_subscription.sql)
 gets the acres of a aoi alert (subscriptions)
 
-**NOTES**  
-N/A
-
 ```sql
 CREATE OR REPLACE FUNCTION public.get_acres_aoi_alert_subscription(
     param_aoi_id integer
@@ -135,6 +132,7 @@ select get_acres_aoi_alert_subscription(3004)
 
 **Returns:**
 ```sql
+get_acres_aoi_alert_subscription
 ----------------------------------
                  1757.75398599716
 (1 row)
@@ -723,9 +721,6 @@ Back to [Table of contents](README.md)
 inserts a new record into aoi_alerts for aoi alert notifications
 * updates the table aoi_alerts
 
-**NOTES**  
-N/A
-
 ```sql
 CREATE OR REPLACE FUNCTION public.insert_alert_aoi(
     geojson text,
@@ -763,8 +758,6 @@ Back to [Table of contents](README.md)
 inserts a new record into user_aoi_alerts for aoi alert notifications.  this associates a user to an aoi.
 * updates the table user_aoi_alerts
 
-**NOTES**  
-N/A
 
 ```sql
 CREATE OR REPLACE FUNCTION public.insert_aoi_alert_subscription(

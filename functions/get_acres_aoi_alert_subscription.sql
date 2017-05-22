@@ -7,7 +7,7 @@ CREATE OR REPLACE FUNCTION public.get_acres_aoi_alert_subscription(
 )
   RETURNS float AS
 
-  --gets the acres of a aoi alert (subscriptions)
+  --gets the acres of an aoi alert (subscriptions)
 
   --requires
   --  aoi_id::integer aoi_id unique id for aoi alert
