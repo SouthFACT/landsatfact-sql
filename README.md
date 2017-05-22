@@ -6,8 +6,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [add_function](functions.md#function-add_function)
 * [delete_user_aoi_by_nid](functions.md#function-delete_user_aoi_by_nid)
 * [edit_function](functions.md#function-edit_function)
-* [get_acres_aoi_alert_subscription](functions.md#get_acres_aoi_alert_subscription)
-
+* [get_acres_aoi_alert_subscription](functions.md#function-get_acres_aoi_alert_subscription)
 * [get_aoi_id_by_nodeid](functions.md#function-get_aoi_id_by_nodeid)
 * [get_completedcustomrequests](functions.md#function-get_completedcustomrequests)
 * [get_countyByGeoid](functions.md#function-get_countybygeoid)
@@ -23,9 +22,8 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [get_scenesMostRecent](functions.md#function-get_scenesmostrecent)
 * [get_statusByAoiId](functions.md#function-get_statusbyaoiid)
 * [initiate_custom_request](functions.md#function-initiate_custom_request)
-* [insert_alert_aoi](functions.md#insert_alert_aoi)
-* [insert_aoi_alert_subscription](functions.md#insert_aoi_alert_subscription)
-
+* [insert_alert_aoi](functions.md#function-insert_alert_aoi)
+* [insert_aoi_alert_subscription](functions.md#function-insert_aoi_alert_subscription)
 * [insert_custom_request_scenes](functions.md#function-insert_custom_request_scenes)
 * [insert_user_aoi_by_county](functions.md#function-insert_user_aoi_by_county)
 * [insert_user_aoi_by_geojson](functions.md#function-insert_user_aoi_by_geojson)
