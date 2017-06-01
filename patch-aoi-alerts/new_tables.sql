@@ -27,7 +27,7 @@ ALTER TABLE public.aoi_alerts_status_types ALTER COLUMN alert_status_id SET DEFA
 
 
 CREATE TABLE "user_aoi_alerts" (
-  "gid" integer
+  "gid" integer,
   "aoi_id" integer,
   "user_id" character varying(30),
   "modified_date" date,
@@ -203,7 +203,7 @@ CREATE TABLE "forest_patch_indicator" (
 
 CREATE TABLE "analysis_source" (
   "analysis_source_id" int,
-  "analysis_source_code" character varying(10),
+  "analysis_source_code" character varying(25),
   PRIMARY KEY ("analysis_source_id")
 );
 
@@ -215,7 +215,7 @@ CREATE TRIGGER edit BEFORE INSERT OR UPDATE
 
 CREATE TRIGGER add BEFORE INSERT
    ON public.products FOR EACH ROW
-   EXECUTE PROCEDURE public.add_stamp()
+   EXECUTE PROCEDURE public.add_stamp();
    
 --insert default values
 INSERT INTO forest_change_type VALUES (0, 'Unknown');
@@ -235,5 +235,19 @@ INSERT INTO forest_patch_indicator VALUES (0, 'No areas of change greater than a
 INSERT INTO forest_patch_indicator VALUES (1, 'At least one area of change greater than or equal to an acre.', NULL);
 INSERT INTO forest_patch_indicator VALUES (2, 'At least one area of change greater than or equal to five acres.', NULL);
 
+
+-- Data for Name: analysis_source; Type: TABLE DATA; Schema: public; Owner: root
+--
+INSERT INTO analysis_source VALUES (0, 'Unknown');
+INSERT INTO analysis_source VALUES (1, 'LCV');
+INSERT INTO analysis_source VALUES (2, 'Custom Request');
+INSERT INTO analysis_source VALUES (3, 'AOI Alert');
+
+-- Data for Name: aoi_alerts_status_types; Type: TABLE DATA; Schema: public; Owner: root
+--
+INSERT INTO aoi_alerts_status_types (alert_status_id, status, comment) VALUES (1, 'Pending', 'Event needs process but  has not started');
+INSERT INTO aoi_alerts_status_types (alert_status_id, status, comment) VALUES (2, 'Process Start', 'Python geoprocessing has started for the event');
+INSERT INTO aoi_alerts_status_types (alert_status_id, status, comment) VALUES (3, 'Process Complete', 'Python geoprocessing has completd and the notification is ready to be sent');
+INSERT INTO aoi_alerts_status_types (alert_status_id, status, comment) VALUES (4, 'Notification Sent', 'Notification has been sent  to users subscribed to the aoi.');
 
    
