@@ -2,7 +2,7 @@
 
 -- DROP VIEW public.vw_aoi_alerts;
 
-CREATE OR REPLACE VIEW public.vw_aoi_alerts ASCREATE VIEW vw_aoi_alerts AS
+CREATE OR REPLACE VIEW public.vw_aoi_alerts AS
 SELECT t2.aoi_id,
     t3.product_id
    FROM landsat_quads t1
