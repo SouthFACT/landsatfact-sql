@@ -18,7 +18,7 @@ CREATE OR REPLACE FUNCTION public.get_acres_aoi_alert_subscription(
 $BODY$
     DECLARE ret_acres float;
     BEGIN
-        SELECT INTO ret_acres st_area(ST_Transform(geom,3857)) * 0.000247105
+        SELECT INTO ret_acres st_area(ST_Transform(geom,102008)) * 0.000247105
         FROM aoi_alerts WHERE aoi_id = param_aoi_id;
 
         --return acres
