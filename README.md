@@ -7,6 +7,7 @@ A collection of all the SQL views, functions, and data types used by Landsat FAC
 * [delete_user_aoi_by_nid](functions.md#function-delete_user_aoi_by_nid)
 * [edit_function](functions.md#function-edit_function)
 * [get_acres_aoi_alert_subscription](functions.md#function-get_acres_aoi_alert_subscription)
+* [get_acres_from_geojson](functions.md#function-get_acres_from_geojson)
 * [get_aoi_id_by_nodeid](functions.md#function-get_aoi_id_by_nodeid)
 * [get_completedcustomrequests](functions.md#function-get_completedcustomrequests)
 * [get_countyByGeoid](functions.md#function-get_countybygeoid)

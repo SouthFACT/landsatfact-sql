@@ -142,6 +142,37 @@ Back to [Table of contents](README.md)
 
 <br><br>
 
+### function [get_acres_from_geojson](functions/get_acres_from_geojson.sql)
+gets the acres of an geosjon
+
+```sql
+CREATE OR REPLACE FUNCTION public.get_acres_from_geojson(
+    geojson text)
+    RETURNS float AS
+```
+**requires**
+* geojson text that is actually valid geojson object
+
+**returns**
+* The acres of the geojson
+
+**Example**
+
+```sql
+select get_acres_from_geojson('{"type":"Polygon","coordinates":[[[-82.64774322509766,35.53219130367052],[-82.64817237854004,35.53131819790861],[-82.6470136642456,35.53079432989081],[-82.64671325683594,35.531981759154206],[-82.64774322509766,35.53219130367052]]]}')
+```
+
+**Returns:**
+```sql
+get_acres_from_geojson
+------------------------
+      3.13604774933652
+(1 row)
+```
+
+Back to [Table of contents](README.md)
+
+<br><br>
 ### function [get_completedcustomrequests](functions/get_completedcustomrequests.sql)
 Function to a table or list of completed custom requests..
 ```sql
