@@ -14,10 +14,10 @@ CREATE SEQUENCE public.aoi_alerts_status_types_seq
   MAXVALUE 9223372036854775807
   START 5
   CACHE 1;
-  
+
 ALTER TABLE public.aoi_alerts_status_types_seq
   OWNER TO root;
-  
+
 GRANT ALL ON SEQUENCE public.aoi_alerts_status_types_seq TO root;
 GRANT SELECT ON SEQUENCE public.aoi_alerts_status_types_seq TO readonly;
 GRANT ALL ON SEQUENCE public.aoi_alerts_status_types_seq TO dataonly;
@@ -31,7 +31,7 @@ CREATE TABLE "user_aoi_alerts" (
   "aoi_id" integer,
   "user_id" character varying(30),
   "modified_date" date,
-  "added_date" date,  
+  "added_date" date,
   PRIMARY KEY ("gid")
 );
 
@@ -51,10 +51,10 @@ CREATE SEQUENCE public.user_aoi_alerts_seq
   MAXVALUE 9223372036854775807
   START 2
   CACHE 1;
-  
+
 ALTER TABLE public.user_aoi_alerts_seq
   OWNER TO root;
-  
+
 GRANT ALL ON SEQUENCE public.user_aoi_alerts_seq TO root;
 GRANT SELECT ON SEQUENCE public.user_aoi_alerts_seq TO readonly;
 GRANT ALL ON SEQUENCE public.user_aoi_alerts_seq TO dataonly;
@@ -89,10 +89,10 @@ CREATE SEQUENCE public.aoi_alerts_seq
   MAXVALUE 9223372036854775807
   START 3000
   CACHE 1;
-  
+
 ALTER TABLE public.aoi_alerts_seq
   OWNER TO root;
-  
+
 GRANT ALL ON SEQUENCE public.aoi_alerts_seq TO root;
 GRANT SELECT ON SEQUENCE public.aoi_alerts_seq TO readonly;
 GRANT ALL ON SEQUENCE public.aoi_alerts_seq TO dataonly;
@@ -100,7 +100,7 @@ GRANT ALL ON SEQUENCE public.aoi_alerts_seq TO dataonly;
 ALTER TABLE public.aoi_alerts ALTER COLUMN aoi_id SET NOT NULL;
 ALTER TABLE public.aoi_alerts ALTER COLUMN aoi_id SET DEFAULT nextval('aoi_alerts_seq'::regclass);
 
-   
+
 CREATE TABLE "aoi_events" (
   "aoi_event_id" integer,
   "aoi_id" integer,
@@ -116,7 +116,7 @@ CREATE TABLE "aoi_events" (
   "patch_count" integer,
   "patch_indicator_id" integer,
   "max_patch_severity" float,
-  "min_patch_severity" float,  
+  "min_patch_severity" float,
   "alert_status_id" integer,
   "modified_date" date,
   "added_date" date,
@@ -134,7 +134,7 @@ CREATE SEQUENCE public.aoi_event_id_seq
   CACHE 1;
 ALTER TABLE public.aoi_event_id_seq
   OWNER TO root;
-  
+
 GRANT ALL ON SEQUENCE public.aoi_event_id_seq TO root;
 GRANT SELECT ON SEQUENCE public.aoi_event_id_seq TO readonly;
 GRANT ALL ON SEQUENCE public.aoi_event_id_seq TO dataonly;
@@ -149,10 +149,10 @@ CREATE TRIGGER edit BEFORE INSERT OR UPDATE
 CREATE TRIGGER add BEFORE INSERT
    ON public.aoi_events FOR EACH ROW
    EXECUTE PROCEDURE public.add_stamp();
-   
+
 CREATE TABLE "aoi_products" (
   "gid" integer,
-  "event_image_id" integer,
+  "aoi_event_id" integer,
   "event_image1" character varying(50),
   "event_image2" character varying(50),
    "product_name" character varying(150),
@@ -164,7 +164,7 @@ CREATE TABLE "aoi_products" (
 ALTER TABLE public.aoi_products
   OWNER TO root;
 
-  
+
 CREATE SEQUENCE public.aoi_products_seq
   INCREMENT 1
   MINVALUE 1
@@ -186,7 +186,7 @@ CREATE TRIGGER edit BEFORE INSERT OR UPDATE
 CREATE TRIGGER add BEFORE INSERT
    ON public.aoi_products FOR EACH ROW
    EXECUTE PROCEDURE public.add_stamp();
-      
+
 CREATE TABLE "forest_change_type" (
   "change_type_id" integer,
   "change_type" character varying(150),
@@ -216,7 +216,7 @@ CREATE TRIGGER edit BEFORE INSERT OR UPDATE
 CREATE TRIGGER add BEFORE INSERT
    ON public.products FOR EACH ROW
    EXECUTE PROCEDURE public.add_stamp();
-   
+
 --insert default values
 INSERT INTO forest_change_type VALUES (0, 'Unknown');
 INSERT INTO forest_change_type VALUES (1, 'Forest Harvesting');
@@ -249,5 +249,3 @@ INSERT INTO aoi_alerts_status_types (alert_status_id, status, comment) VALUES (1
 INSERT INTO aoi_alerts_status_types (alert_status_id, status, comment) VALUES (2, 'Process Start', 'Python geoprocessing has started for the event');
 INSERT INTO aoi_alerts_status_types (alert_status_id, status, comment) VALUES (3, 'Process Complete', 'Python geoprocessing has completd and the notification is ready to be sent');
 INSERT INTO aoi_alerts_status_types (alert_status_id, status, comment) VALUES (4, 'Notification Sent', 'Notification has been sent  to users subscribed to the aoi.');
-
-   
