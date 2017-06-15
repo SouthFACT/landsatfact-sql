@@ -1,6 +1,6 @@
--- Function: public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, text)
+-- Function: public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, float, text)
 
--- DROP FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, text);
+-- DROP FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, float, text);
 
 CREATE OR REPLACE FUNCTION public.write_aoi_events(
     aoiID integer,
@@ -13,6 +13,7 @@ CREATE OR REPLACE FUNCTION public.write_aoi_events(
     patchCount integer,
     eventID integer,
     eventDate date,
+    maxPatchSeverity float,
     swirs text
     )
   RETURNS boolean AS
@@ -35,8 +36,8 @@ $BODY$
 			
         --update table aoi_events 
         UPDATE aoi_events set ("aoi_id", "acres_change", "percent_change", "acres_analyzed", "percent_analyzed_change", "smallest_patch", "largest_patch", "patch_count",
-		      "event_date")
-         	= (aoiID, acresChange, percentChange, acresAnalyzed, percentAnalyzed, smallestPatch, largestPatch, patchCount, eventDate)
+		      "event_date", "max_patch_severity")
+         	= (aoiID, acresChange, percentChange, acresAnalyzed, percentAnalyzed, smallestPatch, largestPatch, patchCount, eventDate, maxPatchSeverity)
 		where aoi_event_id=eventID;
 
         --update table aoi_products
@@ -64,8 +65,8 @@ $BODY$
 $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
-ALTER FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, text) OWNER TO root;
-GRANT EXECUTE ON FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, text) TO public;
-GRANT EXECUTE ON FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, text) TO root;
-GRANT EXECUTE ON FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, text) TO dataonly;
-GRANT EXECUTE ON FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, text) TO readonly;
+ALTER FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, float, text) OWNER TO root;
+GRANT EXECUTE ON FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, float, text) TO public;
+GRANT EXECUTE ON FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, float, text) TO root;
+GRANT EXECUTE ON FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, float, text) TO dataonly;
+GRANT EXECUTE ON FUNCTION public.write_aoi_events(integer, float, float, float, float, float, float, integer, integer, date, float, text) TO readonly;
