@@ -9,7 +9,8 @@ CREATE OR REPLACE VIEW public.vw_user_notification AS
     user_aoi.aoi_name,
     vw_last_days_products.product_type,
     st_extent(st_transform(user_aoi.geom, 900913))::text AS extent,
-    (((((('http://' ||(SELECT url_website from lsf_enviroments) || '/map/?theme=SE&layers='::text ||
+    (((((((('http://'::text || ((( SELECT lsf_enviroments.url_website
+           FROM lsf_enviroments))::text)) || '/map/?theme=SE&layers='::text) ||
         CASE
             WHEN vw_last_days_products.product_type::text = 'SWIR'::text THEN 'ALC'::text
             ELSE ''::text
@@ -17,7 +18,7 @@ CREATE OR REPLACE VIEW public.vw_user_notification AS
    FROM landsat_quads,
     vw_last_days_products,
     user_aoi
-  WHERE user_aoi.aoi_type='subscription' AND landsat_quads.quad_id::text = vw_last_days_products.quad_id::text AND st_intersects(user_aoi.geom, landsat_quads.geom) AND (vw_last_days_products.product_type::text <> ALL (ARRAY['GAP'::character varying::text, 'CLOUD'::character varying::text]))
+  WHERE user_aoi.aoi_type::text = 'subscription'::text AND landsat_quads.quad_id::text = vw_last_days_products.quad_id::text AND st_intersects(user_aoi.geom, landsat_quads.geom) AND (vw_last_days_products.product_type::text <> ALL (ARRAY['GAP'::character varying::text, 'CLOUD'::character varying::text, 'CIRRUS'::character varying::text]))
   GROUP BY user_aoi.node_id, user_aoi.aoi_id, user_aoi.user_id, vw_last_days_products.product_type, vw_last_days_products.product_date
   ORDER BY user_aoi.user_id, user_aoi.node_id;
 
