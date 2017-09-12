@@ -15,16 +15,16 @@ CREATE OR REPLACE FUNCTION public.get_acres_from_geojson(
     -- the acres
 
 $BODY$
-    DECLARE area_geojson geometry;
-    DECLARE ret_acres float;
-    BEGIN
-         area_geojson = ST_Multi(ST_SetSRID(ST_GeomFromGeoJSON(geojson), 4326));
-         SELECT INTO ret_acres st_area(ST_Transform(area_geojson,102008)) * 0.000247105
+DECLARE area_geojson geometry;
+DECLARE ret_acres float;
+BEGIN
+     area_geojson = ST_Multi(ST_SetSRID(ST_GeomFromGeoJSON(geojson), 4326));
+     SELECT INTO ret_acres st_area(ST_Transform(area_geojson,102008)) * 0.000247105;
 
-         --return acres
-         RETURN ret_acres;
+     --return acres
+     RETURN ret_acres;
 
-    END;
+END;
 $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
