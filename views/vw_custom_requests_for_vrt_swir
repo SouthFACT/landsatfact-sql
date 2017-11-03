@@ -1,10 +1,12 @@
-CREATE OR REPLACE VIEW public.vw_custom_requests_for_vrt_swir AS 
+CREATE OR REPLACE VIEW public.vw_custom_requests_for_vrt_swir AS
  SELECT vw_custom_request_tile_index_swir.aoi,
     string_agg(vw_custom_request_tile_index_swir.location, ' '::text) AS product_list,
     vw_custom_requests_for_viewer.product_type
    FROM vw_custom_request_tile_index_swir,
     vw_custom_requests_for_viewer
-  WHERE vw_custom_request_tile_index_swir.aoi = vw_custom_requests_for_viewer.aoi AND vw_custom_requests_for_viewer.product_type::text = 'SWIR'::text
+  WHERE vw_custom_request_tile_index_swir.aoi = vw_custom_requests_for_viewer.aoi AND
+        vw_custom_requests_for_viewer.product_type::text = 'SWIR'::text AND
+        vw_custom_requests_for_viewer.custom_request_date > ('now'::text::date - '45 days'::interval day)
   GROUP BY vw_custom_request_tile_index_swir.aoi, vw_custom_requests_for_viewer.product_type;
 
 ALTER TABLE public.vw_custom_requests_for_vrt_swir

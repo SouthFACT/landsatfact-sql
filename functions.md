@@ -1059,6 +1059,39 @@ aoi_id |    custom_request_date     | custom_request_status_id
 (2 rows)
 ```
 Back to [Table of contents](README.md)
+
+<br><br>
+### function [update_is_on_disk](functions/update_is_on_disk.sql)
+function to update the is_on_disk field, YES for on disk NO for not on disk. Called from cron job and run once a day to check if data is on disk or not.  
+
+```sql
+update_is_on_disk(
+    product_id_val text,
+    is_on_disk_val text)
+  RETURNS boolean
+```
+**requires**
+* product_id_val text product_id for product.
+* is_on_disk_val text  Either YES or NO on disk or not on disk.
+
+**returns**
+* True if succeeds and false if fails
+
+**Example:**
+
+```sql
+SELECT update_is_on_disk('LE70260342017159EDC00UR_LC80260342017167LGN00UR_Fmask.tif', 'YES');
+```
+**Returns:**
+```sql
+update_is_on_disk
+-------------------
+t
+(1 row)
+```
+Back to [Table of contents](README.md)
+
+
 <br><br>
 ### function [update_user_aoi_by_county](functions/update_user_aoi_by_county.sql)
 function to update a geometry in the subscription/custom request table.  Called when user selects a county.

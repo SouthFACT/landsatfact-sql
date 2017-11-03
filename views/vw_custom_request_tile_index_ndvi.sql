@@ -16,13 +16,15 @@ CREATE OR REPLACE VIEW public.vw_custom_request_tile_index_ndvi AS
     extracted_imagery,
     wrs2_codes wc,
     vw_customrequest_inputs c
-  WHERE products.product_type::text = 'NDVI'::text AND
-  products.analysis_source::text = 'CR'::text AND
-	products.input1::text = extracted_imagery.quad_scene::text AND
-	extracted_imagery.quad_id::text = lq.quad_id::text AND
-	lq.wrs2_code::text = wc.wrs2_code::text AND
-	(c.input1::text = products.input1::text AND
-	c.input2::text = products.input2::text)
+  WHERE
+    products.is_on_disk = 'YES' AND
+    products.product_type::text = 'NDVI'::text AND
+    products.analysis_source::text = 'CR'::text AND
+  	products.input1::text = extracted_imagery.quad_scene::text AND
+  	extracted_imagery.quad_id::text = lq.quad_id::text AND
+  	lq.wrs2_code::text = wc.wrs2_code::text AND
+  	(c.input1::text = products.input1::text AND
+  	c.input2::text = products.input2::text)
   ORDER BY c.id, lq.quad_id DESC;
 
 ALTER TABLE public.vw_custom_request_tile_index_ndvi

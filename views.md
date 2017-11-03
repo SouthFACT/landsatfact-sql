@@ -307,6 +307,19 @@ Columns
     data_type_l1 character varying (5)
 ```
 Back to [Table of contents](README.md)
+
+<br><br>
+### view [vw_list_products_files](views/vw_list_products_files.sql)
+
+list all the products in the database, and create a file location string.  This is used to check it the product is still on disk
+
+```sql
+Columns
+  product_id character varying (100)
+  file text
+```
+Back to [Table of contents](README.md)
+
 <br><br>
 ### view [vw_missed_lcv](views/vw_missed_lcv.sql)
 

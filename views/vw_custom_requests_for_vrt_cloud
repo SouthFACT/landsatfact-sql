@@ -1,13 +1,15 @@
-CREATE OR REPLACE VIEW public.vw_custom_requests_for_vrt_cloud AS 
+CREATE OR REPLACE VIEW public.vw_custom_requests_for_vrt_cloud AS
  SELECT vw_custom_request_tile_index_cloud.aoi,
     string_agg(vw_custom_request_tile_index_cloud.location, ' '::text) AS product_list,
     vw_custom_requests_for_viewer.product_type,
     vw_custom_requests_for_viewer.process_date
    FROM vw_custom_request_tile_index_cloud,
     vw_custom_requests_for_viewer
-  WHERE vw_custom_request_tile_index_cloud.aoi = vw_custom_requests_for_viewer.aoi AND vw_custom_requests_for_viewer.product_type::text = 'CLOUD'::text AND vw_custom_requests_for_viewer.process_date > current_date - interval '5' day
+  WHERE vw_custom_request_tile_index_cloud.aoi = vw_custom_requests_for_viewer.aoi AND
+        vw_custom_requests_for_viewer.product_type::text = 'CLOUD'::text AND
+        vw_custom_requests_for_viewer.process_date > current_date - interval '45' day
   GROUP BY vw_custom_request_tile_index_cloud.aoi, vw_custom_requests_for_viewer.product_type, vw_custom_requests_for_viewer.process_date;
-  
+
 ALTER TABLE public.vw_custom_requests_for_vrt_cloud
   OWNER TO root;
 GRANT ALL ON TABLE public.vw_custom_requests_for_vrt_cloud TO root;

@@ -3,7 +3,13 @@
 
 CREATE OR REPLACE VIEW public.vw_customrequest_inputs AS
   WITH aoi as(
-  SELECT aoi_id as id from custom_request_scenes group by aoi_id
+    SELECT custom_request_scenes.aoi_id as id
+  	FROM custom_request_scenes
+  		LEFT JOIN custom_request_dates ON
+  			custom_request_dates.aoi_id = custom_request_scenes.aoi_id
+  	WHERE custom_request_dates.custom_request_status_id = 4 AND
+  	      custom_request_dates.custom_request_date > ('now'::text::date - '45 days'::interval day)
+  	GROUP BY custom_request_scenes.aoi_id
   )
   select
   	id,
