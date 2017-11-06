@@ -8,14 +8,14 @@ CREATE OR REPLACE VIEW public.vw_missing_gap AS
   		pgap.product_type as gproduct_type,
   		pgap.product_date as gproduct_date
   	FROM products pgap
-  	WHERE (pgap.product_type = 'GAP' and pgap.analysis_source = 'LCV')
+  	WHERE (pgap.product_type = 'GAP' and pgap.analysis_source = 'LCV' )
   )  SELECT * FROM  gaptest
   	RIGHT JOIN (SELECT
   		replace(pgswir.product_id,'_percent_SWIR.tif','') product_id,
   		pgswir.product_type,
   		pgswir.product_date
   	FROM products pgswir
-  	WHERE (pgswir.product_type = 'SWIR' and pgswir.analysis_source = 'LCV')) as pgswir ON gaptest.gproduct_id = pgswir.product_id
+  	WHERE (pgswir.product_type = 'SWIR' and pgswir.analysis_source = 'LCV'   AND  pgswir.is_on_disk = 'YES' )) as pgswir ON gaptest.gproduct_id = pgswir.product_id
   ORDER BY pgswir.product_date)
   SELECT *,
     (SELECT path_data from lsf_enviroments) || '/swir/' ||product_id || '_percent_SWIR.tif'  as swir,
