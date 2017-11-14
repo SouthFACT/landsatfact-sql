@@ -12,9 +12,9 @@ CREATE OR REPLACE VIEW public.vw_list_products_files AS
       CASE WHEN product_type = 'CIRRUS' THEN 'cirrus_mask' ELSE lower(product_type)
     END END END ||
     '/' ||
-    product_id as file
+    product_id as file,
+    is_on_disk
   FROM products
-  WHERE is_on_disk is null or is_on_disk = 'YES'
   ORDER BY product_date desc;
 
 ALTER TABLE public.vw_list_products_files
