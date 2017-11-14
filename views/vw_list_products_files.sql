@@ -5,15 +5,17 @@
 CREATE OR REPLACE VIEW public.vw_list_products_files AS
   SELECT
     product_id,
-  	(SELECT path_data FROM lsf_enviroments limit 1) ||
-  	'/' ||
-  	CASE WHEN product_type = 'CLOUD' THEN 'cloud_mask' ELSE
-  		CASE WHEN product_type = 'GAP' THEN 'gap_mask' ELSE
-  		CASE WHEN product_type = 'CIRRUS' THEN 'cirrus_mask' ELSE lower(product_type)
-  	END END END ||
-  	'/' ||
-  	product_id as file
-  FROM products order by product_date desc;
+    (SELECT path_data FROM lsf_enviroments limit 1) ||
+    '/' ||
+    CASE WHEN product_type = 'CLOUD' THEN 'cloud_mask' ELSE
+      CASE WHEN product_type = 'GAP' THEN 'gap_mask' ELSE
+      CASE WHEN product_type = 'CIRRUS' THEN 'cirrus_mask' ELSE lower(product_type)
+    END END END ||
+    '/' ||
+    product_id as file
+  FROM products
+  WHERE is_on_disk is null or is_on_disk = 'YES'
+  ORDER BY product_date desc;
 
 ALTER TABLE public.vw_list_products_files
   OWNER TO root;
