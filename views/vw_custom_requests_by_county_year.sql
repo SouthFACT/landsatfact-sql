@@ -10,3 +10,9 @@ CREATE OR REPLACE VIEW public.vw_custom_requests_by_county_year AS
 	aoi.user_id::text <> '120'::text AND aoi.user_id::text <> '106'::text AND custom_request_date > '2017-01-31'
   GROUP BY counties.gid, counties.name, counties.geom
   ORDER BY count(aoi.aoi_name);
+
+  ALTER TABLE public.vw_custom_requests_by_county_year
+    OWNER TO root;
+  GRANT ALL ON TABLE public.vw_custom_requests_by_county_year TO root;
+  GRANT SELECT ON TABLE public.vw_custom_requests_by_county_year TO readonly;
+  GRANT ALL ON TABLE public.vw_custom_requests_by_county_year TO dataonly;
